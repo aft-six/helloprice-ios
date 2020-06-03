@@ -3,18 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */; };
 		B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */; };
 		CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85D124820F9100F1D863 /* AppDelegate.swift */; };
-		CA3B85D624820F9100F1D863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85D524820F9100F1D863 /* ViewController.swift */; };
 		CA3B85D924820F9100F1D863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85D724820F9100F1D863 /* Main.storyboard */; };
 		CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85DA24820F9300F1D863 /* Assets.xcassets */; };
 		CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85DC24820F9300F1D863 /* LaunchScreen.storyboard */; };
 		CA3B85E924820F9300F1D863 /* HelloPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85E824820F9300F1D863 /* HelloPriceTests.swift */; };
+		CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6924878C1E00E99B25 /* Product.swift */; };
+		CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */; };
+		CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6D2487900300E99B25 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,6 @@
 		C095F473BB7E87ECBFD89631 /* Pods-HelloPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA3B85CE24820F9100F1D863 /* HelloPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3B85D124820F9100F1D863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA3B85D524820F9100F1D863 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA3B85D824820F9100F1D863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA3B85DA24820F9300F1D863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA3B85DD24820F9300F1D863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +43,9 @@
 		CA3B85E424820F9300F1D863 /* HelloPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3B85E824820F9300F1D863 /* HelloPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPriceTests.swift; sourceTree = "<group>"; };
 		CA3B85EA24820F9300F1D863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9D6E6924878C1E00E99B25 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofifiedProduct.swift; sourceTree = "<group>"; };
+		CA9D6E6D2487900300E99B25 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,7 +78,6 @@
 				C095F473BB7E87ECBFD89631 /* Pods-HelloPriceTests.debug.xcconfig */,
 				9C0A9CC8FDC13BC1C4C70B69 /* Pods-HelloPriceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,11 +113,13 @@
 		CA3B85D024820F9100F1D863 /* HelloPrice */ = {
 			isa = PBXGroup;
 			children = (
+				CA9D6E68248787A700E99B25 /* Scene */,
+				CA9D6E652487877500E99B25 /* Service */,
+				CA9D6E642487876B00E99B25 /* ViewModel */,
+				CA9D6E632487876400E99B25 /* ViewController */,
+				CA9D6E612487875100E99B25 /* Model */,
 				CA3B85D124820F9100F1D863 /* AppDelegate.swift */,
-				CA3B85D524820F9100F1D863 /* ViewController.swift */,
-				CA3B85D724820F9100F1D863 /* Main.storyboard */,
 				CA3B85DA24820F9300F1D863 /* Assets.xcassets */,
-				CA3B85DC24820F9300F1D863 /* LaunchScreen.storyboard */,
 				CA3B85DF24820F9300F1D863 /* Info.plist */,
 			);
 			path = HelloPrice;
@@ -127,6 +132,62 @@
 				CA3B85EA24820F9300F1D863 /* Info.plist */,
 			);
 			path = HelloPriceTests;
+			sourceTree = "<group>";
+		};
+		CA9D6E612487875100E99B25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA9D6E6924878C1E00E99B25 /* Product.swift */,
+				CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA9D6E632487876400E99B25 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B85D724820F9100F1D863 /* Main.storyboard */,
+				CA3B85DC24820F9300F1D863 /* LaunchScreen.storyboard */,
+				CA9D6E6D2487900300E99B25 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA9D6E642487876B00E99B25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA9D6E652487877500E99B25 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CA9D6E67248787A000E99B25 /* CoreDataStorage */,
+				CA9D6E662487879700E99B25 /* MemoryStorage */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CA9D6E662487879700E99B25 /* MemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MemoryStorage;
+			sourceTree = "<group>";
+		};
+		CA9D6E67248787A000E99B25 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		CA9D6E68248787A700E99B25 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA3B85D624820F9100F1D863 /* ViewController.swift in Sources */,
 				CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */,
+				CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */,
+				CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */,
+				CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController<MainViewModel> {
+//    var viewModel: MainViewModel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+    }
 }

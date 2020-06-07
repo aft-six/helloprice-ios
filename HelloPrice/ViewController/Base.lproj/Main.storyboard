@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LX1-ag-fjm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,6 +22,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zlS-Uu-Inb">
+            <objects>
+                <viewController id="DU5-Vn-1wt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NOs-8I-8XJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-jV-V0b" customClass="BottonCircleButton" customModule="HelloPrice" customModuleProvider="target">
+                                <rect key="frame" x="182" y="773" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FPJ-tY-Ail"/>
+                                    <constraint firstAttribute="height" constant="50" id="Pqd-pw-dzw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q6Q-jV-V0b" firstAttribute="centerX" secondItem="G4t-CV-CUP" secondAttribute="centerX" id="X90-mW-P05"/>
+                            <constraint firstItem="q6Q-jV-V0b" firstAttribute="bottom" secondItem="G4t-CV-CUP" secondAttribute="bottom" constant="10" id="cl5-Ty-a73"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G4t-CV-CUP"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="d29-ku-bdz"/>
+                        <barButtonItem title="Item" id="qEl-EX-R26"/>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="xbJ-MD-7kq"/>
+                        <barButtonItem title="Item" id="JFw-fW-biI"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Wu6-Po-AqM"/>
+                        <barButtonItem title="Item" id="1XT-PB-sCt"/>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="jr1-HW-XTJ"/>
+                        <barButtonItem title="Item" id="Ssg-bG-QBA"/>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="ygb-OL-Yvo"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="dGd-V4-Xbk"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZm-Ng-Ps6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537.68115942029" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H14-M5-PhF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LX1-ag-fjm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="imB-AQ-XQd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DU5-Vn-1wt" kind="relationship" relationship="rootViewController" id="vsn-M6-ZRy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YpO-YA-Le5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1627.536231884058" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

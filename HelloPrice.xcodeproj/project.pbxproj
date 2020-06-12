@@ -423,21 +423,13 @@
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */,
-<<<<<<< HEAD
-				CA43633B24927C20001772BF /* BaseViewModel.swift in Sources */,
-=======
 				CA9D6E742488754C00E99B25 /* BaseViewModel.swift in Sources */,
 				CA9D6E7E24887E0B00E99B25 /* SettingViewModel.swift in Sources */,
->>>>>>> 12baf1d8b49cb1861c980d44454b63b9ef0ef213
 				CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
 				CA9D6E762488778200E99B25 /* ProductStorageType.swift in Sources */,
 				CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */,
-<<<<<<< HEAD
-				CA43633924927BED001772BF /* MainViewModel.swift in Sources */,
-=======
 				CA9D6E722488718700E99B25 /* MainViewModel.swift in Sources */,
->>>>>>> 12baf1d8b49cb1861c980d44454b63b9ef0ef213
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

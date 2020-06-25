@@ -8,12 +8,9 @@
 
 import UIKit
 
-class BaseViewController<T: BaseViewModel>: UIViewController, ViewModelBindableType {
-    var viewModel: T!
+class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func bindViewModel() { }
 }

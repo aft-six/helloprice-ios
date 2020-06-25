@@ -11,19 +11,25 @@ import RxSwift
 import RxCocoa
 
 class SceneCoordinator: SceneCoordinatorType {
-    
-    var window: UIWindow
+    private var bag = DisposeBag()
+    private var window: UIWindow
+    private var currentVC: UIViewController
     
     required init(window: UIWindow) {
         self.window = window
+        self.currentVC = window.rootViewController!
     }
     
     func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
-        <#code#>
+        let subject = PublishSubject<Void>()
+        
+        return subject.ignoreElements()
     }
     
     func close(animated: Bool) -> Completable {
-        <#code#>
+        let subject = PublishSubject<Void>()
+        
+        return subject.ignoreElements()
     }
     
     

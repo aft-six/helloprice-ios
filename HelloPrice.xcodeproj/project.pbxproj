@@ -9,20 +9,18 @@
 /* Begin PBXBuildFile section */
 		0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */; };
 		B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */; };
+		CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */; };
+		CA31C0B224A49F9600CF190C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0B024A49EE200CF190C /* MainViewModel.swift */; };
 		CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85D124820F9100F1D863 /* AppDelegate.swift */; };
 		CA3B85D924820F9100F1D863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85D724820F9100F1D863 /* Main.storyboard */; };
 		CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85DA24820F9300F1D863 /* Assets.xcassets */; };
 		CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3B85DC24820F9300F1D863 /* LaunchScreen.storyboard */; };
 		CA3B85E924820F9300F1D863 /* HelloPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85E824820F9300F1D863 /* HelloPriceTests.swift */; };
-		CA43633924927BED001772BF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA43633824927BEC001772BF /* MainViewModel.swift */; };
-		CA43633B24927C20001772BF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA43633A24927C20001772BF /* BaseViewModel.swift */; };
 		CA438796248D1C3700B01A8A /* BottonCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA438795248D1C3700B01A8A /* BottonCircleButton.swift */; };
 		CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6924878C1E00E99B25 /* Product.swift */; };
 		CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */; };
 		CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6D2487900300E99B25 /* MainViewController.swift */; };
 		CA9D6E702488700E00E99B25 /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6F2488700E00E99B25 /* ViewModelBindableType.swift */; };
-		CA9D6E722488718700E99B25 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E712488718700E99B25 /* MainViewModel.swift */; };
-		CA9D6E742488754C00E99B25 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E732488754C00E99B25 /* BaseViewModel.swift */; };
 		CA9D6E762488778200E99B25 /* ProductStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E752488778200E99B25 /* ProductStorageType.swift */; };
 		CA9D6E78248879DF00E99B25 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E77248879DF00E99B25 /* SceneCoordinatorType.swift */; };
 		CA9D6E7A24887A4300E99B25 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E7924887A4300E99B25 /* Scene.swift */; };
@@ -48,6 +46,8 @@
 		57E9D6A39C5CE377CD9EC596 /* Pods-HelloPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPrice.release.xcconfig"; path = "Target Support Files/Pods-HelloPrice/Pods-HelloPrice.release.xcconfig"; sourceTree = "<group>"; };
 		9C0A9CC8FDC13BC1C4C70B69 /* Pods-HelloPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.release.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		C095F473BB7E87ECBFD89631 /* Pods-HelloPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		CA31C0B024A49EE200CF190C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CA3B85CE24820F9100F1D863 /* HelloPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3B85D124820F9100F1D863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA3B85D824820F9100F1D863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,8 +57,6 @@
 		CA3B85E424820F9300F1D863 /* HelloPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3B85E824820F9300F1D863 /* HelloPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPriceTests.swift; sourceTree = "<group>"; };
 		CA3B85EA24820F9300F1D863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA43633824927BEC001772BF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = HelloPrice/Util/UI/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
-		CA43633A24927C20001772BF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = HelloPrice/Util/UI/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
 		CA438795248D1C3700B01A8A /* BottonCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottonCircleButton.swift; sourceTree = "<group>"; };
 		CA9D6E6924878C1E00E99B25 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofifiedProduct.swift; sourceTree = "<group>"; };
@@ -118,6 +116,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA31C0AA24A49DBC00CF190C /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CA9D6E732488754C00E99B25 /* BaseViewModel.swift */,
+				CA9D6E712488718700E99B25 /* MainViewModel.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		CA3B85C524820F9100F1D863 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +133,7 @@
 				CA3B85CF24820F9100F1D863 /* Products */,
 				3D90CE990312B42B75FE9255 /* Pods */,
 				529C4C9A1DCFF84B9D488ED3 /* Frameworks */,
+				CA31C0AA24A49DBC00CF190C /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,8 +211,8 @@
 		CA9D6E642487876B00E99B25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CA43633824927BEC001772BF /* MainViewModel.swift */,
-				CA43633A24927C20001772BF /* BaseViewModel.swift */,
+				CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */,
+				CA31C0B024A49EE200CF190C /* MainViewModel.swift */,
 				CA9D6E7B24887E0400E99B25 /* RankViewModel.swift */,
 				CA9D6E7D24887E0B00E99B25 /* SettingViewModel.swift */,
 			);
@@ -423,13 +431,13 @@
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */,
-				CA9D6E742488754C00E99B25 /* BaseViewModel.swift in Sources */,
 				CA9D6E7E24887E0B00E99B25 /* SettingViewModel.swift in Sources */,
 				CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */,
+				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
 				CA9D6E762488778200E99B25 /* ProductStorageType.swift in Sources */,
 				CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */,
-				CA9D6E722488718700E99B25 /* MainViewModel.swift in Sources */,
+				CA31C0B224A49F9600CF190C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,7 @@
 		CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E7F24887E4500E99B25 /* TransitionModel.swift */; };
 		CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E81248880F400E99B25 /* BaseViewController.swift */; };
 		CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */; };
+		CA9F0F4624A8C15D00C84B50 /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F0F4524A8C15D00C84B50 /* BaseNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CA9D6E7F24887E4500E99B25 /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		CA9D6E81248880F400E99B25 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		CA9F0F4524A8C15D00C84B50 /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -222,9 +224,10 @@
 		CA9D6E652487877500E99B25 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CA9D6E752488778200E99B25 /* ProductStorageType.swift */,
 				CA9D6E67248787A000E99B25 /* CoreDataStorage */,
 				CA9D6E662487879700E99B25 /* MemoryStorage */,
+				CA9F0F4424A8C13300C84B50 /* Network */,
+				CA9D6E752488778200E99B25 /* ProductStorageType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -252,6 +255,14 @@
 				CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		CA9F0F4424A8C13300C84B50 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F0F4524A8C15D00C84B50 /* BaseNetwork.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */,
 				CA9D6E7E24887E0B00E99B25 /* SettingViewModel.swift in Sources */,
+				CA9F0F4624A8C15D00C84B50 /* BaseNetwork.swift in Sources */,
 				CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */,
 				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,

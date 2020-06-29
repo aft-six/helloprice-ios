@@ -169,11 +169,14 @@ Dependencies/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 **/xcshareddata/IDE*
 
 
 Podfile.lock
+
+
 
 # End of https://www.gitignore.io/api/xcode,macos,swift,cocoapods,objective-c

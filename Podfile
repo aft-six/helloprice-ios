@@ -15,4 +15,5 @@ target 'HelloPrice' do
   pod 'RxSwift'
   pod 'RxAlamofire'
   pod 'RxCocoa'
+  pod 'NSObject+Rx'
 end

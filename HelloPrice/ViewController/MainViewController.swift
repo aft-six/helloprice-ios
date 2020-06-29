@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+import NSObject_Rx
+
 class MainViewController: BaseViewController, ViewModelBindableType {
     
     var viewModel: MainViewModel!
@@ -28,6 +30,9 @@ class MainViewController: BaseViewController, ViewModelBindableType {
     
     func bindViewModel() {
         
+        viewModel.title
+            .drive(navigationItem.rx.title)
+            .disposed(by: rx.disposeBag)
     }
 }
 

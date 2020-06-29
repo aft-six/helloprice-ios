@@ -6,14 +6,18 @@
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
-import Foundation
 import RxSwift
+import RxCocoa
 
 class BaseViewModel: NSObject {
-//    let title: Driver<String>
-//    
-////    let sceneCoordinatorType: SceneCoordinatorType
-////    let storage: MemoStorageType
-//    
-//    init(title: String, sceneCoordinatorType: SceneCoor)
+    let title: Driver<String>
+    
+    let sceneCoordinator: SceneCoordinatorType
+//    let storage: MemoStorageType
+    
+
+    init(title: String, sceneCoordinator: SceneCoordinatorType) {
+        self.title = Observable.just(title).asDriver(onErrorJustReturn: "")
+        self.sceneCoordinator = sceneCoordinator
+    }
 }

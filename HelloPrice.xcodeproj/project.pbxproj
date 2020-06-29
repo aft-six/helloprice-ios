@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */; };
 		B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */; };
+		CA260AA424A9B5C5001AEF11 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260AA324A9B5C5001AEF11 /* MemoryStorage.swift */; };
 		CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */; };
 		CA31C0B224A49F9600CF190C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0B024A49EE200CF190C /* MainViewModel.swift */; };
 		CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85D124820F9100F1D863 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		57E9D6A39C5CE377CD9EC596 /* Pods-HelloPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPrice.release.xcconfig"; path = "Target Support Files/Pods-HelloPrice/Pods-HelloPrice.release.xcconfig"; sourceTree = "<group>"; };
 		9C0A9CC8FDC13BC1C4C70B69 /* Pods-HelloPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.release.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		C095F473BB7E87ECBFD89631 /* Pods-HelloPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA260AA324A9B5C5001AEF11 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		CA31C0B024A49EE200CF190C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CA3B85CE24820F9100F1D863 /* HelloPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +237,7 @@
 		CA9D6E662487879700E99B25 /* MemoryStorage */ = {
 			isa = PBXGroup;
 			children = (
+				CA260AA324A9B5C5001AEF11 /* MemoryStorage.swift */,
 			);
 			path = MemoryStorage;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				CA9D6E7A24887A4300E99B25 /* Scene.swift in Sources */,
 				CA9D6E78248879DF00E99B25 /* SceneCoordinatorType.swift in Sources */,
 				CA9D6E7C24887E0400E99B25 /* RankViewModel.swift in Sources */,
+				CA260AA424A9B5C5001AEF11 /* MemoryStorage.swift in Sources */,
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */,

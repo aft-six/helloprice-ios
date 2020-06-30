@@ -177,6 +177,6 @@ Dependencies/
 
 Podfile.lock
 
-
+HelloPrice/Resources/*
 
 # End of https://www.gitignore.io/api/xcode,macos,swift,cocoapods,objective-c

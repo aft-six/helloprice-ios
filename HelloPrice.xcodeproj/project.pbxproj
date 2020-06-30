@@ -10,6 +10,8 @@
 		0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */; };
 		B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */; };
 		CA260AA424A9B5C5001AEF11 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260AA324A9B5C5001AEF11 /* MemoryStorage.swift */; };
+		CA260AC724AAC119001AEF11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA260AC624AAC119001AEF11 /* GoogleService-Info.plist */; };
+		CA260ACA24AACF7B001AEF11 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260AC924AACF7B001AEF11 /* PushManager.swift */; };
 		CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */; };
 		CA31C0B224A49F9600CF190C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31C0B024A49EE200CF190C /* MainViewModel.swift */; };
 		CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B85D124820F9100F1D863 /* AppDelegate.swift */; };
@@ -49,6 +51,9 @@
 		9C0A9CC8FDC13BC1C4C70B69 /* Pods-HelloPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.release.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		C095F473BB7E87ECBFD89631 /* Pods-HelloPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPriceTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloPriceTests/Pods-HelloPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA260AA324A9B5C5001AEF11 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		CA260AC624AAC119001AEF11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA260AC824AACEE5001AEF11 /* HelloPrice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloPrice.entitlements; sourceTree = "<group>"; };
+		CA260AC924AACF7B001AEF11 /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		CA31C0AF24A49EE200CF190C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		CA31C0B024A49EE200CF190C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CA3B85CE24820F9100F1D863 /* HelloPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +125,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA260AC524AAC111001AEF11 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA260AC624AAC119001AEF11 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CA31C0AA24A49DBC00CF190C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +166,8 @@
 		CA3B85D024820F9100F1D863 /* HelloPrice */ = {
 			isa = PBXGroup;
 			children = (
+				CA260AC824AACEE5001AEF11 /* HelloPrice.entitlements */,
+				CA260AC524AAC111001AEF11 /* Resources */,
 				CA438793248D1C1900B01A8A /* Util */,
 				CA9D6E68248787A700E99B25 /* Scene */,
 				CA9D6E652487877500E99B25 /* Service */,
@@ -179,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CA438794248D1C2100B01A8A /* UI */,
+				CA260AC924AACF7B001AEF11 /* PushManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */,
+				CA260AC724AAC119001AEF11 /* GoogleService-Info.plist in Resources */,
 				CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */,
 				CA3B85D924820F9100F1D863 /* Main.storyboard in Resources */,
 			);
@@ -454,6 +471,7 @@
 				CA9D6E762488778200E99B25 /* ProductStorageType.swift in Sources */,
 				CA9D6E6E2487900300E99B25 /* MainViewController.swift in Sources */,
 				CA31C0B224A49F9600CF190C /* MainViewModel.swift in Sources */,
+				CA260ACA24AACF7B001AEF11 /* PushManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +632,8 @@
 			baseConfigurationReference = 2D1A1EB17D6B37C7C9873243 /* Pods-HelloPrice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloPrice/HelloPrice.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGQ9YZ4HTR;
 				INFOPLIST_FILE = HelloPrice/Info.plist;
@@ -625,6 +645,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.besteyes.HelloPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -635,6 +656,8 @@
 			baseConfigurationReference = 57E9D6A39C5CE377CD9EC596 /* Pods-HelloPrice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloPrice/HelloPrice.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGQ9YZ4HTR;
 				INFOPLIST_FILE = HelloPrice/Info.plist;
@@ -646,6 +669,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.besteyes.HelloPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

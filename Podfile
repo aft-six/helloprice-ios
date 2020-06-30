@@ -16,4 +16,8 @@ target 'HelloPrice' do
   pod 'RxAlamofire'
   pod 'RxCocoa'
   pod 'NSObject+Rx'
+
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+
 end

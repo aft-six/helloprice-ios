@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LX1-ag-fjm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LX1-ag-fjm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -31,18 +31,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-jV-V0b" customClass="BottonCircleButton" customModule="HelloPrice" customModuleProvider="target">
-                                <rect key="frame" x="182" y="773" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="FPJ-tY-Ail"/>
-                                    <constraint firstAttribute="height" constant="50" id="Pqd-pw-dzw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                            </button>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7TU-SK-Tgj">
                                 <rect key="frame" x="107" y="119" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,28 +42,19 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="q6Q-jV-V0b" firstAttribute="centerX" secondItem="G4t-CV-CUP" secondAttribute="centerX" id="X90-mW-P05"/>
-                            <constraint firstItem="q6Q-jV-V0b" firstAttribute="bottom" secondItem="G4t-CV-CUP" secondAttribute="bottom" constant="10" id="cl5-Ty-a73"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G4t-CV-CUP"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="d29-ku-bdz"/>
                         <barButtonItem title="Item" id="qEl-EX-R26"/>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="xbJ-MD-7kq"/>
-                        <barButtonItem title="Item" id="JFw-fW-biI"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kH5-RU-v5w"/>
+                        <barButtonItem title="Item" image="pencil.circle" catalog="system" id="N6T-G9-LEZ"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Wu6-Po-AqM"/>
-                        <barButtonItem title="Item" id="1XT-PB-sCt"/>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="jr1-HW-XTJ"/>
                         <barButtonItem title="Item" id="Ssg-bG-QBA"/>
                         <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="ygb-OL-Yvo"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dGd-V4-Xbk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="webView" destination="7TU-SK-Tgj" id="TYo-yp-RTV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZm-Ng-Ps6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,4 +79,7 @@
             <point key="canvasLocation" x="1627.536231884058" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

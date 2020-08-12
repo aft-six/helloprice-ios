@@ -10,6 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+extension UIViewController {
+    var sceneViewController: UIViewController {
+        return self.children.first ?? self
+    }
+}
+
 class SceneCoordinator: SceneCoordinatorType {
     private var bag = DisposeBag()
     private var window: UIWindow
@@ -20,16 +26,62 @@ class SceneCoordinator: SceneCoordinatorType {
         self.currentVC = window.rootViewController!
     }
     
+    @discardableResult
     func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
         let subject = PublishSubject<Void>()
+        let target = scene.instantiate()
+        
+        switch style {
+        case .root:
+            currentVC = target.sceneViewController
+            window.rootViewController = target
+            subject.onCompleted()
+        case .push:
+            guard let nav = currentVC.navigationController else {
+                subject.onError(TransitionError.navigationControllerMissing)
+                break
+            }
+            
+            nav.rx.willShow
+                .subscribe(onNext: { evt in
+                    self.currentVC = evt.viewController.sceneViewController
+                })
+                .disposed(by: bag)
+            let navigationController = UINavigationController()
+            navigationController.pushViewController(currentVC, animated: animated)
+            subject.onCompleted()
+        case .modal:
+            currentVC.present(target, animated: animated) {
+                subject.onCompleted()
+            }
+            currentVC = target.sceneViewController
+        }
         
         return subject.ignoreElements()
     }
     
+    @discardableResult
     func close(animated: Bool) -> Completable {
-        let subject = PublishSubject<Void>()
-        
-        return subject.ignoreElements()
+        return Completable.create { [unowned self] completable in
+            
+            if let presentingVC = self.currentVC.presentingViewController {
+                self.currentVC.dismiss(animated: animated) {
+                    self.currentVC = presentingVC.sceneViewController
+                    completable(.completed)
+                }
+                self.currentVC = presentingVC.sceneViewController
+                
+            } else if let nav = self.currentVC.navigationController {
+                guard nav.popViewController(animated: animated) != nil else {
+                    completable(.error(TransitionError.cannotPop)) {
+                        return Disposables
+                    }
+                }
+            } else {
+                completable(.error(TransitionError))
+            }
+            return Disposables.create()
+        }
     }
     
     

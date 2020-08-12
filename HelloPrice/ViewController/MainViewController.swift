@@ -7,23 +7,15 @@
 //
 
 import UIKit
-import WebKit
 
 class MainViewController: BaseViewController, ViewModelBindableType {
+    typealias ViewModelType = MainViewModel
     
     var viewModel: MainViewModel!
     
-    @IBOutlet weak var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config = WKWebViewConfiguration()
-        let contentController = WKUserContentController()
-        
-        let userScript = WKUserScript(source: "redHeader()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        contentController.addUserScript(userScript)
-        
-        config.userContentController = contentController
     }
     
     func bindViewModel() {
@@ -31,3 +23,11 @@ class MainViewController: BaseViewController, ViewModelBindableType {
     }
 }
 
+
+//let config = WKWebViewConfiguration()
+//let contentController = WKUserContentController()
+//
+//let userScript = WKUserScript(source: "redHeader()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//contentController.addUserScript(userScript)
+//
+//config.userContentController = contentController

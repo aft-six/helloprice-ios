@@ -12,7 +12,7 @@ enum TransitionStyle {
     case modal
 }
 
-enum TransitionError {
+enum TransitionError: Error {
     case navigationControllerMissing
     case cannotPop
     case unknown

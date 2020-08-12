@@ -62,26 +62,29 @@ class SceneCoordinator: SceneCoordinatorType {
     
     @discardableResult
     func close(animated: Bool) -> Completable {
-        return Completable.create { [unowned self] completable in
-            
-            if let presentingVC = self.currentVC.presentingViewController {
-                self.currentVC.dismiss(animated: animated) {
-                    self.currentVC = presentingVC.sceneViewController
-                    completable(.completed)
-                }
-                self.currentVC = presentingVC.sceneViewController
-                
-            } else if let nav = self.currentVC.navigationController {
-                guard nav.popViewController(animated: animated) != nil else {
-                    completable(.error(TransitionError.cannotPop)) {
-                        return Disposables
-                    }
-                }
-            } else {
-                completable(.error(TransitionError))
-            }
-            return Disposables.create()
+        return Completable.create { _ in
+            return Disposables.create { }
         }
+//        return Completable.create { [unowned self] completable in
+//
+//            if let presentingVC = self.currentVC.presentingViewController {
+//                self.currentVC.dismiss(animated: animated) {
+//                    self.currentVC = presentingVC.sceneViewController
+//                    completable(.completed)
+//                }
+//                self.currentVC = presentingVC.sceneViewController
+//
+//            } else if let nav = self.currentVC.navigationController {
+//                guard nav.popViewController(animated: animated) != nil else {
+////                    completable(.error(TransitionError.cannotPop)) {
+////                        return Disposables
+//                    }
+//                }
+//            } else {
+////                completable(.error(TransitionError))
+//            }
+//            return Disposables.create()
+//        }
     }
     
     

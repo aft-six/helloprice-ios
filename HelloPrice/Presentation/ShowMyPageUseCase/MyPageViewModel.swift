@@ -1,5 +1,5 @@
 //
-//  RankViewModel.swift
+//  MyPageViewModel.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/06/04.
@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-class RankViewModel: BaseViewModel {
+class MyPageViewModel: BaseViewModel {
     
 }

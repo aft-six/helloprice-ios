@@ -18,5 +18,5 @@ protocol UseCase {
  상품 추가하기(AddProductUseCase)
  검색하기(SearchProductUseCase)
  상품 구독하기(SubscribeProductUseCase)
- 마이페이지(ShowMyProductListUseCase)
+ 마이페이지(ShowMyPageUseCase)
  */

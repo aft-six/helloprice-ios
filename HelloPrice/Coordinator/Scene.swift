@@ -10,8 +10,7 @@ import UIKit
 
 enum Scene {
     case main(MainViewModel)
-    case rank(RankViewModel)
-    case setting(SettingViewModel)
+    case myPage(MyPageViewModel)
 }
 
 extension Scene {
@@ -21,9 +20,7 @@ extension Scene {
         switch self {
         case .main(let viewModel):
             break
-        case .rank(let viewModel):
-            break
-        case .setting(let viewModel):
+        case .myPage(let viewModel):
             break
         }
         

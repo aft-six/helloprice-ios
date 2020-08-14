@@ -1,5 +1,5 @@
 //
-//  ViewModelBindableType.swift
+//  ViewModelBindableControllerType.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/06/04.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ViewModelBindableType {
+protocol ViewModelBindableControllerType {
     associatedtype ViewModelType
     var viewModel: ViewModelType! { get set }
     func bindViewModel()
 }
 
-extension ViewModelBindableType where Self: UIViewController {
+extension ViewModelBindableControllerType where Self: UIViewController {
     mutating func bindViewModel(viewModel: ViewModelType) {
         self.viewModel = viewModel
         

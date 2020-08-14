@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class BaseViewModel: NSObject {
+class BaseViewModel: NSObject, ViewModelType {
 //    let title: Driver<String>
 //    
 ////    let sceneCoordinatorType: SceneCoordinatorType

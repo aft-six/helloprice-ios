@@ -1,13 +1,13 @@
 //
-//  BaseViewModel.swift
+//  BaseCellViewModel.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/06/04.
+//  Created by devming on 2020/08/15.
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
 import RxSwift
 
-class BaseViewModel: NSObject, ViewModelType {
+class BaseCellViewModel: NSObject, ViewModelType {
     var 👜 = DisposeBag()
 }

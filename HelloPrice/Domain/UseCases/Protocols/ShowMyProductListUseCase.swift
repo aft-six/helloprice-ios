@@ -6,12 +6,8 @@
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
-class ShowMyProductListUseCase: UseCase {
-    func excute() {
-        
-    }
-    
-    
+protocol ShowMyProductListUseCase: UseCase {
+    func excute() -> Single<[Product]> 
 }

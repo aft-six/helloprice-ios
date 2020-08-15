@@ -9,7 +9,7 @@
 import UIKit
 
 enum Scene {
-    case main(MainViewModel)
+    case main(MyProductViewModel)
     case myPage(MyPageViewModel)
 }
 

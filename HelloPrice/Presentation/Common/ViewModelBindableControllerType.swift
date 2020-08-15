@@ -9,13 +9,13 @@
 import UIKit
 
 protocol ViewModelBindableControllerType {
-    associatedtype ViewModelType
-    var viewModel: ViewModelType! { get set }
+    associatedtype ViewModel
+    var viewModel: ViewModel! { get set }
     func bindViewModel()
 }
 
 extension ViewModelBindableControllerType where Self: UIViewController {
-    mutating func bindViewModel(viewModel: ViewModelType) {
+    mutating func bindViewModel(viewModel: ViewModel) {
         self.viewModel = viewModel
         
         loadViewIfNeeded()

@@ -9,7 +9,6 @@
 import Foundation
 
 protocol UseCase {
-    func excute()
 }
 /*
  로그인하기(SignInUseCase)

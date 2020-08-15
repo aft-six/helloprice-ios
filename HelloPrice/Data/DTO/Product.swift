@@ -9,17 +9,17 @@
 import Foundation
 
 struct Product: Equatable, Decodable {
-    var id: Int?
-    var productName: String?
-    var productCode: String?
-    var description: String?
-    var url: String?
-    var imageUrl: String?
-    var saleType: String?
-    var price: Int?
-    var prevPrice: Int?
-    var additionalInfo: String?
-    var priceChangeRate: Int?
-    var lastUpdateAt: String?
-    var notifyOn: Bool?
+    var id: Int = 0
+    var productName: String = ""
+    var productCode: String = ""
+    var description: String = ""
+    var url: String = ""
+    var imageUrl: String = ""
+    var saleType: String = ""
+    var price: Int = 0
+    var prevPrice: Int = 0
+    var additionalInfo: String = ""
+    var priceChangeRate: Int = 0
+    var lastUpdateAt: String = ""
+    var notifyOn: Bool = false
 }

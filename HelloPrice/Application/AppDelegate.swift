@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController()
         let coordinator = SceneCoordinator(window: window!)
-        let mainViewModel = MainViewModel()
+        let useCase = ShowMyProductListUseCaseImpl()
+        let myProductViewModel = MyProductViewModel(useCase: useCase)
         
-        coordinator.transition(to: .main(mainViewModel), using: .root, animated: false)
+        coordinator.transition(to: .main(myProductViewModel), using: .root, animated: false)
         
         return true
     }

@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MyProductListViewController.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/06/03.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BaseViewController<MainViewModel> {
+class MyProductListViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

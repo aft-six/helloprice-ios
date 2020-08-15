@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseViewController<T: ViewModelType>: UIViewController, ViewModelBindableControllerType {
     
+    var 👜 = DisposeBag()
     var viewModel: T!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        bindViewModel()
     }
     
     func bindViewModel() { }

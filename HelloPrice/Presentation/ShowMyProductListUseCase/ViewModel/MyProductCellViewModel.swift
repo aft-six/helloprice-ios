@@ -11,11 +11,11 @@ import RxCocoa
 
 class MyProductCellViewModel: BaseCellViewModel {
     
-    struct Input {
+    struct Input: ViewModelInput {
         let bindData = PublishRelay<Product>()
     }
     
-    struct Output {
+    struct Output: ViewModelOutput {
         let thumbnailImageUrlString = BehaviorRelay<String>(value: "")
         let productName = BehaviorRelay<String>(value: "")
         let paymentMethod = BehaviorRelay<String>(value: "")

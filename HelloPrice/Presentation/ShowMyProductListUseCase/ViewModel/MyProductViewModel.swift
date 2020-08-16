@@ -10,17 +10,12 @@ import RxSwift
 import RxCocoa
 
 class MyProductViewModel: BaseViewModel {
-    struct Input {
+    struct Input: ViewModelInput {
         let fetchDatas: PublishRelay<Void>
         let presentWebsite: PublishRelay<Void>
-        
-//        init(fetchDatas: Driver<Void>, presentWebsite: Driver<Void>) {
-//            self.fetchDatas = fetchDatas
-//            self.presentWebsite = presentWebsite
-//        }
     }
     
-    struct Output {
+    struct Output: ViewModelOutput {
         let products = PublishRelay<[Product]>()
         let productsCount = PublishRelay<Int>()
     }
@@ -42,10 +37,16 @@ class MyProductViewModel: BaseViewModel {
             .share()
             
         products
+            .do(onNext: {
+                print("\($0)")
+            })
             .bind(to: output.products)
             .disposed(by: 👜)
         products
             .map { $0.count }
+            .do(onNext: {
+                print("\($0)")
+            })
             .bind(to: output.productsCount)
             .disposed(by: 👜)
         

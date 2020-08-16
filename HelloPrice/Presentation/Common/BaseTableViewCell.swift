@@ -9,24 +9,20 @@
 import UIKit
 import RxSwift
 
-class BaseTableViewCell<T: ViewModelType, ItemType: Item>: UITableViewCell, CellItemType {
+class BaseTableViewCell<T: ViewModelType, OutputType: ViewModelOutput, ItemType: Item>: UITableViewCell, CellItemType {
     
     var 👜 = DisposeBag()
     var viewModel: T!
     var item: ItemType?
     
-    func bindViewModel(item: ItemType) {
-        self.item = item
+    func bindViewModel(outputs: OutputType) {
+        
     }
 }
 
 protocol CellItemType {
     associatedtype ItemType
+    associatedtype OutputType
     var item: ItemType? { get set }
-    func bindViewModel(item: ItemType)
-}
-extension CellItemType where Self: UITableViewCell {
-    mutating func bindViewModel(item: ItemType) {
-        self.item = item
-    }
+    func bindViewModel(outputs: OutputType)
 }

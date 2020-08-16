@@ -39,6 +39,9 @@
 		CA8E8FD724E92D88005F18DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FD624E92D88005F18DD /* UIViewController+Extension.swift */; };
 		CA8E8FD924E92F31005F18DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FD824E92F31005F18DD /* UIView+Extension.swift */; };
 		CA8E8FDB24E93673005F18DD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDA24E93673005F18DD /* Item.swift */; };
+		CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */; };
+		CA8E8FE024E93D9D005F18DD /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */; };
+		CA8E8FE224E93E0D005F18DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FE124E93E0D005F18DD /* AppCoordinator.swift */; };
 		CA9D6E6A24878C1E00E99B25 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6924878C1E00E99B25 /* Product.swift */; };
 		CA9D6E6C24878E1B00E99B25 /* NofifiedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */; };
 		CA9D6E6E2487900300E99B25 /* MyProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6D2487900300E99B25 /* MyProductListViewController.swift */; };
@@ -104,6 +107,9 @@
 		CA8E8FD624E92D88005F18DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CA8E8FD824E92F31005F18DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CA8E8FDA24E93673005F18DD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyProductListUseCaseMock.swift; sourceTree = "<group>"; };
+		CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		CA8E8FE124E93E0D005F18DD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CA9D6E6924878C1E00E99B25 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CA9D6E6B24878E1B00E99B25 /* NofifiedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofifiedProduct.swift; sourceTree = "<group>"; };
 		CA9D6E6D2487900300E99B25 /* MyProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductListViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 		CA33B54424E43433008F558C /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				CA8E8FDC24E93CCA005F18DD /* Mock */,
 				CA2C2A9024E7EB1B00E4CB1D /* Implements */,
 				CA2C2A8F24E7EB1400E4CB1D /* Protocols */,
 			);
@@ -529,6 +536,7 @@
 			children = (
 				CA3B85D124820F9100F1D863 /* AppDelegate.swift */,
 				CA146D7024E2E62100C85C1C /* SceneDelegate.swift */,
+				CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -548,6 +556,14 @@
 				CA8E8FD824E92F31005F18DD /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA8E8FDC24E93CCA005F18DD /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		CA9D6E612487875100E99B25 /* DTO */ = {
@@ -591,6 +607,7 @@
 				CA9D6E7924887A4300E99B25 /* Scene.swift */,
 				CA9D6E77248879DF00E99B25 /* SceneCoordinatorType.swift */,
 				CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */,
+				CA8E8FE124E93E0D005F18DD /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -772,6 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */,
 				CA8E8FD724E92D88005F18DD /* UIViewController+Extension.swift in Sources */,
 				CAE901F324E8338E008B5032 /* ShowMyProductListUseCaseImpl.swift in Sources */,
 				CA9D6E702488700E00E99B25 /* ViewModelBindableControllerType.swift in Sources */,
@@ -786,6 +804,7 @@
 				CA33B54C24E43AB0008F558C /* AddProductUseCase.swift in Sources */,
 				CA9D6E7A24887A4300E99B25 /* Scene.swift in Sources */,
 				CA9D6E78248879DF00E99B25 /* SceneCoordinatorType.swift in Sources */,
+				CA8E8FE224E93E0D005F18DD /* AppCoordinator.swift in Sources */,
 				CA8E8FDB24E93673005F18DD /* Item.swift in Sources */,
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
 				CA146D6C24E2D16D00C85C1C /* RemoteRepository.swift in Sources */,
@@ -803,6 +822,7 @@
 				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA146D7124E2E62100C85C1C /* SceneDelegate.swift in Sources */,
 				CA7A0C5824E7996E0047F971 /* BaseCollectionViewCell.swift in Sources */,
+				CA8E8FE024E93D9D005F18DD /* AppDIContainer.swift in Sources */,
 				CA8E8FD924E92F31005F18DD /* UIView+Extension.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
 				CA9D6E762488778200E99B25 /* ProductStorageType.swift in Sources */,

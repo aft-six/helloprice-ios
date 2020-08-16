@@ -19,8 +19,10 @@ extension Scene {
         
         switch self {
         case .main(let viewModel):
-            break
-        case .myPage(let viewModel):
+            var viewController = storyboard.instantiateViewController(withIdentifier: MyProductListViewController.className) as! MyProductListViewController
+            viewController.bindViewModel(viewModel: viewModel)
+            return viewController
+        case .myPage(_):
             break
         }
         

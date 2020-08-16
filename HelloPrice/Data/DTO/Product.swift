@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product: Equatable, Decodable {
+struct Product: Item, Decodable {
     var id: Int = 0
     var productName: String = ""
     var productCode: String = ""
@@ -23,3 +23,4 @@ struct Product: Equatable, Decodable {
     var lastUpdateAt: String = ""
     var notifyOn: Bool = false
 }
+

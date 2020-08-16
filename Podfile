@@ -16,5 +16,6 @@ target 'HelloPrice' do
   pod 'RxAlamofire'
   pod 'RxCocoa'
   pod 'Hero'
+  pod 'RxDataSources'
   
 end

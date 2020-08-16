@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product> {
+class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
     
     @IBOutlet weak var movePositionButton: UIButton!
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -20,9 +20,17 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
     @IBOutlet weak var previousPriceLabel: UILabel!
     @IBOutlet weak var lowestPriceLabel: UILabel!
     @IBOutlet weak var lastConfirmTimeLabel: UILabel!
+
     
-    override func bindViewModel(outputs: MyProductCellViewModel.Output) {
+    override func bindViewModel(item: Product) {
+        viewModelCreatable = self
+        super.bindViewModel(item: item)
+        
+        let input = MyProductCellViewModel.Input()
+        let outputs = viewModel!.transform(input: input)
+        
         if #available(iOS 13.0, *) {
+            
             outputs.thumbnailImageUrlString
                 .map { UIImage(systemName: $0) }
                 .bind(to: thumbnailImageView.rx.image)
@@ -78,5 +86,11 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
         })
             .bind(to: lastConfirmTimeLabel.rx.text)
             .disposed(by: 👜)
+        
+        input.bindData.accept(item)
+    }
+    
+    func createCellViewModel() {
+        viewModel = MyProductCellViewModel()
     }
 }

@@ -14,9 +14,11 @@ class BaseTableViewCell<T: ViewModelType, OutputType: ViewModelOutput, ItemType:
     var 👜 = DisposeBag()
     var viewModel: T!
     var item: ItemType?
+    var output: OutputType?
+    var viewModelCreatable: CellViewModelCreatable?
     
-    func bindViewModel(outputs: OutputType) {
-        
+    func bindViewModel(item: ItemType) {
+        viewModelCreatable?.createCellViewModel()
     }
 }
 
@@ -24,5 +26,11 @@ protocol CellItemType {
     associatedtype ItemType
     associatedtype OutputType
     var item: ItemType? { get set }
-    func bindViewModel(outputs: OutputType)
+    var output: OutputType? { get set }
+    var viewModelCreatable: CellViewModelCreatable? { get set }
+    func bindViewModel(item: ItemType)
+}
+
+protocol CellViewModelCreatable {
+    func createCellViewModel()
 }

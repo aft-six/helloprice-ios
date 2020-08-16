@@ -32,10 +32,10 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
         makeTableView()
         
         outputs.products
-            .bind(to: myProductListTableView.rx.items(cellIdentifier: MyProductCell.className)) { index, _, cell in
+            .bind(to: myProductListTableView.rx.items(cellIdentifier: MyProductCell.className)) { index, product, cell in
                 guard let productCell = cell as? MyProductCell else { return }
                 
-                productCell.bindViewModel(outputs: outputs)
+                productCell.bindViewModel(item: product)
             }
             .disposed(by: 👜)
         

@@ -29,7 +29,7 @@ class SceneCoordinator: SceneCoordinatorType {
     @discardableResult
     func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
         let subject = PublishSubject<Void>()
-        let target = scene.instantiate()
+        let target = scene.instantiate(from: "RootTabBarController")
         
         switch style {
         case .root:

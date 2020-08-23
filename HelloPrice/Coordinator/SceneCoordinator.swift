@@ -10,6 +10,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum StoryboardName: String {
+    case RootTabBarController
+    case Main
+    
+    func toString() -> String {
+        return self.rawValue
+    }
+}
+
 extension UIViewController {
     var sceneViewController: UIViewController {
         return self.children.first ?? self
@@ -29,7 +38,7 @@ class SceneCoordinator: SceneCoordinatorType {
     @discardableResult
     func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
         let subject = PublishSubject<Void>()
-        let target = scene.instantiate(from: "RootTabBarController")
+        let target = scene.instantiate(from: StoryboardName.RootTabBarController.rawValue)
         
         switch style {
         case .root:

@@ -30,14 +30,14 @@ class RootTabBarController: UITabBarController {
         createButtonContainerView(containerView: subButtonBackView, size: 100)
         productNameSearchToAddButton =
             createSubButton(parentView: subButtonBackView,
-                            buttonImage: UIImage(named: "ic_search")!, positionX: -subButtonsPosition)
+                            buttonImage: UIImage(named: "ic_search")!, position: -subButtonsPosition)
         //magnifyingglass
         productNameSearchToAddButton.addTarget(self,
                                                action: #selector(searchProductNameButton),
                                                for: .touchUpInside)
         urlSearchToAddButton = createSubButton(parentView: subButtonBackView,
                                                buttonImage: UIImage(named: "ic_link")!,
-                                               positionX: subButtonsPosition)
+                                               position: subButtonsPosition)
         
         createButtonContainerView(containerView: buttonBackView, size: 60)
         createAddButton(parentView: buttonBackView,
@@ -48,11 +48,15 @@ class RootTabBarController: UITabBarController {
        effectClick(productNameSearchToAddButton)
        effectClick(urlSearchToAddButton)
     }
-    
-    func createButtonContainerView(containerView: UIView, size constant: CGFloat) {
+}
+
+/// Create TabBar UI & Animation
+extension RootTabBarController {
+
+    private func createButtonContainerView(containerView: UIView, size constant: CGFloat) {
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         containerView.centerYAnchor
             .constraint(equalTo: tabBar.topAnchor)
             .isActive = true
@@ -67,7 +71,7 @@ class RootTabBarController: UITabBarController {
             .isActive = true
     }
     
-    func createAddButton(parentView: UIView, buttonImage: UIImage) {
+    private func createAddButton(parentView: UIView, buttonImage: UIImage) {
         
         let addButton = UIButton()
         
@@ -85,7 +89,7 @@ class RootTabBarController: UITabBarController {
                             for: .touchUpInside)
     }
     
-    func makeAddButtonConstraint(addButton: UIButton, parentView: UIView) {
+    private func makeAddButtonConstraint(addButton: UIButton, parentView: UIView) {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.centerYAnchor
             .constraint(equalTo: parentView.centerYAnchor)
@@ -108,9 +112,10 @@ class RootTabBarController: UITabBarController {
         let subButtonAlpha: CGFloat = self.buttonState.isOpen
             ? 0
             : 1
-
+        
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.subButtonBackView.alpha = subButtonAlpha
+            
             self.subButtonBackView.transform =
                 self.subButtonBackView.transform.rotated(by: subButtonAngle)
         })
@@ -123,8 +128,9 @@ class RootTabBarController: UITabBarController {
         }
     }
     
-    func createSubButton(parentView: UIView, buttonImage: UIImage, positionX: CGFloat) -> UIButton {
+    private func createSubButton(parentView: UIView, buttonImage: UIImage, position: CGFloat) -> UIButton {
         
+        //        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let button = UIButton()
         parentView.addSubview(button)
         button.setImage(buttonImage, for: .normal)
@@ -132,13 +138,16 @@ class RootTabBarController: UITabBarController {
         // TODO: 버튼 모양은 회전하지 않도록 수정하자.
         button.transform = button.transform.translatedBy(x: 0, y: 0)
         button.transform = button.transform.rotated(by: CGFloat(Double.pi))
-        button.transform = button.transform.translatedBy(x: positionX, y: -subButtonsPosition)
-        button.transform = button.transform.scaledBy(x: 0.8, y: 0.8)
+        button.transform = button.transform.translatedBy(x: position, y: -subButtonsPosition)
+        button.transform = button.transform.scaledBy(x: 0.5, y: 0.5)
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 5
+        button.layer.cornerRadius = 50
         
         return button
     }
     
-    func makeSubButtonConstraint(button: UIButton, parentView: UIView) {
+    private func makeSubButtonConstraint(button: UIButton, parentView: UIView) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerYAnchor
             .constraint(equalTo: parentView.centerYAnchor)
@@ -154,15 +163,17 @@ class RootTabBarController: UITabBarController {
             .isActive = true
     }
     
-    @objc func searchProductNameButton(_ sender: UIButton) {
+    @objc private func searchProductNameButton(_ sender: UIButton) {
         effectClick(sender)
+        print("\(#function) 클릭")
     }
     
-    @objc func searchLinkButton(_ sender: UIButton) {
+    @objc private func searchLinkButton(_ sender: UIButton) {
         effectClick(sender)
+        print("\(#function) 클릭")
     }
     
-    @objc func effectFadeIn(_ sender: UIButton) {
+    @objc private func effectFadeIn(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2,
                        delay: 0,
                        options: .curveEaseInOut,
@@ -170,7 +181,7 @@ class RootTabBarController: UITabBarController {
                         sender.alpha = 0.5
         })
     }
-    @objc func effectFadeOut(_ sender: UIButton) {
+    @objc private func effectFadeOut(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2,
                        delay: 0,
                        options: .curveEaseInOut,
@@ -178,7 +189,7 @@ class RootTabBarController: UITabBarController {
                         sender.alpha = 1.0
         })
     }
-    func effectClick(_ sender: UIButton) {
+    private func effectClick(_ sender: UIButton) {
         
         sender.addTarget(self,
                          action: #selector(effectFadeIn),

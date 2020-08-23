@@ -53,7 +53,6 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
         let nibName = UINib(nibName: MyProductCell.className, bundle: nil)
         myProductListTableView.register(nibName, forCellReuseIdentifier: MyProductCell.className)
         myProductListTableView.rowHeight = 200
-//        myProductListTableView.estimatedRowHeight = 200
     }
 }
 

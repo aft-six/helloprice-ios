@@ -33,7 +33,7 @@ class MyProductViewModel: BaseViewModel {
         let output = Output()
         
         let products = inputs.fetchDatas
-            .flatMap { self.useCase.excute() }
+            .flatMap { self.useCase.fetchMyProducts() }
             .share()
             
         products

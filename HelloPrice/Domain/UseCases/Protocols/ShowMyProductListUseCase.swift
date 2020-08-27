@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol ShowMyProductListUseCase: UseCase {
-    func excute() -> Single<[Product]> 
+    func fetchMyProducts() -> Single<[Product]> 
 }

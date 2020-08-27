@@ -6,4 +6,8 @@
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+protocol ShowMyPageUseCase {
+    func fetchUserInfo() -> Single<User>
+}

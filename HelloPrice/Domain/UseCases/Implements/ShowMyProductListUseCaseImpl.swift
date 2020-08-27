@@ -10,13 +10,15 @@ import RxSwift
 
 class ShowMyProductListUseCaseImpl: ShowMyProductListUseCase {
     
-    init() {
-        
+    let repository: ProductRepository
+    
+    init(repository: ProductRepository) {
+        self.repository = repository
     }
     
-    func excute() -> Single<[Product]> {
+    func fetchMyProducts() -> Single<[Product]> {
         
-        return Observable.of([Product()]).asSingle()
+        return repository.fetchMyProducts()
     }
     
     

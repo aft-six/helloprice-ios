@@ -12,11 +12,10 @@ import RxCocoa
 
 enum StoryboardName: String {
     case RootTabBarController
-    case Main
-    
-    func toString() -> String {
-        return self.rawValue
-    }
+    case ShowMyProductList
+    case MyPage
+    case SignIn
+    case SignUp
 }
 
 extension UIViewController {
@@ -38,7 +37,7 @@ class SceneCoordinator: SceneCoordinatorType {
     @discardableResult
     func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
         let subject = PublishSubject<Void>()
-        let target = scene.instantiate(from: StoryboardName.RootTabBarController.rawValue)
+        let target = scene.instantiate()
         
         switch style {
         case .root:

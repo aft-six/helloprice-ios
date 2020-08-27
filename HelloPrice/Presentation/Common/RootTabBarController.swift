@@ -24,7 +24,6 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         subButtonBackView.alpha = 0
         subButtonBackView.backgroundColor = .clear
         createButtonContainerView(containerView: subButtonBackView, size: 100)
@@ -45,14 +44,20 @@ class RootTabBarController: UITabBarController {
         urlSearchToAddButton.addTarget(self,
                                        action: #selector(searchLinkButton),
                                        for: .touchUpInside)
-       effectClick(productNameSearchToAddButton)
-       effectClick(urlSearchToAddButton)
+        effectClick(productNameSearchToAddButton)
+        effectClick(urlSearchToAddButton)
+    }
+}
+
+extension RootTabBarController {
+    func initViewControllers(viewControllers: [UIViewController]) {
+        tabBarController?.viewControllers = viewControllers
     }
 }
 
 /// Create TabBar UI & Animation
 extension RootTabBarController {
-
+    
     private func createButtonContainerView(containerView: UIView, size constant: CGFloat) {
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false

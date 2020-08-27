@@ -10,4 +10,27 @@ import UIKit
 
 class AppCoordinator {
     
+    private let window: UIWindow
+    private let appDIContainer: AppDIContainer
+    
+    init(window: UIWindow, appDIContainer: AppDIContainer) {
+        self.window = window
+        self.appDIContainer = appDIContainer
+    }
+    
+    func start() {
+        let productDIContainer = appDIContainer.productDIContainer
+        
+        let productViewModel = productDIContainer.makeMyProductViewModel()
+        let myProductViewController = Scene.myProductList(productViewModel).instantiate()
+        
+        let myPageViewModel = productDIContainer.makeMyPageViewModel()
+        let myPageViewController = Scene.myPage(myPageViewModel).instantiate()
+        
+        let coordinator = SceneCoordinator(window: window)
+        coordinator.transition(to: .main([myProductViewController,
+                                          myPageViewController]),
+                               using: .root,
+                               animated: false)
+    }
 }

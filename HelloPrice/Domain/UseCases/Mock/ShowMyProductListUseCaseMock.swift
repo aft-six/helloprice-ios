@@ -9,7 +9,8 @@
 import RxSwift
 
 class ShowMyProductListUseCaseMock: ShowMyProductListUseCase {
-    func excute() -> Single<[Product]> {
+    
+    func fetchMyProducts() -> Single<[Product]> {
         
         let products = [
             Product(id: 1,
@@ -27,6 +28,6 @@ class ShowMyProductListUseCaseMock: ShowMyProductListUseCase {
                     notifyOn: false)
         ]
         
-        return Observable.of(products).asSingle()
+        return Single.just(products)
     }
 }

@@ -9,34 +9,52 @@
 import UIKit
 
 enum Scene {
-    case main(MyProductViewModel)
+    case main([UIViewController])
+    case myProductList(MyProductViewModel)
     case myPage(MyPageViewModel)
-    case login
-    case signUp
+    case signIn(SignInViewModel)
+    case signUp(SignUpViewModel)
 }
 
 extension Scene {
-    func instantiate(from storyboardName: String = StoryboardName.RootTabBarController.rawValue) -> UIViewController {
-        let storyboard: UIStoryboard
+    
+    var storyboardName: String {
+        switch self {
+        case .main:
+            return StoryboardName.RootTabBarController.rawValue
+        case .myProductList(_):
+            return StoryboardName.ShowMyProductList.rawValue
+        case .myPage(_):
+            return StoryboardName.MyPage.rawValue
+        case .signIn(_):
+            return StoryboardName.SignIn.rawValue
+        case .signUp(_):
+            return StoryboardName.SignUp.rawValue
+        }
+    }
+    
+    func instantiate() -> UIViewController {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         
         switch self {
-        case .main(let viewModel):
-            storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-//            var viewController = storyboard.instantiateViewController(withIdentifier: MyProductListViewController.className) as! MyProductListViewController
-//            viewController.bindViewModel(viewModel: viewModel)
+        case .main(let viewControllers):
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as! RootTabBarController
+            tabBarController.initViewControllers(viewControllers: viewControllers)
+            return tabBarController
+        case .myProductList(let viewModel):
+            var viewController = storyboard.instantiateViewController(withIdentifier: MyProductListViewController.className) as! MyProductListViewController
+            viewController.bindViewModel(viewModel: viewModel)
+            return viewController
+        case .myPage(let viewModel):
             var viewController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as! RootTabBarController
             return viewController
-        case .myPage(_):
-            storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-            break
-        case .login:
-            storyboard = UIStoryboard(name: StoryboardName.Main.rawValue, bundle: nil)
-            break
-        case .signUp:
-            storyboard = UIStoryboard(name: StoryboardName.Main.rawValue, bundle: nil)
-            break
+        case .signIn(let viewModel):
+            var viewController = storyboard.instantiateViewController(withIdentifier: SignInViewController.className) as! RootTabBarController
+            return viewController
+        case .signUp(let viewModel):
+            var viewController = storyboard.instantiateViewController(withIdentifier: SignUpViewController.className) as! RootTabBarController
+            return viewController
         }
         
-        return UIViewController ()
     }
 }

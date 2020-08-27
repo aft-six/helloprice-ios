@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DU5-Vn-1wt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +20,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f4a-py-ytK" firstAttribute="top" secondItem="G4t-CV-CUP" secondAttribute="top" id="G2k-5Z-2vJ"/>
                             <constraint firstItem="f4a-py-ytK" firstAttribute="leading" secondItem="G4t-CV-CUP" secondAttribute="leading" id="Wbs-r1-QAl"/>
@@ -30,15 +29,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G4t-CV-CUP"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="d29-ku-bdz"/>
-                        <barButtonItem title="Item" id="qEl-EX-R26"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kH5-RU-v5w"/>
-                        <barButtonItem title="Item" image="pencil.circle" catalog="system" id="N6T-G9-LEZ"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Wu6-Po-AqM"/>
-                        <barButtonItem title="Item" id="Ssg-bG-QBA"/>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="ygb-OL-Yvo"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myProductListTableView" destination="f4a-py-ytK" id="lcC-3q-AIP"/>
@@ -49,7 +40,4 @@
             <point key="canvasLocation" x="863.768115942029" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

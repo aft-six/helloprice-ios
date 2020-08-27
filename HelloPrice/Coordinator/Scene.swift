@@ -25,7 +25,7 @@ extension Scene {
         case .myProductList(_):
             return StoryboardName.ShowMyProductList.rawValue
         case .myPage(_):
-            return StoryboardName.MyPage.rawValue
+            return StoryboardName.ShowMyPage.rawValue
         case .signIn(_):
             return StoryboardName.SignIn.rawValue
         case .signUp(_):
@@ -46,13 +46,16 @@ extension Scene {
             viewController.bindViewModel(viewModel: viewModel)
             return viewController
         case .myPage(let viewModel):
-            var viewController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as! RootTabBarController
+            var viewController = storyboard.instantiateViewController(withIdentifier: MyPageViewController.className) as! MyPageViewController
+            viewController.bindViewModel(viewModel: viewModel)
             return viewController
         case .signIn(let viewModel):
-            var viewController = storyboard.instantiateViewController(withIdentifier: SignInViewController.className) as! RootTabBarController
+            var viewController = storyboard.instantiateViewController(withIdentifier: SignInViewController.className) as! SignInViewController
+            viewController.bindViewModel(viewModel: viewModel)
             return viewController
         case .signUp(let viewModel):
-            var viewController = storyboard.instantiateViewController(withIdentifier: SignUpViewController.className) as! RootTabBarController
+            var viewController = storyboard.instantiateViewController(withIdentifier: SignUpViewController.className) as! SignUpViewController
+            viewController.bindViewModel(viewModel: viewModel)
             return viewController
         }
         

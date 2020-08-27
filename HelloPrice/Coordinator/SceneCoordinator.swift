@@ -13,7 +13,7 @@ import RxCocoa
 enum StoryboardName: String {
     case RootTabBarController
     case ShowMyProductList
-    case MyPage
+    case ShowMyPage
     case SignIn
     case SignUp
 }

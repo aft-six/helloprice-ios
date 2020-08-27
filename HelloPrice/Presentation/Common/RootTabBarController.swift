@@ -46,12 +46,17 @@ class RootTabBarController: UITabBarController {
                                        for: .touchUpInside)
         effectClick(productNameSearchToAddButton)
         effectClick(urlSearchToAddButton)
+        
     }
 }
 
 extension RootTabBarController {
     func initViewControllers(viewControllers: [UIViewController]) {
-        tabBarController?.viewControllers = viewControllers
+        
+        viewControllers.forEach {
+            let nav = UINavigationController(rootViewController: $0)
+            self.addChild(nav)
+        }
     }
 }
 

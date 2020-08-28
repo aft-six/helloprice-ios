@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Product List View Controller-->
+        <!--홈-->
         <scene sceneID="zlS-Uu-Inb">
             <objects>
                 <viewController storyboardIdentifier="MyProductListViewController" id="DU5-Vn-1wt" customClass="MyProductListViewController" customModule="HelloPrice" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,15 +22,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="G4t-CV-CUP" firstAttribute="bottom" secondItem="f4a-py-ytK" secondAttribute="bottom" id="FXW-FT-JjP"/>
                             <constraint firstItem="f4a-py-ytK" firstAttribute="top" secondItem="G4t-CV-CUP" secondAttribute="top" id="G2k-5Z-2vJ"/>
                             <constraint firstItem="f4a-py-ytK" firstAttribute="leading" secondItem="G4t-CV-CUP" secondAttribute="leading" id="Wbs-r1-QAl"/>
-                            <constraint firstItem="G4t-CV-CUP" firstAttribute="bottom" secondItem="f4a-py-ytK" secondAttribute="bottom" id="Wjg-RW-Gen"/>
                             <constraint firstItem="G4t-CV-CUP" firstAttribute="trailing" secondItem="f4a-py-ytK" secondAttribute="trailing" id="pea-gv-VOC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G4t-CV-CUP"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="DZm-xO-Y9g"/>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myProductListTableView" destination="f4a-py-ytK" id="lcC-3q-AIP"/>
                     </connections>
@@ -40,4 +41,8 @@
             <point key="canvasLocation" x="863.768115942029" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+    </resources>
 </document>

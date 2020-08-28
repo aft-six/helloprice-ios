@@ -39,6 +39,7 @@ extension Scene {
         switch self {
         case .main(let viewControllers):
             let tabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as! RootTabBarController
+            
             tabBarController.initViewControllers(viewControllers: viewControllers)
             return tabBarController
         case .myProductList(let viewModel):

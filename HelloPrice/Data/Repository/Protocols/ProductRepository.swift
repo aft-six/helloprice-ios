@@ -10,5 +10,5 @@ import RxSwift
 
 protocol ProductRepository: RepositoryType {
     
-    func fetchMyProducts() -> Single<[Product]>
+    func fetchMyProducts() -> Single<FetchMyProductResponse>
 }

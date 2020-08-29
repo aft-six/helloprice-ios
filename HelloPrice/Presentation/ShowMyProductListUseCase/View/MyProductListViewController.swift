@@ -38,14 +38,12 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
                 productCell.bindViewModel(item: product)
             }
             .disposed(by: 👜)
-        
-        loadDatas()
     }
     
     func loadDatas() {
         /// - TODO
         /// accept로 불러오기를 call하는 중인데, 이걸 viewController가 viewWillAppear를 호출한 뒤로 엮으면 더 좋을듯!
-        fetchDatas.accept(())
+        
         
     }
     

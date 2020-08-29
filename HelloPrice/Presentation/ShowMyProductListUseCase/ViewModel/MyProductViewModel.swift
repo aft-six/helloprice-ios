@@ -33,23 +33,53 @@ class MyProductViewModel: BaseViewModel {
         let output = Output()
         
         let products = inputs.fetchDatas
-            .flatMap { self.useCase.fetchMyProducts() }
+            .flatMap {
+                self.useCase.fetchMyProducts()
+                     .do(onSuccess: { res in
+                        print("success!")
+                })
+        }
             .share()
             
         products
-            .do(onNext: {
-                print("\($0)")
-            })
+            .map {
+                self.responseToProducts($0)
+                
+        }
             .bind(to: output.products)
             .disposed(by: 👜)
         products
-            .map { $0.count }
-            .do(onNext: {
-                print("\($0)")
-            })
+            .map { $0.contents?.count ?? 0 }
             .bind(to: output.productsCount)
             .disposed(by: 👜)
         
+        inputs.fetchDatas.accept(())
+        
         return output        
+    }
+    
+    private func responseToProducts(_ response: FetchMyProductResponse) -> [Product] {
+        
+        var items = [Product]()
+        
+        response.contents?.forEach { contents in
+            let item = Product(id: contents.product?.id ?? 0,
+                               productName: contents.product?.productName ?? "",
+                               productCode: contents.product?.productCode ?? "",
+                               url: contents.product?.url ?? "",
+                               imageUrl: contents.product?.imageUrl ?? "",
+                               description: contents.product?.description ?? "",
+                               saleType: contents.product?.productSale?.saleType ?? "",
+                               price: contents.product?.productSale?.price ?? 0,
+                               prevPrice: contents.product?.productSale?.prevPrice ?? 0,
+                               additionalInfo: contents.product?.productSale?.additionalInfo ?? "x",
+                               priceChangeRate: contents.product?.productSale?.priceChangeRate ?? 0.0,
+                               lowestPrice: contents.lowestPrice ?? 0,
+                               lastUpdateAt: contents.product?.lastConfirmAt ?? "x",
+                               notifyOn: true)
+            items.append(item)
+        }
+        
+        return items
     }
 }

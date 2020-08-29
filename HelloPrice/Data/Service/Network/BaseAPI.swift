@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+struct NoBody: Encodable {}
 protocol APIType {}
 
 protocol APIServiceProtocol: APIType {
@@ -54,9 +55,12 @@ class BaseAPI<T: Encodable, R: Decodable>: APIServiceProtocol {
     var headers: HTTPHeaders? = nil
     var parameters: HTTPParameters? = nil
     
-    init(bodyData: T? = nil) {
+    init(bodyData: T? = nil, headersParam: HTTPHeaders? = nil) {
         if let bodyData = bodyData {
             self.body = NetworkProvider.convertRequestBody(bodyData)
+        }
+        if let headers = headersParam {
+            self.headers = headers
         }
     }
     

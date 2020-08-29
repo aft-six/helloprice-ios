@@ -33,7 +33,7 @@ extension ProductDIContainer {
     }
     
     func makeProductRepository() -> ProductRepository {
-        return ProductRepositoryImpl()
+        return ProductRepositoryImpl(apiService: apiService)
     }
 }
 

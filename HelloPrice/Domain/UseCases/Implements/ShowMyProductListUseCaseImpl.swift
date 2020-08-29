@@ -16,7 +16,7 @@ class ShowMyProductListUseCaseImpl: ShowMyProductListUseCase {
         self.repository = repository
     }
     
-    func fetchMyProducts() -> Single<[Product]> {
+    func fetchMyProducts() -> Single<FetchMyProductResponse> {
         
         return repository.fetchMyProducts()
     }

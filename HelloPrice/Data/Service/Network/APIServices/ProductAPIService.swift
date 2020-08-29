@@ -11,10 +11,28 @@ import Alamofire
 
 class ProductAPIService: APIType {
     
+    let httpHeader: HTTPHeader
+    
+    init(authToken token: String = "Bearer tokenblabla") {
+        self.httpHeader = HTTPHeader.authorization(bearerToken: token)
+    }
+    
     func registerProduct(productCode: String) -> Single<RegistProductResponse> {
-        
+    
         let data = RegistProductRequestBody(productCode: productCode)
-        let api = ProductRegistrationAPI(bodyData: data)
+        let api = ProductRegistrationAPI(bodyData: data, headersParam: HTTPHeaders([httpHeader]))
+        return api.request()
+    }
+    
+    func fetchTopDecreaseProducts() -> Single<FetchTopDecreaseProductResponse> {
+
+        let api = TopDecreasedProductFetchingAPI(headersParam: HTTPHeaders([httpHeader]))
+        return api.request()
+    }
+    
+    func fetchMyProducts() -> Single<FetchMyProductResponse> {
+
+        let api = MyProductFetchingAPI(headersParam: HTTPHeaders([httpHeader]))
         return api.request()
     }
 }

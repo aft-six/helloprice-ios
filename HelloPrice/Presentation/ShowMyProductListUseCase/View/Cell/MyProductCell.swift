@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
+import RxKingfisher
 
 class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
     
@@ -20,27 +22,28 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
     @IBOutlet weak var previousPriceLabel: UILabel!
     @IBOutlet weak var lowestPriceLabel: UILabel!
     @IBOutlet weak var lastConfirmTimeLabel: UILabel!
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        viewModelCreatable = self
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        viewModelCreatable = self
+    }
     
     override func bindViewModel(item: Product) {
-        viewModelCreatable = self
         super.bindViewModel(item: item)
         
         let input = MyProductCellViewModel.Input()
         let outputs = viewModel!.transform(input: input)
         
-        if #available(iOS 13.0, *) {
-            
-            outputs.thumbnailImageUrlString
-                .map { UIImage(systemName: $0) }
-                .bind(to: thumbnailImageView.rx.image)
-                .disposed(by: 👜)
-        } else {
-            outputs.thumbnailImageUrlString
-                .map { UIImage(named: $0) }
-                .bind(to: thumbnailImageView.rx.image)
-                .disposed(by: 👜)
-        }
+        outputs.thumbnailImageUrlString
+            .filter { $0 != "" }
+            .map { ImageResource(downloadURL: URL(string: $0)!) }
+            .bind(to: thumbnailImageView.kf.rx.image())
+            .disposed(by: 👜)
         
         outputs.productName
             .do(onNext: {
@@ -81,9 +84,9 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
             .disposed(by: 👜)
         
         outputs.lastConfirmTime
-        .do(onNext: {
-            print("lastConfirmTime : \($0)")
-        })
+            .do(onNext: {
+                print("lastConfirmTime : \($0)")
+            })
             .bind(to: lastConfirmTimeLabel.rx.text)
             .disposed(by: 👜)
         

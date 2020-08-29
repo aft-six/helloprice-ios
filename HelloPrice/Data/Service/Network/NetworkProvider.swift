@@ -108,7 +108,9 @@ class NetworkProvider: NSObject, RemoteRepository {
                                                 userInfo: nil)
                             subscriber.onError(error)
                         }
-                    } catch {}
+                    } catch {
+                        print("json decoding error")
+                    }
                     
                 })
         }

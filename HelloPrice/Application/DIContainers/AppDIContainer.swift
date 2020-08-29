@@ -15,7 +15,7 @@ final class AppDIContainer {
         LocalDBService()
     }()
     
-    lazy var apiService: ProductAPIService = {
+    lazy var productAPIService: ProductAPIService = {
         ProductAPIService()
     }()
     
@@ -25,6 +25,6 @@ final class AppDIContainer {
 
     lazy var productDIContainer: ProductDIContainer = {
         ProductDIContainer(localDBService: localDBService,
-                           apiService: apiService)
+                           apiService: productAPIService)
     }()
 }

@@ -9,11 +9,12 @@
 import Foundation
 
 struct RegistProductResponse: Decodable {
-    var id: Int
+    var id: Int?
     var productSales: [ProductSales]
 }
 
-struct ProductSales: Decodable {
-    var id: Int
-    var saleType: String
+enum SaleType: String, Decodable {
+    case normal = "NORMAL"
+    case cash = "CASH"
+    case card = "CARD"
 }

@@ -10,9 +10,15 @@ import RxSwift
 
 final class ProductRepositoryImpl: ProductRepository {
     
-    func fetchMyProducts() -> Single<[Product]> {
-        // apiservice로 호출
-        return Single.just([Product()])
+    let apiService: ProductAPIService
+    
+    init(apiService: APIType) {
+        self.apiService = apiService as! ProductAPIService
+    }
+    
+    func fetchMyProducts() -> Single<FetchMyProductResponse> {
+        
+        return apiService.fetchMyProducts()
     }
     
 }

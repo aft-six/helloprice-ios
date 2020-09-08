@@ -34,18 +34,16 @@ class MyProductViewModel: BaseViewModel {
         
         let products = inputs.fetchDatas
             .flatMap {
-                self.useCase.fetchMyProducts()
-                     .do(onSuccess: { res in
+                self.useCase
+                    .fetchMyProducts()
+                    .do(onSuccess: { res in
                         print("success!")
-                })
-        }
+                    })
+            }
             .share()
             
         products
-            .map {
-                self.responseToProducts($0)
-                
-        }
+            .map { self.responseToProducts($0) }
             .bind(to: output.products)
             .disposed(by: 👜)
         products
@@ -57,6 +55,7 @@ class MyProductViewModel: BaseViewModel {
         
         return output        
     }
+    
     
     private func responseToProducts(_ response: FetchMyProductResponse) -> [Product] {
         

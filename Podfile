@@ -18,5 +18,10 @@ target 'HelloPrice' do
   pod 'Hero'
   pod 'RxDataSources'
   pod 'RxKingfisher'
+  pod 'RxTest'
+
+
   
+  pod 'FBSDKLoginKit'
+      
 end

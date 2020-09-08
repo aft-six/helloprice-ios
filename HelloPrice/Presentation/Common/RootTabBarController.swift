@@ -29,13 +29,13 @@ class RootTabBarController: UITabBarController {
         createButtonContainerView(containerView: subButtonBackView, size: 100)
         productNameSearchToAddButton =
             createSubButton(parentView: subButtonBackView,
-                            buttonImage: UIImage(named: "ic_search")!, position: -subButtonsPosition)
+                            buttonImage: UIImage(named: "ic_product_search")!, position: -subButtonsPosition)
         //magnifyingglass
         productNameSearchToAddButton.addTarget(self,
                                                action: #selector(searchProductNameButton),
                                                for: .touchUpInside)
         urlSearchToAddButton = createSubButton(parentView: subButtonBackView,
-                                               buttonImage: UIImage(named: "ic_link")!,
+                                               buttonImage: UIImage(named: "ic_product_url_search")!,
                                                position: subButtonsPosition)
         
         createButtonContainerView(containerView: buttonBackView, size: 60)

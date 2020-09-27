@@ -26,26 +26,26 @@ class RootTabBarController: UITabBarController {
         
         subButtonBackView.alpha = 0
         subButtonBackView.backgroundColor = .clear
-        createButtonContainerView(containerView: subButtonBackView, size: 100)
-        productNameSearchToAddButton =
-            createSubButton(parentView: subButtonBackView,
-                            buttonImage: UIImage(named: "ic_product_search")!, position: -subButtonsPosition)
-        //magnifyingglass
-        productNameSearchToAddButton.addTarget(self,
-                                               action: #selector(searchProductNameButton),
-                                               for: .touchUpInside)
-        urlSearchToAddButton = createSubButton(parentView: subButtonBackView,
-                                               buttonImage: UIImage(named: "ic_product_url_search")!,
-                                               position: subButtonsPosition)
-        
-        createButtonContainerView(containerView: buttonBackView, size: 60)
-        createAddButton(parentView: buttonBackView,
-                        buttonImage: UIImage(systemName: "plus.circle.fill")!)
-        urlSearchToAddButton.addTarget(self,
-                                       action: #selector(searchLinkButton),
-                                       for: .touchUpInside)
-        effectClick(productNameSearchToAddButton)
-        effectClick(urlSearchToAddButton)
+//        createButtonContainerView(containerView: subButtonBackView, size: 100)
+//        productNameSearchToAddButton =
+//            createSubButton(parentView: subButtonBackView,
+//                            buttonImage: UIImage(named: "ic_product_search")!, position: -subButtonsPosition)
+//        //magnifyingglass
+//        productNameSearchToAddButton.addTarget(self,
+//                                               action: #selector(searchProductNameButton),
+//                                               for: .touchUpInside)
+//        urlSearchToAddButton = createSubButton(parentView: subButtonBackView,
+//                                               buttonImage: UIImage(named: "ic_product_url_search")!,
+//                                               position: subButtonsPosition)
+//        
+//        createButtonContainerView(containerView: buttonBackView, size: 60)
+//        createAddButton(parentView: buttonBackView,
+//                        buttonImage: UIImage(systemName: "plus.circle.fill")!)
+//        urlSearchToAddButton.addTarget(self,
+//                                       action: #selector(searchLinkButton),
+//                                       for: .touchUpInside)
+//        effectClick(productNameSearchToAddButton)
+//        effectClick(urlSearchToAddButton)
         
     }
 }

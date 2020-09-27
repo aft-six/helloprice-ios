@@ -14,9 +14,23 @@ import RxKingfisher
 
 class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
     
-    @IBOutlet weak var movePositionButton: UIButton!
-    @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var productNameLabel: UILabel!
+//    @IBOutlet weak var movePositionButton: UIButton! {
+//        didSet {
+//            self.movePositionButton.isHidden = true
+//        }
+//    }
+    @IBOutlet weak var thumbnailImageView: UIImageView! {
+        didSet {
+            self.thumbnailImageView.layer.borderWidth = 1.0
+            self.thumbnailImageView.layer.borderColor = UIColor.lightGray.cgColor
+            self.thumbnailImageView.layer.cornerRadius = 60
+        }
+    }
+    @IBOutlet weak var productNameLabel: UILabel! {
+        didSet {
+            self.paymentMethodLabel.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var paymentMethodLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
     @IBOutlet weak var previousPriceLabel: UILabel!
@@ -53,9 +67,10 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
             .disposed(by: 👜)
         
         outputs.paymentMethod
-            .do(onNext: {
-                print("paymentMethod : \($0)")
+            .do(onNext: { [weak self] method in
+                self?.paymentMethodLabel.backgroundColor = self?.fillPaymentMethodBackgroundColor(paymentMethod: method)
             })
+            .map { [weak self] in self?.convertPaymentMethod(paymentMethod: $0) }
             .bind(to: paymentMethodLabel.rx.text)
             .disposed(by: 👜)
         
@@ -95,5 +110,34 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
     
     func createCellViewModel() {
         viewModel = MyProductCellViewModel()
+    }
+}
+
+/// Rx binding 할 때 필요한 변환 메소드들.
+extension MyProductCell {
+    func fillPaymentMethodBackgroundColor(paymentMethod: String) -> UIColor {
+        switch paymentMethod.paymentMethod {
+        case .cash:
+            return UIColor(red: 20, green: 20, blue: 230, alpha: 255)
+        case .card:
+            return UIColor(red: 20, green: 230, blue: 20, alpha: 255)
+        case .normal:
+            return UIColor(red: 230, green: 20, blue: 20, alpha: 255)
+        case .invalid:
+            return UIColor(red: 20, green: 20, blue: 20, alpha: 20)
+        }
+    }
+    
+    func convertPaymentMethod(paymentMethod: String) -> String {
+        switch paymentMethod.paymentMethod {
+        case .cash:
+            return "현금가"
+        case .card:
+            return "카드"
+        case .normal:
+            return "일반가"
+        case .invalid:
+            return ""
+        }
     }
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bid-aL-7Dz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,153 @@
                     <view key="view" contentMode="scaleToFill" id="Rt3-kF-aRD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0e-mI-cGn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="590"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin" translatesAutoresizingMaskIntoConstraints="NO" id="Q5U-MM-v7d">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-main-title" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-Zq-BjF">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="p3p-zg-4AS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Q5U-MM-v7d" firstAttribute="leading" secondItem="G0e-mI-cGn" secondAttribute="leading" id="7Pf-Bf-DEy"/>
+                                    <constraint firstItem="Q5U-MM-v7d" firstAttribute="top" secondItem="G0e-mI-cGn" secondAttribute="top" id="8bC-cv-AGD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Arh-Zq-BjF" secondAttribute="trailing" id="Clv-Jl-zit"/>
+                                    <constraint firstItem="Arh-Zq-BjF" firstAttribute="leading" secondItem="G0e-mI-cGn" secondAttribute="leading" id="DEV-Vo-iNH"/>
+                                    <constraint firstItem="Arh-Zq-BjF" firstAttribute="top" secondItem="G0e-mI-cGn" secondAttribute="top" constant="20" id="aJn-t8-Trc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q5U-MM-v7d" secondAttribute="bottom" id="q3l-he-cIY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q5U-MM-v7d" secondAttribute="trailing" id="rNa-bL-JOY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tn-wg-4Mv">
+                                <rect key="frame" x="0.0" y="634" width="414" height="228"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 계정으로 계속하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-yx-aqS">
+                                        <rect key="frame" x="20" y="20" width="374" height="56"/>
+                                        <color key="backgroundColor" red="1" green="0.90980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUq-dM-Iq3">
+                                        <rect key="frame" x="20" y="20" width="374" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="dGv-kI-ZEe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".AppleKoreanFont" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="account-kakao">
+                                            <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구글 계정으로 계속하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-Pl-eHf">
+                                        <rect key="frame" x="20" y="86" width="374" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otf-x1-E2B">
+                                        <rect key="frame" x="20" y="86" width="374" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="SN6-7f-pe3"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="account-google"/>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플 계정으로 계속하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-mg-cM0">
+                                        <rect key="frame" x="20" y="152" width="374" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-l9-1yL">
+                                        <rect key="frame" x="20" y="152" width="374" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="kwd-X6-lWQ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="account-apple"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="UUq-dM-Iq3" firstAttribute="leading" secondItem="LE0-l9-1yL" secondAttribute="leading" id="0eF-RO-G9q"/>
+                                    <constraint firstItem="1SP-mg-cM0" firstAttribute="top" secondItem="LE0-l9-1yL" secondAttribute="top" id="3BX-p2-3kx"/>
+                                    <constraint firstItem="UUq-dM-Iq3" firstAttribute="top" secondItem="2tn-wg-4Mv" secondAttribute="top" constant="20" id="4HT-Ph-63q"/>
+                                    <constraint firstItem="1SP-mg-cM0" firstAttribute="leading" secondItem="LE0-l9-1yL" secondAttribute="leading" id="5sj-Lb-nB0"/>
+                                    <constraint firstAttribute="bottom" secondItem="LE0-l9-1yL" secondAttribute="bottom" constant="20" id="85U-XV-Alx"/>
+                                    <constraint firstItem="1SP-mg-cM0" firstAttribute="trailing" secondItem="LE0-l9-1yL" secondAttribute="trailing" id="8aL-hu-ggn"/>
+                                    <constraint firstItem="dhz-Pl-eHf" firstAttribute="top" secondItem="otf-x1-E2B" secondAttribute="top" id="A9g-Ec-EbH"/>
+                                    <constraint firstItem="1SP-mg-cM0" firstAttribute="bottom" secondItem="LE0-l9-1yL" secondAttribute="bottom" id="I8s-EX-bOY"/>
+                                    <constraint firstItem="UUq-dM-Iq3" firstAttribute="trailing" secondItem="LE0-l9-1yL" secondAttribute="trailing" id="IQh-r5-Sx3"/>
+                                    <constraint firstItem="dhz-Pl-eHf" firstAttribute="leading" secondItem="otf-x1-E2B" secondAttribute="leading" id="Jxw-hC-NYh"/>
+                                    <constraint firstItem="aUd-yx-aqS" firstAttribute="leading" secondItem="UUq-dM-Iq3" secondAttribute="leading" id="KE7-EH-S26"/>
+                                    <constraint firstItem="aUd-yx-aqS" firstAttribute="bottom" secondItem="UUq-dM-Iq3" secondAttribute="bottom" id="KPO-ou-f6R"/>
+                                    <constraint firstItem="otf-x1-E2B" firstAttribute="leading" secondItem="LE0-l9-1yL" secondAttribute="leading" id="LNM-18-bT1"/>
+                                    <constraint firstItem="LE0-l9-1yL" firstAttribute="leading" secondItem="2tn-wg-4Mv" secondAttribute="leading" constant="20" id="O5X-Db-ln6"/>
+                                    <constraint firstAttribute="trailing" secondItem="LE0-l9-1yL" secondAttribute="trailing" constant="20" id="Oop-ce-Hjj"/>
+                                    <constraint firstItem="aUd-yx-aqS" firstAttribute="trailing" secondItem="UUq-dM-Iq3" secondAttribute="trailing" id="Pnu-NW-ZB3"/>
+                                    <constraint firstItem="LE0-l9-1yL" firstAttribute="top" secondItem="otf-x1-E2B" secondAttribute="bottom" constant="10" id="em0-Ug-XLn"/>
+                                    <constraint firstItem="dhz-Pl-eHf" firstAttribute="bottom" secondItem="otf-x1-E2B" secondAttribute="bottom" id="gJK-hI-QpO"/>
+                                    <constraint firstItem="dhz-Pl-eHf" firstAttribute="trailing" secondItem="otf-x1-E2B" secondAttribute="trailing" id="ieH-ay-fwZ"/>
+                                    <constraint firstItem="aUd-yx-aqS" firstAttribute="top" secondItem="UUq-dM-Iq3" secondAttribute="top" id="kRb-rw-MIm"/>
+                                    <constraint firstItem="otf-x1-E2B" firstAttribute="trailing" secondItem="LE0-l9-1yL" secondAttribute="trailing" id="yW9-iW-xhi"/>
+                                    <constraint firstItem="otf-x1-E2B" firstAttribute="top" secondItem="UUq-dM-Iq3" secondAttribute="bottom" constant="10" id="zBf-R7-fRg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="m0g-4F-OIn"/>
+                        <color key="backgroundColor" red="0.0" green="0.16078431372549018" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2tn-wg-4Mv" firstAttribute="leading" secondItem="m0g-4F-OIn" secondAttribute="leading" id="1nu-8u-bpR"/>
+                            <constraint firstItem="2tn-wg-4Mv" firstAttribute="top" secondItem="G0e-mI-cGn" secondAttribute="bottom" id="3Af-vx-72T"/>
+                            <constraint firstItem="m0g-4F-OIn" firstAttribute="bottom" secondItem="2tn-wg-4Mv" secondAttribute="bottom" id="HBn-af-Ghp"/>
+                            <constraint firstItem="m0g-4F-OIn" firstAttribute="trailing" secondItem="2tn-wg-4Mv" secondAttribute="trailing" id="OPr-bB-OAl"/>
+                            <constraint firstItem="G0e-mI-cGn" firstAttribute="top" secondItem="m0g-4F-OIn" secondAttribute="top" id="QXa-NN-AWQ"/>
+                            <constraint firstItem="G0e-mI-cGn" firstAttribute="leading" secondItem="m0g-4F-OIn" secondAttribute="leading" id="QZ5-PB-p6i"/>
+                            <constraint firstItem="m0g-4F-OIn" firstAttribute="trailing" secondItem="G0e-mI-cGn" secondAttribute="trailing" id="b2f-Uy-Kla"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHV-R6-H83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="157"/>
+            <point key="canvasLocation" x="111.59420289855073" y="156.69642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="account-apple" width="31" height="56"/>
+        <image name="account-google" width="31" height="56"/>
+        <image name="account-kakao" width="31" height="56"/>
+        <image name="app-main-title" width="202" height="27"/>
+        <image name="signin" width="375" height="500"/>
+    </resources>
 </document>

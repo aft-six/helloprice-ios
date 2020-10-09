@@ -19,10 +19,10 @@ class MyProductCellViewModel: BaseCellViewModel {
         let thumbnailImageUrlString = BehaviorRelay<String>(value: "")
         let productName = BehaviorRelay<String>(value: "")
         let paymentMethod = BehaviorRelay<String>(value: "")
-        let currentPrice = BehaviorRelay<Int>(value: 0)
-        let previousPrice = BehaviorRelay<Int>(value: 0)
+        let currentPrice = BehaviorRelay<String>(value: "0")
+//        let previousPrice = BehaviorRelay<String>(value: 0)
         let changeRate = BehaviorRelay<Double>(value: 0.0)
-        let lowestPrice = BehaviorRelay<Int>(value: 0)
+//        let lowestPrice = BehaviorRelay<String>(value: 0)
         let lastConfirmTime = BehaviorRelay<String>(value: "")
     }
     
@@ -51,26 +51,26 @@ class MyProductCellViewModel: BaseCellViewModel {
             .bind(to: outputs.paymentMethod)
             .disposed(by: 👜)
         
-        product.map { $0.price }
+        product.map { $0.price.won }
         .do (onNext: {
-            print("paymentMethod \($0)")
+            print("currentPrice \($0)")
         })
             .bind(to: outputs.currentPrice)
             .disposed(by: 👜)
         
-        product.map { $0.prevPrice }
-        .do (onNext: {
-            print("currentPrice \($0)")
-        })
-            .bind(to: outputs.previousPrice)
-            .disposed(by: 👜)
-        
-        product.map { $0.lowestPrice! }
-            .do (onNext: {
-                print("lowestPrice \($0)")
-            })
-            .bind(to: outputs.lowestPrice)
-            .disposed(by: 👜)
+//        product.map { "\($0.prevPrice.won)" }
+//        .do (onNext: {
+//            print("previousPrice \($0)")
+//        })
+//            .bind(to: outputs.previousPrice)
+//            .disposed(by: 👜)
+//
+//        product.map { $0.lowestPrice! }
+//            .do (onNext: {
+//                print("lowestPrice \($0)")
+//            })
+//            .bind(to: outputs.lowestPrice)
+//            .disposed(by: 👜)
         
         product.map { $0.priceChangeRate! }
         .do (onNext: {

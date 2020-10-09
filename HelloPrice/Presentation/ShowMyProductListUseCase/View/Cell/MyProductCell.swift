@@ -33,9 +33,15 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
     }
     @IBOutlet weak var paymentMethodLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
-    @IBOutlet weak var previousPriceLabel: UILabel!
-    @IBOutlet weak var lowestPriceLabel: UILabel!
+//    @IBOutlet weak var previousPriceLabel: UILabel!
+//    @IBOutlet weak var lowestPriceLabel: UILabel!
     @IBOutlet weak var lastConfirmTimeLabel: UILabel!
+    @IBOutlet weak var alarmCheckToggle: UISwitch! {
+        didSet {
+            self.alarmCheckToggle.offImage = UIImage(named: "ic_notification")
+            self.alarmCheckToggle.onImage = UIImage(systemName: "pencil")
+        }
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -82,21 +88,21 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
             .bind(to: currentPriceLabel.rx.text)
             .disposed(by: 👜)
         
-        outputs.previousPrice
-            .map { "\($0)" }
-            .do(onNext: {
-                print("previousPrice : \($0)")
-            })
-            .bind(to: previousPriceLabel.rx.text)
-            .disposed(by: 👜)
+//        outputs.previousPrice
+//            .map { "\($0)" }
+//            .do(onNext: {
+//                print("previousPrice : \($0)")
+//            })
+//            .bind(to: previousPriceLabel.rx.text)
+//            .disposed(by: 👜)
         
-        outputs.lowestPrice
-            .map { "\($0)" }
-            .do(onNext: {
-                print("lowestPrice : \($0)")
-            })
-            .bind(to: lowestPriceLabel.rx.text)
-            .disposed(by: 👜)
+//        outputs.lowestPrice
+//            .map { "\($0)" }
+//            .do(onNext: {
+//                print("lowestPrice : \($0)")
+//            })
+//            .bind(to: lowestPriceLabel.rx.text)
+//            .disposed(by: 👜)
         
         outputs.lastConfirmTime
             .do(onNext: {

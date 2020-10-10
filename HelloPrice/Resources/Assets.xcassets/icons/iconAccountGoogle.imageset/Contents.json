@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "signin.png",
+      "filename" : "iconAccountGoogle.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "signin@2x.png",
+      "filename" : "iconAccountGoogle@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "signin@3x.png",
+      "filename" : "iconAccountGoogle@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

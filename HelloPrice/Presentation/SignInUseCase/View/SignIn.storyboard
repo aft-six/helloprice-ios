@@ -65,7 +65,7 @@
                                         <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".AppleKoreanFont" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="account-kakao">
+                                        <state key="normal" image="iconAccountKakao">
                                             <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                     </button>
@@ -88,7 +88,7 @@
                                             <constraint firstAttribute="height" constant="56" id="SN6-7f-pe3"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="account-google"/>
+                                        <state key="normal" image="iconAccountGoogle"/>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플 계정으로 계속하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-mg-cM0">
                                         <rect key="frame" x="20" y="152" width="374" height="56"/>
@@ -109,7 +109,7 @@
                                             <constraint firstAttribute="height" constant="56" id="kwd-X6-lWQ"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="account-apple"/>
+                                        <state key="normal" image="iconAccountApple"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,10 +158,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account-apple" width="31" height="56"/>
-        <image name="account-google" width="31" height="56"/>
-        <image name="account-kakao" width="31" height="56"/>
         <image name="app-main-title" width="202" height="27"/>
+        <image name="iconAccountApple" width="31" height="56"/>
+        <image name="iconAccountGoogle" width="31" height="56"/>
+        <image name="iconAccountKakao" width="31" height="56"/>
         <image name="signin" width="375" height="500"/>
     </resources>
 </document>

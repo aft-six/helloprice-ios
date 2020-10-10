@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "signin.png",
+      "filename" : "iconMyNoti.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "signin@2x.png",
+      "filename" : "iconMyNoti@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "signin@3x.png",
+      "filename" : "iconMyNoti@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

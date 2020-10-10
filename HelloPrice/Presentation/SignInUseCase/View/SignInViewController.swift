@@ -10,4 +10,7 @@ import UIKit
 
 class SignInViewController: BaseViewController<SignInViewModel> {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

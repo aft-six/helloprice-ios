@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 extension UIView {
     var className: String {
         return String.init(describing: self).components(separatedBy: ".").last!
@@ -15,5 +16,15 @@ extension UIView {
     
     class var className: String {
         return String.init(describing: self).components(separatedBy: ".").last!
+    }
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
     }
 }

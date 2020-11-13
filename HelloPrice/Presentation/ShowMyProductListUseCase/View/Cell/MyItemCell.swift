@@ -1,5 +1,5 @@
 //
-//  MyProductCell.swift
+//  MyItemCell.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/08/15.
@@ -12,7 +12,7 @@ import RxCocoa
 import Kingfisher
 import RxKingfisher
 
-class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
+class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
     
 //    @IBOutlet weak var movePositionButton: UIButton! {
 //        didSet {
@@ -120,7 +120,7 @@ class MyProductCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellView
 }
 
 /// Rx binding 할 때 필요한 변환 메소드들.
-extension MyProductCell {
+extension MyItemCell {
     func fillPaymentMethodBackgroundColor(paymentMethod: String) -> UIColor {
         switch paymentMethod.paymentMethod {
         case .cash:

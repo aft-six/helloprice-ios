@@ -73,7 +73,7 @@
                                         <rect key="frame" x="20" y="86" width="374" height="56"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -151,6 +151,11 @@
                             <constraint firstItem="m0g-4F-OIn" firstAttribute="trailing" secondItem="G0e-mI-cGn" secondAttribute="trailing" id="b2f-Uy-Kla"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appleSignInButton" destination="LE0-l9-1yL" id="933-bJ-TcO"/>
+                        <outlet property="googleSignInButton" destination="otf-x1-E2B" id="D3V-Ax-XQP"/>
+                        <outlet property="kakaoSignInButton" destination="UUq-dM-Iq3" id="seX-pS-gZ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHV-R6-H83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

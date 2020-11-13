@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct User: Item, Codable {
+struct User: Item, Decodable {
     
 }

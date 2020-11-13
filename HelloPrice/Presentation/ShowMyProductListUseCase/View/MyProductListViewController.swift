@@ -15,10 +15,12 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
     @IBOutlet weak var myProductListTableView: UITableView!
     let fetchDatas = PublishRelay<Void>()
     let presentWebsite = PublishRelay<Void>()
+    var tableViewHeader: MyItemHeaderView? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindViewModel()
     }
     
     override func bindViewModel() {
@@ -32,8 +34,8 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
         makeTableView()
         
         outputs.products
-            .bind(to: myProductListTableView.rx.items(cellIdentifier: MyProductCell.className)) { index, product, cell in
-                guard let productCell = cell as? MyProductCell else { return }
+            .bind(to: myProductListTableView.rx.items(cellIdentifier: MyItemCell.className)) { index, product, cell in
+                guard let productCell = cell as? MyItemCell else { return }
                 
                 productCell.bindViewModel(item: product)
             }
@@ -48,13 +50,15 @@ class MyProductListViewController: BaseViewController<MyProductViewModel> {
     }
     
     func makeTableView() {
-        let nibName = UINib(nibName: MyProductCell.className, bundle: nil)
-        myProductListTableView.register(nibName, forCellReuseIdentifier: MyProductCell.className)
+        let nibName = UINib(nibName: MyItemCell.className, bundle: nil)
+        myProductListTableView.register(nibName, forCellReuseIdentifier: MyItemCell.className)
         myProductListTableView.rowHeight = 200
+        
+        tableViewHeader = MyItemHeaderView.createFromNib()
+        myProductListTableView.tableHeaderView = tableViewHeader
+        myProductListTableView.dataSource = nil
     }
 }
-
-
 
 //let config = WKWebViewConfiguration()
 //let contentController = WKUserContentController()

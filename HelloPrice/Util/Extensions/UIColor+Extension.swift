@@ -16,3 +16,17 @@ extension UIColor {
                   alpha: CGFloat(alpha)/255.0)
     }
 }
+
+extension UIColor {
+    class var base3: UIColor { UIColor(named: "base3")! }
+    class var base5: UIColor { UIColor(named: "base5")! }
+    class var base10: UIColor { UIColor(named: "base10")! }
+    class var base30: UIColor { UIColor(named: "base30")! }
+    class var base100: UIColor { UIColor(named: "base100")! }
+    class var baseLabel100: UIColor { UIColor(named: "baseLabel100")! }
+    class var black100: UIColor { UIColor(named: "black100")! }
+    class var darkIndigo30: UIColor { UIColor(named: "darkIndigo30")! }
+    class var brightYellow: UIColor { UIColor(named: "brightYellow")! }
+    class var orangeRed: UIColor { UIColor(named: "orangeRed")! }
+    class var richBlue: UIColor { UIColor(named: "richBlue")! }
+}

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Alamofire
 
-class MyProductFetchingAPI: BaseAPI<NoBody, FetchMyProductResponse> {
+class MyProductFetchingAPI: BaseAPI<FetchMyProductByCategoryRequest, FetchMyProductResponse> {
     override var path: String {
         return "my/notifies"
     }

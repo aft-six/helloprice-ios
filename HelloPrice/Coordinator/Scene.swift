@@ -10,6 +10,7 @@ import UIKit
 
 enum Scene {
     case main([UIViewController])
+    case home(HomeViewModel)
     case myProductList(MyProductViewModel)
     case myPage(MyPageViewModel)
     case signIn(SignInViewModel)
@@ -22,6 +23,8 @@ extension Scene {
         switch self {
         case .main:
             return StoryboardName.RootTabBarController.rawValue
+        case .home(_):
+            return StoryboardName.ShowHome.rawValue
         case .myProductList(_):
             return StoryboardName.ShowMyProductList.rawValue
         case .myPage(_):
@@ -39,9 +42,12 @@ extension Scene {
         switch self {
         case .main(let viewControllers):
             let tabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as! RootTabBarController
-            
             tabBarController.initViewControllers(viewControllers: viewControllers)
             return tabBarController
+        case .home(let viewModel):
+            var viewController = storyboard.instantiateViewController(withIdentifier: HomeViewController.className) as! HomeViewController
+            viewController.bindViewModel(viewModel: viewModel)
+            return viewController
         case .myProductList(let viewModel):
             var viewController = storyboard.instantiateViewController(withIdentifier: MyProductListViewController.className) as! MyProductListViewController
             viewController.bindViewModel(viewModel: viewModel)

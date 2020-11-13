@@ -1,21 +1,20 @@
 //
-//  ProductRegistrationAPI.swift
+//  HomeCategoryFetchingAPI.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/08/28.
+//  Created by devming on 2020/11/13.
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
 import RxSwift
 import Alamofire
 
-class ProductRegistrationAPI: BaseAPI<RegistProductRequestBody, RegistProductResponse> {
+class HomeCategoryFetchingAPI: BaseAPI<NoBody, FetchHomeCategoryResponse> {
     override var path: String {
-        return "products"
+        return "categories"
     }
     
     override var method: HTTPMethod {
         return .post
     }
 }
-

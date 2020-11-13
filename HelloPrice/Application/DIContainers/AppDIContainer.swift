@@ -19,6 +19,10 @@ final class AppDIContainer {
         ProductAPIService()
     }()
     
+    lazy var homeAPIService: HomeAPIService = {
+        HomeAPIService()
+    }()
+    
     lazy var userDIContainer: UserDIContainer = {
         UserDIContainer()
     }()
@@ -26,5 +30,9 @@ final class AppDIContainer {
     lazy var productDIContainer: ProductDIContainer = {
         ProductDIContainer(localDBService: localDBService,
                            apiService: productAPIService)
+    }()
+    
+    lazy var homeDIContainer: HomeDIContainer = {
+        HomeDIContainer(localDBService: localDBService, apiService: homeAPIService)
     }()
 }

@@ -20,17 +20,25 @@ class AppCoordinator {
     
     func start() {
         let productDIContainer = appDIContainer.productDIContainer
-        
         let productViewModel = productDIContainer.makeMyProductViewModel()
         let myProductViewController = Scene.myProductList(productViewModel).instantiate()
+        
+        let homeDIContainer = appDIContainer.homeDIContainer
+        let homeViewModel = homeDIContainer.makeHomeViewModel()
+        let homeViewController = Scene.home(homeViewModel).instantiate()
         
         let myPageViewModel = productDIContainer.makeMyPageViewModel()
         let myPageViewController = Scene.myPage(myPageViewModel).instantiate()
         
         let coordinator = SceneCoordinator(window: window)
-        coordinator.transition(to: .main([myProductViewController,
+        coordinator.transition(to: .main([homeViewController,
+                                          myProductViewController,
                                           myPageViewController]),
                                using: .root,
                                animated: false)
     }
+    
+//    fileprivate func makeMyProductViewController() -> MyProductListViewController {
+//
+//    }
 }

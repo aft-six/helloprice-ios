@@ -1,5 +1,5 @@
 //
-//  HomeUseCase.swift
+//  HomeRepository.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/11/13.
@@ -8,7 +8,8 @@
 
 import RxSwift
 
-protocol HomeUseCase: UseCase {
+protocol HomeRepository: RepositoryType {
+    
     func fetchCategories() -> Single<FetchHomeCategoryResponse>
     func fetchCategoryItems(categoryId: Int) -> Single<FetchMyProductResponse>
 }

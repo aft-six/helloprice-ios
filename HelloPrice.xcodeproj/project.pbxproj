@@ -96,6 +96,13 @@
 		CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */; };
 		CA9F0F4624A8C15D00C84B50 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F0F4524A8C15D00C84B50 /* NetworkProvider.swift */; };
 		CAE901F324E8338E008B5032 /* ShowMyProductListUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C2A9124E7EB2700E4CB1D /* ShowMyProductListUseCaseImpl.swift */; };
+		CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8BE255ECD1F000E7882 /* HomeDIContainer.swift */; };
+		CAECE8C3255ECD8F000E7882 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8C2255ECD8F000E7882 /* HomeRepository.swift */; };
+		CAECE8C7255ECD92000E7882 /* HomeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8C6255ECD92000E7882 /* HomeRepositoryImpl.swift */; };
+		CAECE8CD255ECE11000E7882 /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8CC255ECE11000E7882 /* HomeAPIService.swift */; };
+		CAECE8D3255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8D2255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift */; };
+		CAECE8D9255ED025000E7882 /* FetchMyProductByCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8D8255ED025000E7882 /* FetchMyProductByCategoryRequest.swift */; };
+		CAECE8DF255ED158000E7882 /* HomeUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,7 +170,7 @@
 		CA46367D24F79097003FAFDB /* MyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepository.swift; sourceTree = "<group>"; };
 		CA46367F24F790D6003FAFDB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA46368124F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyPageUseCaseImpl.swift; sourceTree = "<group>"; };
-		CA46368524F7928B003FAFDB /* LocalDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalDBService.swift; path = HelloPrice/Domain/UseCases/Protocols/LocalDBService.swift; sourceTree = SOURCE_ROOT; };
+		CA46368524F7928B003FAFDB /* LocalDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalDBService.swift; path = HelloPrice/Data/Service/LocalDB/LocalDBService.swift; sourceTree = SOURCE_ROOT; };
 		CA47DE0E24E6A52B00156AF1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		CA49944324F8CDA000691666 /* TopDecreasedProductFetchingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDecreasedProductFetchingAPI.swift; sourceTree = "<group>"; };
 		CA49944724F8CDFF00691666 /* FetchTopDecreaseProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTopDecreaseProductResponse.swift; sourceTree = "<group>"; };
@@ -206,6 +213,13 @@
 		CA9D6E81248880F400E99B25 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CA9D6E83248884FF00E99B25 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		CA9F0F4524A8C15D00C84B50 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		CAECE8BE255ECD1F000E7882 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		CAECE8C2255ECD8F000E7882 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		CAECE8C6255ECD92000E7882 /* HomeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpl.swift; sourceTree = "<group>"; };
+		CAECE8CC255ECE11000E7882 /* HomeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIService.swift; sourceTree = "<group>"; };
+		CAECE8D2255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryFetchingAPI.swift; sourceTree = "<group>"; };
+		CAECE8D8255ED025000E7882 /* FetchMyProductByCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyProductByCategoryRequest.swift; sourceTree = "<group>"; };
+		CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseImpl.swift; sourceTree = "<group>"; };
 		D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -317,6 +331,7 @@
 			children = (
 				CA2C2A9124E7EB2700E4CB1D /* ShowMyProductListUseCaseImpl.swift */,
 				CA46368124F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift */,
+				CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */,
 			);
 			path = Implements;
 			sourceTree = "<group>";
@@ -437,6 +452,7 @@
 				CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */,
 				CA46366B24F7558D003FAFDB /* ProductDIContainer.swift */,
 				CA46366D24F755B2003FAFDB /* UserDIContainer.swift */,
+				CAECE8BE255ECD1F000E7882 /* HomeDIContainer.swift */,
 			);
 			path = DIContainers;
 			sourceTree = "<group>";
@@ -455,6 +471,7 @@
 				CA46367124F7585D003FAFDB /* UserRepository.swift */,
 				CA46367324F75866003FAFDB /* ProductRepository.swift */,
 				CA46367D24F79097003FAFDB /* MyPageRepository.swift */,
+				CAECE8C2255ECD8F000E7882 /* HomeRepository.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -464,6 +481,7 @@
 			children = (
 				CA46367924F75967003FAFDB /* ProductRepositoryImpl.swift */,
 				CA46367B24F79082003FAFDB /* MyPageRepositoryImpl.swift */,
+				CAECE8C6255ECD92000E7882 /* HomeRepositoryImpl.swift */,
 			);
 			path = Implements;
 			sourceTree = "<group>";
@@ -743,6 +761,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6B7CE424F808920059FF63 /* RegistProductRequestBody.swift */,
+				CAECE8D8255ED025000E7882 /* FetchMyProductByCategoryRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -761,6 +780,7 @@
 		CA6B7CE124F8074A0059FF63 /* APIList */ = {
 			isa = PBXGroup;
 			children = (
+				CAECE8D1255ECE61000E7882 /* HomeAPIService */,
 				CA49944524F8CDD300691666 /* ProductAPIService */,
 			);
 			path = APIList;
@@ -781,6 +801,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6B7CE224F807630059FF63 /* ProductAPIService.swift */,
+				CAECE8CC255ECE11000E7882 /* HomeAPIService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -818,18 +839,10 @@
 			children = (
 				CA146D6E24E2D17D00C85C1C /* LocalRepository.swift */,
 				CA146D6B24E2D16D00C85C1C /* RemoteRepository.swift */,
-				CA9D6E67248787A000E99B25 /* CoreDataStorage */,
+				CAECE8D0255ECE4D000E7882 /* LocalDB */,
 				CA9F0F4424A8C13300C84B50 /* Network */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		CA9D6E67248787A000E99B25 /* CoreDataStorage */ = {
-			isa = PBXGroup;
-			children = (
-				CA46368524F7928B003FAFDB /* LocalDBService.swift */,
-			);
-			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 		CA9D6E68248787A700E99B25 /* Coordinator */ = {
@@ -853,6 +866,22 @@
 				CA6B7CDF24F801630059FF63 /* BaseAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CAECE8D0255ECE4D000E7882 /* LocalDB */ = {
+			isa = PBXGroup;
+			children = (
+				CA46368524F7928B003FAFDB /* LocalDBService.swift */,
+			);
+			path = LocalDB;
+			sourceTree = "<group>";
+		};
+		CAECE8D1255ECE61000E7882 /* HomeAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				CAECE8D2255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift */,
+			);
+			path = HomeAPIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1032,6 +1061,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6B7CE824F809200059FF63 /* RegistProductResponse.swift in Sources */,
+				CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */,
 				CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */,
 				CA46366324F73883003FAFDB /* SignUpViewController.swift in Sources */,
 				CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */,
@@ -1064,15 +1094,19 @@
 				CA146D6C24E2D16D00C85C1C /* RemoteRepository.swift in Sources */,
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA46367C24F79082003FAFDB /* MyPageRepositoryImpl.swift in Sources */,
+				CAECE8CD255ECE11000E7882 /* HomeAPIService.swift in Sources */,
 				CA46368624F7928B003FAFDB /* LocalDBService.swift in Sources */,
+				CAECE8DF255ED158000E7882 /* HomeUseCaseImpl.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* FetchMyProductResponse.swift in Sources */,
 				CA9D6E7E24887E0B00E99B25 /* MyPageViewModel.swift in Sources */,
 				CA26CDCF254D62C4002C23BE /* MyItemHeaderView.swift in Sources */,
 				CA7A0C5624E799660047F971 /* BaseTableViewCell.swift in Sources */,
 				CA46367224F7585D003FAFDB /* UserRepository.swift in Sources */,
+				CAECE8C7255ECD92000E7882 /* HomeRepositoryImpl.swift in Sources */,
 				CA146D6F24E2D17D00C85C1C /* LocalRepository.swift in Sources */,
 				CA46366E24F755B2003FAFDB /* UserDIContainer.swift in Sources */,
 				CA6936BD255EC206004ADA26 /* HomeCategory.swift in Sources */,
+				CAECE8C3255ECD8F000E7882 /* HomeRepository.swift in Sources */,
 				CA9F0F4624A8C15D00C84B50 /* NetworkProvider.swift in Sources */,
 				CA7A0C5424E78C2D0047F971 /* ViewModelBindableCellType.swift in Sources */,
 				CA367DAA24E6E1CB00E63753 /* MyItemCell.swift in Sources */,
@@ -1092,6 +1126,7 @@
 				CA46367A24F75967003FAFDB /* ProductRepositoryImpl.swift in Sources */,
 				CA46367024F75834003FAFDB /* RepositoryType.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
+				CAECE8D3255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift in Sources */,
 				CA46365D24F72F08003FAFDB /* AppConfiguration.swift in Sources */,
 				CA14CC6224F813F50089D039 /* MyPageViewController.swift in Sources */,
 				CA33B54124E43412008F558C /* UseCase.swift in Sources */,
@@ -1101,6 +1136,7 @@
 				CA1C0A262520875600EA841D /* UIColor+Extension.swift in Sources */,
 				CA6936B1255EC0E7004ADA26 /* HomeUseCase.swift in Sources */,
 				CA49944824F8CDFF00691666 /* FetchTopDecreaseProductResponse.swift in Sources */,
+				CAECE8D9255ED025000E7882 /* FetchMyProductByCategoryRequest.swift in Sources */,
 				CA6936B7255EC1F7004ADA26 /* FetchHomeCategoryResponse.swift in Sources */,
 				CA46367424F75866003FAFDB /* ProductRepository.swift in Sources */,
 				CA31C0B224A49F9600CF190C /* MyProductViewModel.swift in Sources */,

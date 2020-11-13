@@ -12,6 +12,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavigationController()
+        print("이건데?")
     }
     
+    func setNavigationController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = .richBlue
+        
+    }
 }

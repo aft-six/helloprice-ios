@@ -24,7 +24,8 @@ extension UIView {
             layer.cornerRadius
         }
         set {
-            layer.cornerRadius = newValue
+//            layer.cornerRadius = newValue
+            layer.cornerCurve = .circular
         }
     }
 }

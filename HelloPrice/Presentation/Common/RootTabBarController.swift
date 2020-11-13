@@ -56,6 +56,15 @@ extension RootTabBarController {
         viewControllers.forEach {
             let nav = UINavigationController(rootViewController: $0)
             self.addChild(nav)
+            
+            if $0 is HomeViewController {
+                nav.navigationBar.backgroundColor = .richBlue
+                nav.navigationBar.prefersLargeTitles = true
+                nav.navigationBar.largeTitleTextAttributes =
+                    [NSAttributedString.Key.foregroundColor: UIColor.white,
+                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .bold)]
+            }
+//            UIFont(name: "S-CoreDream-9Black", size: 28)
         }
     }
 }

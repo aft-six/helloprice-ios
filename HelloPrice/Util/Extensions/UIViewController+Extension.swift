@@ -16,4 +16,12 @@ extension UIViewController {
     class var className: String {
         return String.init(describing: self).components(separatedBy: ".").last!
     }
+    
+    var topSafeAreaHeight: CGFloat {
+        return UIApplication.shared.windows.first?.safeAreaInsets.top ?? 47
+    }
+    
+    var bottomSafeAreaHeight: CGFloat {
+        return UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 47
+    }
 }

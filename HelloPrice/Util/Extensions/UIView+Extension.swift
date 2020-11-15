@@ -24,8 +24,11 @@ extension UIView {
             layer.cornerRadius
         }
         set {
-//            layer.cornerRadius = newValue
-            layer.cornerCurve = .circular
+            layer.cornerRadius = newValue
+            layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
+                                   .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            layer.cornerCurve = .continuous
         }
+        
     }
 }

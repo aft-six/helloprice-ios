@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
+    @IBOutlet weak var titleBackHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,8 +19,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     func setNavigationController() {
+        let defaultHeight: CGFloat = 131
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = .richBlue
-        
+        titleBackHeightConstraint.constant = defaultHeight + topSafeAreaHeight
     }
 }

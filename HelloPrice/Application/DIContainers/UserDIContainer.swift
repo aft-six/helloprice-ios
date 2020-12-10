@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class UserDIContainer {
+final class UserDIContainer: DIContainerType {
     
     func makeSignInViewModel() -> SignInViewModel {
         return SignInViewModel()

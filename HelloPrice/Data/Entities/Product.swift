@@ -24,16 +24,8 @@ struct Product: Item, Decodable {
     var lowestPrice: Int? = 0
     var lastUpdateAt: String = ""
     var notifyOn: Bool = false
-}
-
-extension Int {
-    var won: String {
-        return decimalWon(value: self)
-    }
     
-    private func decimalWon(value: Int) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        return numberFormatter.string(from: NSNumber(value: value))! + " 원"
+    static func ==(lhs: Product, rhs: Product) -> Bool {
+        return lhs.id == rhs.id
     }
 }

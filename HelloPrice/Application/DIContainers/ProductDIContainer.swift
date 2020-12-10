@@ -8,17 +8,14 @@
 
 import Foundation
 
-final class ProductDIContainer {
-    
+final class ProductDIContainer: DIContainerType {
     let localDBService: LocalRepository
     let apiService: APIType
-    
+
     init(localDBService: LocalRepository, apiService: APIType) {
         self.localDBService = localDBService
         self.apiService = apiService
     }
-    
-    
 }
 
 /// MyProductList 부분

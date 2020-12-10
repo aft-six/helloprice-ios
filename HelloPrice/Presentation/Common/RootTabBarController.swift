@@ -32,11 +32,16 @@ extension RootTabBarController {
             self.addChild(nav)
             
             if $0 is HomeViewController {
-                nav.navigationBar.backgroundColor = .richBlue
+//                nav.isNavigationBarHidden = true
+//                let titleView = UIView()
+//                titleView.backgroundColor = .red
+//                titleView.frame = nav.navigationBar.frame
+//                nav.navigationItem.titleView = titleView
+//                nav.navigationBar.backgroundColor = .clear
                 nav.navigationBar.prefersLargeTitles = true
-                nav.navigationBar.largeTitleTextAttributes =
-                    [NSAttributedString.Key.foregroundColor: UIColor.white,
-                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .black)]
+//                nav.navigationBar.largeTitleTextAttributes =
+//                    [NSAttributedString.Key.foregroundColor: UIColor.white,
+//                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .black)]
             }
 //            UIFont(name: "S-CoreDream-9Black", size: 28)
         }

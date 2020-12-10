@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewModelType {
+protocol ViewModelType: Injectable {
 //    associatedtype Input
 //    associatedtype Output
 }

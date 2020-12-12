@@ -40,8 +40,8 @@ class HomeCategoryItemCell: BaseCollectionViewCell<HomeCategoryItemCellViewModel
         cellBackground.layer.cornerCurve = .circular
     }
     
-    func configure(category: HomeCategory) {
+    func configure(item: HomeCategory) {
         
-        categoryLabel.text = category.title
+        categoryLabel.text = item.title
     }
 }

@@ -9,19 +9,20 @@
 import UIKit
 import RxSwift
 
-class BaseCollectionViewCell<T: ViewModelType, OutputType: ViewModelOutput, DomainType: DomainObject>: UICollectionViewCell, CellItemType {
+class BaseCollectionViewCell<T: ViewModelType,
+                             OutputType: ViewModelOutput,
+                             DomainType: DomainObject>: UICollectionViewCell, CellItemType {
     
     var 👜 = DisposeBag()
     var viewModel: T!
     var item: DomainType?
     var output: OutputType?
-    var viewModelCreatable: CellViewModelCreatable?
     class var identifier: String {
         return Self.className
     }
     
     func bindViewModel(item: DomainType) {
-        viewModelCreatable?.createCellViewModel()
+        
     }
 }
 

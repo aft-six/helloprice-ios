@@ -108,6 +108,11 @@
 		CAA03E55258495EC00359B88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E54258495EC00359B88 /* User.swift */; };
 		CAA03E5F2584A34400359B88 /* HorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E5E2584A34400359B88 /* HorizontalFlowLayout.swift */; };
 		CAA03E632584BB8500359B88 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E622584BB8500359B88 /* UILabel+Extension.swift */; };
+		CAA03E672584E80400359B88 /* HomeMainItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA03E662584E80400359B88 /* HomeMainItemCell.xib */; };
+		CAA03E6B2584E80B00359B88 /* HomeMainItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E6A2584E80B00359B88 /* HomeMainItemCell.swift */; };
+		CAA03E6F2584E81100359B88 /* HomeMainItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E6E2584E81100359B88 /* HomeMainItemCellViewModel.swift */; };
+		CAA03E732584F19800359B88 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E722584F19800359B88 /* UIImage+Extension.swift */; };
+		CAA03E842584FC7B00359B88 /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA03E832584FC7B00359B88 /* HomeCellType.swift */; };
 		CAE901F324E8338E008B5032 /* ShowMyProductListUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C2A9124E7EB2700E4CB1D /* ShowMyProductListUseCaseImpl.swift */; };
 		CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8BE255ECD1F000E7882 /* HomeDIContainer.swift */; };
 		CAECE8C3255ECD8F000E7882 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8C2255ECD8F000E7882 /* HomeRepository.swift */; };
@@ -127,6 +132,19 @@
 			remoteInfo = HelloPrice;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CAA03E802584F61C00359B88 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2D1A1EB17D6B37C7C9873243 /* Pods-HelloPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloPrice.debug.xcconfig"; path = "Target Support Files/Pods-HelloPrice/Pods-HelloPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +257,11 @@
 		CAA03E54258495EC00359B88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CAA03E5E2584A34400359B88 /* HorizontalFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		CAA03E622584BB8500359B88 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		CAA03E662584E80400359B88 /* HomeMainItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMainItemCell.xib; sourceTree = "<group>"; };
+		CAA03E6A2584E80B00359B88 /* HomeMainItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainItemCell.swift; sourceTree = "<group>"; };
+		CAA03E6E2584E81100359B88 /* HomeMainItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainItemCellViewModel.swift; sourceTree = "<group>"; };
+		CAA03E722584F19800359B88 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		CAA03E832584FC7B00359B88 /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
 		CAECE8BE255ECD1F000E7882 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
 		CAECE8C2255ECD8F000E7882 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		CAECE8C6255ECD92000E7882 /* HomeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -767,6 +790,7 @@
 				CA6936A3255EBFD3004ADA26 /* Cell */,
 				CA6936A4255EBFE8004ADA26 /* ShowHome.storyboard */,
 				CA6936A8255EBFFF004ADA26 /* HomeViewController.swift */,
+				CAA03E832584FC7B00359B88 /* HomeCellType.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -785,6 +809,9 @@
 				CA7C4102258247FD0034DBA5 /* HomeCategoryItemCell.xib */,
 				CA65B97C256954B9009F2C81 /* HomeCategoryItemCell.swift */,
 				CA467396258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift */,
+				CAA03E662584E80400359B88 /* HomeMainItemCell.xib */,
+				CAA03E6A2584E80B00359B88 /* HomeMainItemCell.swift */,
+				CAA03E6E2584E81100359B88 /* HomeMainItemCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -868,6 +895,7 @@
 				CA1C0A212520872100EA841D /* String+Extension.swift */,
 				CA1C0A252520875600EA841D /* UIColor+Extension.swift */,
 				CA86D6CB2576777C00E8CE10 /* Int+Extension.swift */,
+				CAA03E722584F19800359B88 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -951,12 +979,15 @@
 				CA3B85CB24820F9100F1D863 /* Frameworks */,
 				CA3B85CC24820F9100F1D863 /* Resources */,
 				20BB040DC178EDE00D172E1A /* [CP] Embed Pods Frameworks */,
+				CAA03E802584F61C00359B88 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = HelloPrice;
+			packageProductDependencies = (
+			);
 			productName = HelloPrice;
 			productReference = CA3B85CE24820F9100F1D863 /* HelloPrice.app */;
 			productType = "com.apple.product-type.application";
@@ -1008,6 +1039,8 @@
 				Base,
 			);
 			mainGroup = CA3B85C524820F9100F1D863;
+			packageReferences = (
+			);
 			productRefGroup = CA3B85CF24820F9100F1D863 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1031,6 +1064,7 @@
 				CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */,
 				CA367DAC24E6E1D700E63753 /* MyItemCell.xib in Resources */,
 				CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */,
+				CAA03E672584E80400359B88 /* HomeMainItemCell.xib in Resources */,
 				CA46366924F738B0003FAFDB /* SignUp.storyboard in Resources */,
 				CA4E4CF224EA59C2008BB8F2 /* RootTabBarController.storyboard in Resources */,
 				CA46366724F738A5003FAFDB /* SignIn.storyboard in Resources */,
@@ -1121,6 +1155,7 @@
 				CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */,
 				CA46366324F73883003FAFDB /* SignUpViewController.swift in Sources */,
 				CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */,
+				CAA03E732584F19800359B88 /* UIImage+Extension.swift in Sources */,
 				CA8E8FD724E92D88005F18DD /* UIViewController+Extension.swift in Sources */,
 				CA467397258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift in Sources */,
 				CA6A62512579185700E91418 /* InjectUseCase.swift in Sources */,
@@ -1159,6 +1194,7 @@
 				CA46368624F7928B003FAFDB /* LocalDBService.swift in Sources */,
 				CAECE8DF255ED158000E7882 /* HomeUseCaseImpl.swift in Sources */,
 				CA6A62482579109E00E91418 /* InjectViewModel.swift in Sources */,
+				CAA03E842584FC7B00359B88 /* HomeCellType.swift in Sources */,
 				CA9D6E6C24878E1B00E99B25 /* FetchMyProductResponse.swift in Sources */,
 				CA9D6E7E24887E0B00E99B25 /* MyPageViewModel.swift in Sources */,
 				CA86D6D1257677C900E8CE10 /* InjectContainer.swift in Sources */,
@@ -1183,6 +1219,7 @@
 				CA33B55224E43B17008F558C /* ShowMyPageUseCase.swift in Sources */,
 				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA7A0C5824E7996E0047F971 /* BaseCollectionViewCell.swift in Sources */,
+				CAA03E6F2584E81100359B88 /* HomeMainItemCellViewModel.swift in Sources */,
 				CA46366C24F7558D003FAFDB /* ProductDIContainer.swift in Sources */,
 				CA46366124F73863003FAFDB /* SignUpViewModel.swift in Sources */,
 				CA6B7CEB24F80F690059FF63 /* ProductRegistrationAPI.swift in Sources */,
@@ -1196,6 +1233,7 @@
 				CAECE8D3255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift in Sources */,
 				CA46365D24F72F08003FAFDB /* AppConfiguration.swift in Sources */,
 				CA14CC6224F813F50089D039 /* MyPageViewController.swift in Sources */,
+				CAA03E6B2584E80B00359B88 /* HomeMainItemCell.swift in Sources */,
 				CA33B54124E43412008F558C /* UseCase.swift in Sources */,
 				CA46368224F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift in Sources */,
 				CA46366524F7388D003FAFDB /* SignInViewController.swift in Sources */,

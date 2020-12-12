@@ -28,4 +28,14 @@ extension UILabel {
         
         return ceil(labelSize.width)
     }
+    
+    func setColor(by num: Double) {
+//        if num > 0 {
+//            textColor = .red
+//        }
+    }
+    
+    func setMark(_ num: Double, head frontMark: String = "", tail endMark: String = "") {
+        text = "\(frontMark)\(num)\(endMark)"
+    }
 }

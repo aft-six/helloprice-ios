@@ -12,7 +12,7 @@ import RxCocoa
 import Kingfisher
 import RxKingfisher
 
-class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
+class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product> {
     
 //    @IBOutlet weak var movePositionButton: UIButton! {
 //        didSet {
@@ -41,16 +41,6 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
             self.alarmCheckToggle.offImage = UIImage(named: "ic_notification")
             self.alarmCheckToggle.onImage = UIImage(systemName: "pencil")
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        viewModelCreatable = self
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        viewModelCreatable = self
     }
     
     override func bindViewModel(item: Product) {
@@ -112,10 +102,6 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
             .disposed(by: 👜)
         
         input.bindData.accept(item)
-    }
-    
-    func createCellViewModel() {
-        viewModel = MyProductCellViewModel()
     }
 }
 

@@ -15,13 +15,13 @@ class BaseTableViewCell<T: ViewModelType, OutputType: ViewModelOutput, DomainTyp
     var viewModel: T!
     var item: DomainType?
     var output: OutputType?
-    var viewModelCreatable: CellViewModelCreatable?
+//    weak var viewModelCreatable: CellViewModelCreatable?
     override var reuseIdentifier: String? {
         return Self.className
     }
     
     func bindViewModel(item: DomainType) {
-        viewModelCreatable?.createCellViewModel()
+        
     }
 }
 
@@ -30,10 +30,6 @@ protocol CellItemType {
     associatedtype OutputType
     var item: ItemType? { get set }
     var output: OutputType? { get set }
-    var viewModelCreatable: CellViewModelCreatable? { get set }
+//    var viewModelCreatable: CellViewModelCreatable? { get set }
     func bindViewModel(item: ItemType)
-}
-
-protocol CellViewModelCreatable {
-    func createCellViewModel()
 }

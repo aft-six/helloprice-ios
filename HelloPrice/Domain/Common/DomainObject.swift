@@ -1,13 +1,13 @@
 //
-//  User.swift
+//  Item.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/08/27.
+//  Created by devming on 2020/08/16.
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
 import Foundation
 
-struct User: Item, Decodable {
+protocol DomainObject: Equatable {
     
 }

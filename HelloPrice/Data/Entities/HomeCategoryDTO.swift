@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct HomeCategory: Item, Decodable {
+struct HomeCategoryDTO: Decodable {
     var id: Int
     var title: String
-    var products: [Product]
+    var products: [ProductDTO]
     
     var categoryField: HomeCategoryField {
         return HomeCategoryField(rawValue: id) ?? HomeCategoryField.all

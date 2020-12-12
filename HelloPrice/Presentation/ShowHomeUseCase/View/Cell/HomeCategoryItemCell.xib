@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XbT-dc-lux" customClass="HomeCategoryItemCell" customModule="HelloPrice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oEb-Yx-Oc5">
+                <rect key="frame" x="0.0" y="0.0" width="146" height="48"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlj-rV-P8p">
+                        <rect key="frame" x="0.0" y="0.0" width="146" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1z-lG-SPV">
+                                <rect key="frame" x="48" y="14" width="78" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="darkIndigoText100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCategoryAll" translatesAutoresizingMaskIntoConstraints="NO" id="3ig-2A-6Hu">
+                                <rect key="frame" x="16" y="12" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="gZ8-8m-Wuo"/>
+                                    <constraint firstAttribute="height" constant="24" id="kcq-XL-lgk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="darkIndigo5"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="x1z-lG-SPV" secondAttribute="bottom" constant="14" id="9un-h8-Jef"/>
+                            <constraint firstItem="3ig-2A-6Hu" firstAttribute="centerY" secondItem="zlj-rV-P8p" secondAttribute="centerY" id="Adv-as-8Iw"/>
+                            <constraint firstItem="x1z-lG-SPV" firstAttribute="top" secondItem="zlj-rV-P8p" secondAttribute="top" constant="14" id="Eq5-ZF-qrr"/>
+                            <constraint firstAttribute="trailing" secondItem="x1z-lG-SPV" secondAttribute="trailing" constant="20" id="o8J-8O-5Fl"/>
+                            <constraint firstItem="x1z-lG-SPV" firstAttribute="leading" secondItem="3ig-2A-6Hu" secondAttribute="trailing" constant="8" id="qSX-yW-dhD"/>
+                            <constraint firstItem="3ig-2A-6Hu" firstAttribute="leading" secondItem="zlj-rV-P8p" secondAttribute="leading" constant="16" id="wxD-gH-FbY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zlj-rV-P8p" firstAttribute="leading" secondItem="oEb-Yx-Oc5" secondAttribute="leading" id="6wM-Lp-D2q"/>
+                    <constraint firstAttribute="trailing" secondItem="zlj-rV-P8p" secondAttribute="trailing" id="fwY-DA-uNA"/>
+                    <constraint firstItem="zlj-rV-P8p" firstAttribute="top" secondItem="oEb-Yx-Oc5" secondAttribute="top" id="yOT-gI-ug9"/>
+                    <constraint firstAttribute="bottom" secondItem="zlj-rV-P8p" secondAttribute="bottom" id="ySx-ur-82h"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="146" height="52"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="24"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="categoryLabel" destination="x1z-lG-SPV" id="LFj-Yt-9bG"/>
+                <outlet property="cellBackground" destination="zlj-rV-P8p" id="UNu-8l-DQ7"/>
+                <outlet property="logoImageView" destination="3ig-2A-6Hu" id="eKG-uw-9aV"/>
+            </connections>
+            <point key="canvasLocation" x="392.75362318840581" y="-32.8125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="iconCategoryAll" width="24" height="24"/>
+        <namedColor name="darkIndigo5">
+            <color red="0.027000000700354576" green="0.071000002324581146" blue="0.18799999356269836" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkIndigoText100">
+            <color red="0.027000000700354576" green="0.071000002324581146" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  ProductDTO.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/06/03.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product: Item, Decodable {
+struct ProductDTO: Decodable {
     var id: Int = 0
     var productName: String = ""
     var productCode: String = ""
@@ -25,7 +25,7 @@ struct Product: Item, Decodable {
     var lastUpdateAt: String = ""
     var notifyOn: Bool = false
     
-    static func ==(lhs: Product, rhs: Product) -> Bool {
+    static func ==(lhs: ProductDTO, rhs: ProductDTO) -> Bool {
         return lhs.id == rhs.id
     }
 }

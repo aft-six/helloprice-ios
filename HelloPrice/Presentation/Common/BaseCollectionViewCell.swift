@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import RxSwift
 
-class BaseCollectionViewCell<T: ViewModelType>: UICollectionViewCell, ViewModelBindableCellType {
-    var viewModel: T!
+class BaseCollectionViewCell<T: ViewModelType, OutputType: ViewModelOutput, DomainType: DomainObject>: UICollectionViewCell, CellItemType {
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        bindViewModel()
+    var 👜 = DisposeBag()
+    var viewModel: T!
+    var item: DomainType?
+    var output: OutputType?
+    var viewModelCreatable: CellViewModelCreatable?
+    class var identifier: String {
+        return Self.className
     }
     
-    func bindViewModel() { }
+    func bindViewModel(item: DomainType) {
+        viewModelCreatable?.createCellViewModel()
+    }
 }
+
+//class BaseCollectionViewCell<T: ViewModelType>: UICollectionViewCell, ViewModelBindableCellType {
+//    var viewModel: T!
+//
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//
+//        bindViewModel()
+//    }
+//
+//    func bindViewModel() { }
+//}

@@ -6,11 +6,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--헬로-->
+        <!--홈-->
         <scene sceneID="CMv-Hd-7BY">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Cod-pq-E4y" customClass="HomeViewController" customModule="HelloPrice" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,57 +84,19 @@
                                     <constraint firstAttribute="bottom" secondItem="lzc-Au-Zbk" secondAttribute="bottom" constant="-28" id="wM1-a9-4aB"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-ov-4FF">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-ov-4FF">
                                 <rect key="frame" x="0.0" y="218" width="414" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="iBG-ON-j1G"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I3x-ra-qFO">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I3x-ra-qFO">
                                     <size key="itemSize" width="128" height="49"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CIH-28-1Ti" customClass="CategoryItemCell" customModule="HelloPrice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8V9-Ya-TDv">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="49"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaa-dA-1bE">
-                                                    <rect key="frame" x="16" y="12" width="24" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="QpG-Jm-Nwe"/>
-                                                        <constraint firstAttribute="width" constant="24" id="ogO-W9-i1c"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekU-g7-6B9">
-                                                    <rect key="frame" x="48" y="12" width="64" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iaa-dA-1bE" firstAttribute="top" secondItem="8V9-Ya-TDv" secondAttribute="top" constant="12" id="3dy-Zk-2GA"/>
-                                                <constraint firstItem="ekU-g7-6B9" firstAttribute="top" secondItem="iaa-dA-1bE" secondAttribute="top" id="7So-Q1-fUz"/>
-                                                <constraint firstItem="ekU-g7-6B9" firstAttribute="leading" secondItem="iaa-dA-1bE" secondAttribute="trailing" constant="8" id="DEX-uH-cLU"/>
-                                                <constraint firstAttribute="trailing" secondItem="ekU-g7-6B9" secondAttribute="trailing" constant="16" id="HOn-nW-bV1"/>
-                                                <constraint firstAttribute="bottom" secondItem="iaa-dA-1bE" secondAttribute="bottom" constant="16" id="LRV-Xf-BMb"/>
-                                                <constraint firstItem="ekU-g7-6B9" firstAttribute="bottom" secondItem="iaa-dA-1bE" secondAttribute="bottom" id="OC1-q9-Nfa"/>
-                                                <constraint firstItem="iaa-dA-1bE" firstAttribute="leading" secondItem="8V9-Ya-TDv" secondAttribute="leading" constant="16" id="aef-gk-OxH"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="49"/>
-                                        <connections>
-                                            <outlet property="categoryImageView" destination="iaa-dA-1bE" id="W1Q-ee-NaK"/>
-                                            <outlet property="categoryTitleLabel" destination="ekU-g7-6B9" id="uP8-NI-xra"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XO8-Fk-2xv"/>
@@ -154,9 +115,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="iconHome" selectedImage="iconHomeOn" id="rCJ-y7-7Ul"/>
-                    <navigationItem key="navigationItem" title="헬로" largeTitleDisplayMode="always" id="hxR-pU-xsW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="categoryCollectionView" destination="5Lv-ov-4FF" id="bCw-hS-UBg"/>
                         <outlet property="titleBackHeightConstraint" destination="mj3-UF-AD6" id="rRU-jX-mCB"/>
                         <outlet property="titleViewHeightConstraint" destination="H7q-ys-QEm" id="5cb-Ph-4wT"/>
                     </connections>

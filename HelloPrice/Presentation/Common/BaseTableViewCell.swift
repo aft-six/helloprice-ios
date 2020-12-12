@@ -9,15 +9,18 @@
 import UIKit
 import RxSwift
 
-class BaseTableViewCell<T: ViewModelType, OutputType: ViewModelOutput, ItemType: Item>: UITableViewCell, CellItemType {
+class BaseTableViewCell<T: ViewModelType, OutputType: ViewModelOutput, DomainType: DomainObject>: UITableViewCell, CellItemType {
     
     var 👜 = DisposeBag()
     var viewModel: T!
-    var item: ItemType?
+    var item: DomainType?
     var output: OutputType?
     var viewModelCreatable: CellViewModelCreatable?
+    override var reuseIdentifier: String? {
+        return Self.className
+    }
     
-    func bindViewModel(item: ItemType) {
+    func bindViewModel(item: DomainType) {
         viewModelCreatable?.createCellViewModel()
     }
 }

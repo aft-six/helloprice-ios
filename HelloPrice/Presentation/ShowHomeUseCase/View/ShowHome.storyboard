@@ -19,9 +19,20 @@
                         <subviews>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-ac-imx" userLabel="Background ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" name="white100"/>
+                                <color key="backgroundColor" name="darkIndigo100"/>
                                 <color key="tintColor" name="white5"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-C7-VdL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rdd-Rh-5lp">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-ys-QEm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                 <subviews>
@@ -85,17 +96,6 @@
                                     <constraint firstAttribute="bottom" secondItem="lzc-Au-Zbk" secondAttribute="bottom" constant="-28" id="wM1-a9-4aB"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-C7-VdL">
-                                <rect key="frame" x="0.0" y="266" width="414" height="547"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rdd-Rh-5lp">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-ov-4FF">
                                 <rect key="frame" x="0.0" y="218" width="414" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +119,7 @@
                             <constraint firstItem="XO8-Fk-2xv" firstAttribute="bottom" secondItem="s8x-C7-VdL" secondAttribute="bottom" id="AHA-0l-f65"/>
                             <constraint firstItem="s8x-C7-VdL" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="EpT-eQ-t5q"/>
                             <constraint firstItem="5Lv-ov-4FF" firstAttribute="top" secondItem="H7q-ys-QEm" secondAttribute="bottom" constant="48" id="Fb1-2h-X2W"/>
-                            <constraint firstItem="s8x-C7-VdL" firstAttribute="top" secondItem="5Lv-ov-4FF" secondAttribute="bottom" id="Km7-Hc-Baf"/>
+                            <constraint firstItem="s8x-C7-VdL" firstAttribute="top" secondItem="qaB-Jn-kyT" secondAttribute="top" id="Km7-Hc-Baf"/>
                             <constraint firstItem="nTN-ac-imx" firstAttribute="top" secondItem="qaB-Jn-kyT" secondAttribute="top" id="L8A-oe-QbR"/>
                             <constraint firstItem="s8x-C7-VdL" firstAttribute="trailing" secondItem="XO8-Fk-2xv" secondAttribute="trailing" id="RLK-s3-Xy8"/>
                             <constraint firstItem="H7q-ys-QEm" firstAttribute="top" secondItem="qaB-Jn-kyT" secondAttribute="top" id="SWc-8T-wgD"/>
@@ -134,10 +134,14 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="5Lv-ov-4FF" id="bCw-hS-UBg"/>
+                        <outlet property="categoryHeightConstraint" destination="iBG-ON-j1G" id="H6F-2f-t2U"/>
+                        <outlet property="categoryTopHeightConstraint" destination="Fb1-2h-X2W" id="uxR-fy-Zfw"/>
+                        <outlet property="mainCollectionTopConstraint" destination="Km7-Hc-Baf" id="FJT-6H-bcx"/>
                         <outlet property="mainItemCollectionView" destination="s8x-C7-VdL" id="UCb-8r-2Y1"/>
                         <outlet property="searchBackgroundView" destination="lzc-Au-Zbk" id="mbh-hx-Ckw"/>
-                        <outlet property="titleBackHeightConstraint" destination="mj3-UF-AD6" id="rRU-jX-mCB"/>
-                        <outlet property="titleViewHeightConstraint" destination="H7q-ys-QEm" id="5cb-Ph-4wT"/>
+                        <outlet property="searchField" destination="cO9-0i-umj" id="lnO-SA-lnR"/>
+                        <outlet property="titleViewHeightConstraint" destination="mj3-UF-AD6" id="viS-HK-lGj"/>
+                        <outlet property="topConstraint" destination="SWc-8T-wgD" id="cWQ-kA-UPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCZ-Ug-J4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,9 +159,6 @@
         </namedColor>
         <namedColor name="richBlue">
             <color red="0.0" green="0.16078431372549021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="white100">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white5">
             <color red="1" green="1" blue="1" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="sRGB"/>

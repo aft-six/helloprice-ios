@@ -16,6 +16,7 @@ class HomeMainItemCell: BaseCollectionViewCell<HomeMainItemCellViewModel, HomeMa
         didSet {
             thumbnailImageView.layer.borderWidth = 0.5
             thumbnailImageView.layer.borderColor = UIColor.darkIndigo10.cgColor
+            thumbnailImageView.backgroundColor = .white
         }
     }
     @IBOutlet weak var titleLabel: UILabel!

@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import NSObject_Rx
+
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     @IBOutlet weak var searchBackgroundView: UIView! {
@@ -15,8 +19,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             searchBackgroundView.layer.shadowOpacity = 0.4
         }
     }
-    @IBOutlet weak var titleBackHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var titleViewHeightConstraint: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         didSet {
             categoryCollectionView.register(HomeCellType.category.nib, forCellWithReuseIdentifier: HomeCellType.category.identifier)
@@ -26,16 +28,37 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     @IBOutlet weak var mainItemCollectionView: UICollectionView! {
         didSet {
-//            mainItemCollectionView.register(UINib(nibName: HomeMainItemCell.className, bundle: Bundle.main), forCellWithReuseIdentifier: HomeMainItemCell.className)
             mainItemCollectionView.register(HomeCellType.main.nib, forCellWithReuseIdentifier: HomeCellType.main.identifier)
             mainItemCollectionView.dataSource = self
             mainItemCollectionView.delegate = self
-//            let layout = UICollectionViewFlowLayout()
-//            layout.scrollDirection = .vertical
-//            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//            layout.itemSize = CGSize(width: mainItemCollectionView.frame.width / 2 - 15, height: mainItemCollectionView.contentSize.height)
-//            layout.minimumInteritemSpacing = 15
-//            layout.minimumLineSpacing = 20
+        }
+    }
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mainCollectionTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoryHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoryTopHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchField: UITextField! {
+        didSet {
+            
+            searchField.rx.controlEvent(.editingDidEndOnExit)
+                .asDriver()
+                .drive(onNext: { [weak self] in
+                    self?.resignFirstResponder()
+                })
+                .disposed(by: rx.disposeBag)
+            searchField.rx.controlEvent(.editingDidBegin)
+                .asDriver()
+                .drive(onNext: {
+                    
+                    let pasteBoard = UIPasteboard.general
+                    if pasteBoard.hasURLs {
+                        // 복사한 URL 넣기 버튼 추가
+                        print("\(pasteBoard.url)")
+                    }
+                    
+                })
+                .disposed(by: rx.disposeBag)
         }
     }
     
@@ -63,14 +86,19 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         let defaultHeight: CGFloat = 131
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = .richBlue
-        titleBackHeightConstraint.constant = defaultHeight + topSafeAreaHeight
+        titleViewHeightConstraint.constant = defaultHeight + topSafeAreaHeight
     }
+    
 }
 
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        navigationController?.isNavigationBarHidden =   scrollView.contentOffset.y <= 0
-//        print("\(scrollView.contentOffset.y)")
+        if scrollView.contentOffset.y < 0 {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            return
+        }
+        
+        topConstraint.constant = -scrollView.contentOffset.y
     }
 }
 
@@ -116,6 +144,19 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        if collectionView === mainItemCollectionView {
+            let topMargin = categoryHeightConstraint.constant
+                + categoryTopHeightConstraint.constant
+                + titleViewHeightConstraint.constant
+            
+            return CGSize(width: collectionView.frame.width, height: topMargin)
+        }
+        
+        return CGSize.zero
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView === categoryCollectionView {

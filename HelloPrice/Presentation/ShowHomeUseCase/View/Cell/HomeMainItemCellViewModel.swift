@@ -10,20 +10,29 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeMainItemCellViewModel: ViewModelType {
+class HomeMainItemCellViewModel: BaseCellViewModel {
     
     struct Input: ViewModelInput {
         let bindData = PublishRelay<Product>()
+        let tapNotiButton = PublishRelay<Void>()
     }
     
     struct Output: ViewModelOutput {
         let thumbnailImageUrlString = BehaviorRelay<String>(value: "")
-        let productName = BehaviorRelay<String>(value: "")
-        let paymentMethod = BehaviorRelay<String>(value: "")
-        let currentPrice = BehaviorRelay<String>(value: "0")
-//        let previousPrice = BehaviorRelay<String>(value: 0)
-        let changeRate = BehaviorRelay<Double>(value: 0.0)
-//        let lowestPrice = BehaviorRelay<String>(value: 0)
-        let lastConfirmTime = BehaviorRelay<String>(value: "")
+        
+    }
+    
+    let useCase: HomeUseCase
+    
+    init(useCase: HomeUseCase) {
+        self.useCase = useCase
+        
+        super.init()
+    }
+    
+    func transform(inputs: Input) -> Output {
+        let output = Output()
+        
+        return output
     }
 }

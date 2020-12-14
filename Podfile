@@ -18,6 +18,7 @@ target 'HelloPrice' do
   pod 'Hero'
   pod 'RxDataSources'
   pod 'RxKingfisher'
+  pod 'NSObject+Rx'
 #  pod 'RxTest'
 
 

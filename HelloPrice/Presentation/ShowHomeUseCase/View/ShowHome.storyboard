@@ -56,7 +56,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다나와 상품 또는 URL을 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cO9-0i-umj">
-                                                <rect key="frame" x="48" y="17.5" width="318" height="21"/>
+                                                <rect key="frame" x="48" y="0.0" width="318" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -64,6 +64,7 @@
                                         <color key="backgroundColor" name="darkIndigo100"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cO9-0i-umj" secondAttribute="trailing" constant="8" id="11v-0W-TRz"/>
+                                            <constraint firstItem="cO9-0i-umj" firstAttribute="top" secondItem="lzc-Au-Zbk" secondAttribute="top" id="4t4-QY-jKB"/>
                                             <constraint firstItem="AbA-XC-Igi" firstAttribute="leading" secondItem="lzc-Au-Zbk" secondAttribute="leading" constant="16" id="8ff-9Z-G7o"/>
                                             <constraint firstItem="X8V-YP-UnS" firstAttribute="top" secondItem="lzc-Au-Zbk" secondAttribute="top" id="9Zc-l8-wg9"/>
                                             <constraint firstAttribute="height" constant="56" id="9em-SX-BaO"/>
@@ -71,6 +72,7 @@
                                             <constraint firstItem="X8V-YP-UnS" firstAttribute="leading" secondItem="lzc-Au-Zbk" secondAttribute="leading" id="ZmY-uv-lR0"/>
                                             <constraint firstItem="cO9-0i-umj" firstAttribute="leading" secondItem="AbA-XC-Igi" secondAttribute="trailing" constant="8" symbolic="YES" id="b3r-I4-Uag"/>
                                             <constraint firstAttribute="bottom" secondItem="AbA-XC-Igi" secondAttribute="bottom" constant="16" id="iXD-a8-gWu"/>
+                                            <constraint firstAttribute="bottom" secondItem="cO9-0i-umj" secondAttribute="bottom" id="jAq-cq-Ror"/>
                                             <constraint firstItem="AbA-XC-Igi" firstAttribute="top" secondItem="lzc-Au-Zbk" secondAttribute="top" constant="16" id="kPH-WK-b0y"/>
                                             <constraint firstAttribute="trailing" secondItem="X8V-YP-UnS" secondAttribute="trailing" id="m6m-0D-6p0"/>
                                             <constraint firstAttribute="bottom" secondItem="X8V-YP-UnS" secondAttribute="bottom" id="wT8-VU-Q8V"/>
@@ -110,6 +112,12 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-uJ-9kI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <connections>
+                                    <segue destination="Vx3-2m-Vmy" kind="embed" id="68g-wF-Xff"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XO8-Fk-2xv"/>
                         <color key="backgroundColor" name="darkIndigo100"/>
@@ -117,6 +125,9 @@
                             <constraint firstItem="H7q-ys-QEm" firstAttribute="trailing" secondItem="XO8-Fk-2xv" secondAttribute="trailing" id="1so-99-kYa"/>
                             <constraint firstItem="nTN-ac-imx" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="822-JG-Tr7"/>
                             <constraint firstItem="XO8-Fk-2xv" firstAttribute="bottom" secondItem="s8x-C7-VdL" secondAttribute="bottom" id="AHA-0l-f65"/>
+                            <constraint firstItem="QdM-uJ-9kI" firstAttribute="bottom" secondItem="XO8-Fk-2xv" secondAttribute="bottom" id="ALw-XB-VS2"/>
+                            <constraint firstItem="QdM-uJ-9kI" firstAttribute="top" secondItem="qaB-Jn-kyT" secondAttribute="top" id="AvR-By-o4U"/>
+                            <constraint firstItem="QdM-uJ-9kI" firstAttribute="trailing" secondItem="XO8-Fk-2xv" secondAttribute="trailing" id="Dkh-d8-hgm"/>
                             <constraint firstItem="s8x-C7-VdL" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="EpT-eQ-t5q"/>
                             <constraint firstItem="5Lv-ov-4FF" firstAttribute="top" secondItem="H7q-ys-QEm" secondAttribute="bottom" constant="48" id="Fb1-2h-X2W"/>
                             <constraint firstItem="s8x-C7-VdL" firstAttribute="top" secondItem="qaB-Jn-kyT" secondAttribute="top" id="Km7-Hc-Baf"/>
@@ -128,6 +139,7 @@
                             <constraint firstItem="H7q-ys-QEm" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="raz-8j-ATG"/>
                             <constraint firstItem="5Lv-ov-4FF" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="vRf-CQ-qnR"/>
                             <constraint firstItem="XO8-Fk-2xv" firstAttribute="trailing" secondItem="nTN-ac-imx" secondAttribute="trailing" id="wjj-bX-mug"/>
+                            <constraint firstItem="QdM-uJ-9kI" firstAttribute="leading" secondItem="XO8-Fk-2xv" secondAttribute="leading" id="zIG-1x-dQt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="iconHome" selectedImage="iconHomeOn" id="rCJ-y7-7Ul"/>
@@ -148,6 +160,86 @@
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="123.88392857142857"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="gkf-jS-bbS">
+            <objects>
+                <viewController id="Vx3-2m-Vmy" customClass="SearchViewController" customModule="HelloPrice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vlH-qZ-J68">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNB-qS-eVJ">
+                                <rect key="frame" x="20" y="20" width="324" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-5w-jcM">
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="56"/>
+                                        <color key="backgroundColor" name="darkIndigo5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSearch" translatesAutoresizingMaskIntoConstraints="NO" id="4IV-pu-iNw">
+                                        <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="HRt-zN-mZW"/>
+                                            <constraint firstAttribute="height" constant="24" id="NIv-2v-q2B"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="239" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다나와 상품 또는 URL을 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aZm-Fm-UqM">
+                                        <rect key="frame" x="48" y="0.0" width="276" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="249" id="NvM-pX-I26"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" name="darkIndigo100"/>
+                                <constraints>
+                                    <constraint firstItem="Fb5-5w-jcM" firstAttribute="leading" secondItem="tNB-qS-eVJ" secondAttribute="leading" id="1TT-7X-zXi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fb5-5w-jcM" secondAttribute="trailing" id="1gG-3o-0ZS"/>
+                                    <constraint firstItem="Fb5-5w-jcM" firstAttribute="top" secondItem="tNB-qS-eVJ" secondAttribute="top" id="2ri-HS-O1r"/>
+                                    <constraint firstAttribute="bottom" secondItem="aZm-Fm-UqM" secondAttribute="bottom" id="47V-AI-syk"/>
+                                    <constraint firstAttribute="bottom" secondItem="4IV-pu-iNw" secondAttribute="bottom" constant="16" id="6fa-9X-XE3"/>
+                                    <constraint firstItem="aZm-Fm-UqM" firstAttribute="centerY" secondItem="4IV-pu-iNw" secondAttribute="centerY" id="Dod-l0-W7F"/>
+                                    <constraint firstItem="aZm-Fm-UqM" firstAttribute="top" secondItem="tNB-qS-eVJ" secondAttribute="top" id="JNf-Rc-02b"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZm-Fm-UqM" secondAttribute="trailing" id="b8S-Ui-4er"/>
+                                    <constraint firstItem="4IV-pu-iNw" firstAttribute="top" secondItem="tNB-qS-eVJ" secondAttribute="top" constant="16" id="iqp-nz-qb2"/>
+                                    <constraint firstItem="aZm-Fm-UqM" firstAttribute="leading" secondItem="4IV-pu-iNw" secondAttribute="trailing" constant="8" symbolic="YES" id="kOG-ui-K7g"/>
+                                    <constraint firstAttribute="height" constant="56" id="otE-MW-b6o"/>
+                                    <constraint firstItem="4IV-pu-iNw" firstAttribute="leading" secondItem="tNB-qS-eVJ" secondAttribute="leading" constant="16" id="qj8-Dt-90I"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fb5-5w-jcM" secondAttribute="bottom" id="yD7-ji-OjR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOK-lu-gdQ">
+                                <rect key="frame" x="364" y="33" width="30" height="30"/>
+                                <state key="normal" title="취소"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="darkIndigo100"/>
+                        <constraints>
+                            <constraint firstItem="tNB-qS-eVJ" firstAttribute="top" secondItem="vlH-qZ-J68" secondAttribute="top" constant="20" id="5Mm-1s-MQ2"/>
+                            <constraint firstItem="tNB-qS-eVJ" firstAttribute="leading" secondItem="vlH-qZ-J68" secondAttribute="leading" constant="20" id="TfM-vX-mUc"/>
+                            <constraint firstItem="rOK-lu-gdQ" firstAttribute="centerY" secondItem="tNB-qS-eVJ" secondAttribute="centerY" id="d84-aT-wNh"/>
+                            <constraint firstAttribute="trailing" secondItem="rOK-lu-gdQ" secondAttribute="trailing" constant="20" id="fkW-iW-voP"/>
+                            <constraint firstItem="rOK-lu-gdQ" firstAttribute="leading" secondItem="tNB-qS-eVJ" secondAttribute="trailing" constant="20" id="oeC-GD-XzM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchFieldTopConstraint" destination="5Mm-1s-MQ2" id="4Qp-Nh-2jU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Q6-Dv-DB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="174"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iconHome" width="27" height="27"/>
@@ -156,6 +248,9 @@
         <image name="titleHome" width="164" height="44"/>
         <namedColor name="darkIndigo100">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkIndigo5">
+            <color red="0.027000000700354576" green="0.071000002324581146" blue="0.18799999356269836" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="richBlue">
             <color red="0.0" green="0.16078431372549021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -128,14 +128,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         inputs?.fetchCategoryItems.accept(0)
         categoryCollectionView.reloadData()
         mainItemCollectionView.reloadData()
-//        UIView.animate(withDuration: 0.2, delay: 2) {
-//            print("@")
-//        } completion: { _ in
-//
-//            self.categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
-//        }
-
-//        categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
     
     override func bindViewModel() {
@@ -171,15 +163,5 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 self.topConstraint.constant = -y
             })
             .disposed(by: 👜)
-    }
-}
-
-extension UICollectionView {
-    
-    
-    func reloadDataWithCompletion(_ complete: @escaping () -> Void) {
-        reloadData()
-        complete()
-        layoutSubviews()
     }
 }

@@ -36,8 +36,8 @@ class HomeCategoryItemCell: BaseCollectionViewCell<HomeCategoryItemCellViewModel
     }
     
     func initView() {
-        cellBackground.layer.cornerRadius = cellBackground.frame.height/2
-        cellBackground.layer.cornerCurve = .circular
+        cellBackground.layer.cornerRadius = cellBackground.frame.height/2 
+        cellBackground.layer.cornerCurve = .continuous
     }
     
     func configure(item: HomeCategory) {

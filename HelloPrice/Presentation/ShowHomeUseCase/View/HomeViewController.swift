@@ -23,17 +23,27 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         didSet {
             categoryCollectionView.register(HomeCellType.category.nib, forCellWithReuseIdentifier: HomeCellType.category.identifier)
-//            categoryCollectionView.dataSource = self
-            categoryCollectionView.delegate = self
-            
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 8
+            layout.estimatedItemSize = CGSize(width: 90, height: 48)
+            layout.itemSize = UICollectionViewFlowLayout.automaticSize
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            categoryCollectionView.collectionViewLayout = layout
         }
     }
     @IBOutlet weak var mainItemCollectionView: UICollectionView! {
         didSet {
+            mainItemCollectionView.register(UINib(nibName: HeaderMarginView.className, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMarginView.className)
             mainItemCollectionView.register(HomeCellType.main.nib, forCellWithReuseIdentifier: HomeCellType.main.identifier)
-            
-//            mainItemCollectionView.dataSource = self
-            mainItemCollectionView.delegate = self
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 8
+            layout.estimatedItemSize = CGSize(width: 160, height: 300)
+            layout.itemSize = UICollectionViewFlowLayout.automaticSize
+            layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            mainItemCollectionView.collectionViewLayout = layout
         }
     }
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
@@ -55,9 +65,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 .drive(onNext: {
                     
                     let pasteBoard = UIPasteboard.general
-                    if pasteBoard.hasURLs {
+                    if pasteBoard.hasURLs, let url = pasteBoard.url {
                         // 복사한 URL 넣기 버튼 추가
-                        print("\(pasteBoard.url)")
+                        print("\(url)")
                     }
                     
                 })
@@ -74,11 +84,21 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return categoryDataSource
     }()
     lazy var mainItemDataSource: RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>> = {
-        let mainItemDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>> { dataSource, collectionView, indexPath, item -> HomeMainItemCell in
+        let mainItemDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>>(configureCell: { dataSource, collectionView, indexPath, item -> HomeMainItemCell in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell else { return HomeMainItemCell() }
             cell.configure(item: item)
             return cell
-        }
+        }, configureSupplementaryView: { [weak self] dataSource, collectionView, titleString, indexPath -> UICollectionReusableView in
+            guard let `self` = self,
+                  let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMarginView.className, for: indexPath) as? HeaderMarginView else {
+                return UICollectionReusableView()
+            }
+            self.categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+            self.categoryCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            
+            return header
+        })
+        
         return mainItemDataSource
     }()
     
@@ -91,6 +111,16 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let topMargin = self.categoryHeightConstraint.constant
+            + self.categoryTopHeightConstraint.constant
+            + self.titleViewHeightConstraint.constant
+        let layout = mainItemCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.headerReferenceSize = CGSize(width: mainItemCollectionView.frame.width, height: topMargin)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -98,7 +128,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         inputs?.fetchCategoryItems.accept(0)
         categoryCollectionView.reloadData()
         mainItemCollectionView.reloadData()
-        categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+//        UIView.animate(withDuration: 0.2, delay: 2) {
+//            print("@")
+//        } completion: { _ in
+//
+//            self.categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+//        }
+
+//        categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
     
     override func bindViewModel() {
@@ -108,99 +145,41 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         let outputs = viewModel.transform(input: inputs!)
         
         outputs.categories
-            .subscribeOn(MainScheduler.asyncInstance)
+            .observeOn(MainScheduler.asyncInstance)
             .bind(to: categoryCollectionView.rx.items(dataSource: categoryDataSource))
             .disposed(by: 👜)
         
         outputs.products
-            .subscribeOn(MainScheduler.asyncInstance)
+            .observeOn(MainScheduler.asyncInstance)
             .bind(to: mainItemCollectionView.rx.items(dataSource: mainItemDataSource))
             .disposed(by: 👜)
         
-        categoryDataSource.collectionView(categoryCollectionView, observedEvent: .completed)
-        mainItemDataSource.collectionView(mainItemCollectionView, observedEvent: .completed)
-    }
-    
-    func setNavigationController() {
-        let defaultHeight: CGFloat = 131
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = .richBlue
-        titleViewHeightConstraint.constant = defaultHeight + topSafeAreaHeight
+        mainItemCollectionView.rx.didScroll
+            .observeOn(MainScheduler.asyncInstance)
+            .map { [weak self] () -> CGFloat in
+                guard let `self` = self else { return 0 }
+                return self.mainItemCollectionView.contentOffset.y
+            }
+            .asDriver(onErrorJustReturn: 0)
+            .drive(onNext: { [weak self] y in
+                guard let `self` = self else { return }
+                if y < 0 {
+                    self.mainItemCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+                    return
+                }
+                
+                self.topConstraint.constant = -y
+            })
+            .disposed(by: 👜)
     }
 }
 
-extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-            return
-        }
-        
-        topConstraint.constant = -scrollView.contentOffset.y
-    }
-}
-//
-//extension HomeViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        switch collectionView {
-//        case categoryCollectionView:
-//            return categories.count
-//        case mainItemCollectionView:
-//            return items.count
-//        default:
-//            return 0
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        switch collectionView {
-//        case categoryCollectionView:
-//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCategoryItemCell.identifier, for: indexPath) as? HomeCategoryItemCell {
-//                cell.configure(item: categories[indexPath.item])
-//                return cell
-//            }
-//        case mainItemCollectionView:
-//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell {
-//                cell.configure(item: items[indexPath.item])
-//                return cell
-//            }
-//        default:
-//            #if DEBUG
-//            fatalError("Cell Creation Error")
-//            #else
-//            return UICollectionViewCell()
-//            #endif
-//        }
-//        #if DEBUG
-//        fatalError("Cell Creation Error")
-//        #else
-//        return UICollectionViewCell()
-//        #endif
-//    }
-//
-//
-//}
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension UICollectionView {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        if collectionView === mainItemCollectionView {
-            let topMargin = categoryHeightConstraint.constant
-                + categoryTopHeightConstraint.constant
-                + titleViewHeightConstraint.constant
-            
-            return CGSize(width: collectionView.frame.width, height: topMargin)
-        }
-        
-        return CGSize.zero
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView === categoryCollectionView {
-            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    func reloadDataWithCompletion(_ complete: @escaping () -> Void) {
+        reloadData()
+        complete()
+        layoutSubviews()
     }
-    
 }

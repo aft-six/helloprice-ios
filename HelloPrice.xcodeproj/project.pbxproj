@@ -86,6 +86,8 @@
 		CA6D3F4A2588535300D43EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F492588535300D43EAC /* Kingfisher */; };
 		CA6D3F4D25886F7700D43EAC /* HomeUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */; };
 		CA774BFC2588B6DA004696C1 /* SectionOfDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */; };
+		CA774BFF2588F7DF004696C1 /* HeaderMarginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */; };
+		CA774C022588F7F2004696C1 /* HeaderMarginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA774C012588F7F2004696C1 /* HeaderMarginView.xib */; };
 		CA7A0C5224E78C030047F971 /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5124E78C030047F971 /* BaseCellViewModel.swift */; };
 		CA7A0C5424E78C2D0047F971 /* ViewModelBindableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5324E78C2D0047F971 /* ViewModelBindableCellType.swift */; };
 		CA7A0C5624E799660047F971 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5524E799660047F971 /* BaseTableViewCell.swift */; };
@@ -234,6 +236,8 @@
 		CA6B7CEA24F80F690059FF63 /* ProductRegistrationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRegistrationAPI.swift; sourceTree = "<group>"; };
 		CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseMock.swift; sourceTree = "<group>"; };
 		CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfDomainObject.swift; sourceTree = "<group>"; };
+		CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMarginView.swift; sourceTree = "<group>"; };
+		CA774C012588F7F2004696C1 /* HeaderMarginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMarginView.xib; sourceTree = "<group>"; };
 		CA7A0C5124E78C030047F971 /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
 		CA7A0C5324E78C2D0047F971 /* ViewModelBindableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableCellType.swift; sourceTree = "<group>"; };
 		CA7A0C5524E799660047F971 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -815,6 +819,8 @@
 				CAA03E662584E80400359B88 /* HomeMainItemCell.xib */,
 				CAA03E6A2584E80B00359B88 /* HomeMainItemCell.swift */,
 				CAA03E6E2584E81100359B88 /* HomeMainItemCellViewModel.swift */,
+				CA774C012588F7F2004696C1 /* HeaderMarginView.xib */,
+				CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1082,6 +1088,7 @@
 				CAA03E672584E80400359B88 /* HomeMainItemCell.xib in Resources */,
 				CA46366924F738B0003FAFDB /* SignUp.storyboard in Resources */,
 				CA4E4CF224EA59C2008BB8F2 /* RootTabBarController.storyboard in Resources */,
+				CA774C022588F7F2004696C1 /* HeaderMarginView.xib in Resources */,
 				CA46366724F738A5003FAFDB /* SignIn.storyboard in Resources */,
 				CA3B85D924820F9100F1D863 /* ShowMyProductList.storyboard in Resources */,
 			);
@@ -1231,6 +1238,7 @@
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
 				CAECE8D3255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift in Sources */,
 				CA46365D24F72F08003FAFDB /* AppConfiguration.swift in Sources */,
+				CA774BFF2588F7DF004696C1 /* HeaderMarginView.swift in Sources */,
 				CA14CC6224F813F50089D039 /* MyPageViewController.swift in Sources */,
 				CAA03E6B2584E80B00359B88 /* HomeMainItemCell.swift in Sources */,
 				CA33B54124E43412008F558C /* UseCase.swift in Sources */,

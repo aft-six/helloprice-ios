@@ -25,8 +25,9 @@ extension HomeDIContainer {
         return HomeViewModel(useCase: makeShowHomeUseCaseImpl())
     }
     
-    func makeShowHomeUseCaseImpl() -> HomeUseCaseImpl {
-        return HomeUseCaseImpl(repository: makeHomeRepository())
+    func makeShowHomeUseCaseImpl() -> HomeUseCase {
+        return HomeUseCaseMock()
+//        return HomeUseCaseImpl(repository: makeHomeRepository())
     }
     
     func makeHomeRepository() -> HomeRepository {

@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */; };
-		B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */; };
 		CA146D6C24E2D16D00C85C1C /* RemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA146D6B24E2D16D00C85C1C /* RemoteRepository.swift */; };
 		CA146D6F24E2D17D00C85C1C /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA146D6E24E2D17D00C85C1C /* LocalRepository.swift */; };
 		CA14CC6224F813F50089D039 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA14CC6124F813F50089D039 /* MyPageViewController.swift */; };
@@ -51,7 +49,6 @@
 		CA46367A24F75967003FAFDB /* ProductRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46367924F75967003FAFDB /* ProductRepositoryImpl.swift */; };
 		CA46367C24F79082003FAFDB /* MyPageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46367B24F79082003FAFDB /* MyPageRepositoryImpl.swift */; };
 		CA46367E24F79097003FAFDB /* MyPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46367D24F79097003FAFDB /* MyPageRepository.swift */; };
-		CA46368024F790D6003FAFDB /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46367F24F790D6003FAFDB /* UserDTO.swift */; };
 		CA46368224F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46368124F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift */; };
 		CA46368624F7928B003FAFDB /* LocalDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46368524F7928B003FAFDB /* LocalDBService.swift */; };
 		CA467397258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA467396258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift */; };
@@ -70,7 +67,6 @@
 		CA6936AD255EC039004ADA26 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6936AC255EC039004ADA26 /* HomeViewModel.swift */; };
 		CA6936B1255EC0E7004ADA26 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6936B0255EC0E7004ADA26 /* HomeUseCase.swift */; };
 		CA6936B7255EC1F7004ADA26 /* FetchHomeCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6936B6255EC1F7004ADA26 /* FetchHomeCategoryResponse.swift */; };
-		CA6936BD255EC206004ADA26 /* HomeCategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6936BC255EC206004ADA26 /* HomeCategoryDTO.swift */; };
 		CA6A62482579109E00E91418 /* InjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A62472579109E00E91418 /* InjectViewModel.swift */; };
 		CA6A62512579185700E91418 /* InjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A62502579185700E91418 /* InjectUseCase.swift */; };
 		CA6A62552579185F00E91418 /* InjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A62542579185F00E91418 /* InjectRepository.swift */; };
@@ -79,6 +75,17 @@
 		CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B7CE424F808920059FF63 /* RegistProductRequestBody.swift */; };
 		CA6B7CE824F809200059FF63 /* RegistProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B7CE724F809200059FF63 /* RegistProductResponse.swift */; };
 		CA6B7CEB24F80F690059FF63 /* ProductRegistrationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B7CEA24F80F690059FF63 /* ProductRegistrationAPI.swift */; };
+		CA6D3F2125883B7600D43EAC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F2025883B7600D43EAC /* RxSwift */; };
+		CA6D3F2325883B7600D43EAC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F2225883B7600D43EAC /* RxCocoa */; };
+		CA6D3F2525883B7600D43EAC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F2425883B7600D43EAC /* RxRelay */; };
+		CA6D3F2925883BA300D43EAC /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F2825883BA300D43EAC /* RxAlamofire */; };
+		CA6D3F2D25883BC000D43EAC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F2C25883BC000D43EAC /* Hero */; };
+		CA6D3F3125883BE000D43EAC /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F3025883BE000D43EAC /* Differentiator */; };
+		CA6D3F3325883BE000D43EAC /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F3225883BE000D43EAC /* RxDataSources */; };
+		CA6D3F3725883C4100D43EAC /* NSObject-Rx in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F3625883C4100D43EAC /* NSObject-Rx */; };
+		CA6D3F4A2588535300D43EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CA6D3F492588535300D43EAC /* Kingfisher */; };
+		CA6D3F4D25886F7700D43EAC /* HomeUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */; };
+		CA774BFC2588B6DA004696C1 /* SectionOfDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */; };
 		CA7A0C5224E78C030047F971 /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5124E78C030047F971 /* BaseCellViewModel.swift */; };
 		CA7A0C5424E78C2D0047F971 /* ViewModelBindableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5324E78C2D0047F971 /* ViewModelBindableCellType.swift */; };
 		CA7A0C5624E799660047F971 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A0C5524E799660047F971 /* BaseTableViewCell.swift */; };
@@ -90,10 +97,9 @@
 		CA8E8FD724E92D88005F18DD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FD624E92D88005F18DD /* UIViewController+Extension.swift */; };
 		CA8E8FD924E92F31005F18DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FD824E92F31005F18DD /* UIView+Extension.swift */; };
 		CA8E8FDB24E93673005F18DD /* DomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDA24E93673005F18DD /* DomainObject.swift */; };
-		CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */; };
+		CA8E8FDE24E93CE4005F18DD /* MockShowMyProductListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDD24E93CE4005F18DD /* MockShowMyProductListUseCase.swift */; };
 		CA8E8FE024E93D9D005F18DD /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */; };
 		CA8E8FE224E93E0D005F18DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E8FE124E93E0D005F18DD /* AppCoordinator.swift */; };
-		CA9D6E6A24878C1E00E99B25 /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6924878C1E00E99B25 /* ProductDTO.swift */; };
 		CA9D6E6C24878E1B00E99B25 /* FetchMyProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6B24878E1B00E99B25 /* FetchMyProductResponse.swift */; };
 		CA9D6E6E2487900300E99B25 /* MyProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6D2487900300E99B25 /* MyProductListViewController.swift */; };
 		CA9D6E702488700E00E99B25 /* ViewModelBindableControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D6E6F2488700E00E99B25 /* ViewModelBindableControllerType.swift */; };
@@ -200,7 +206,6 @@
 		CA46367924F75967003FAFDB /* ProductRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryImpl.swift; sourceTree = "<group>"; };
 		CA46367B24F79082003FAFDB /* MyPageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepositoryImpl.swift; sourceTree = "<group>"; };
 		CA46367D24F79097003FAFDB /* MyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepository.swift; sourceTree = "<group>"; };
-		CA46367F24F790D6003FAFDB /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CA46368124F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyPageUseCaseImpl.swift; sourceTree = "<group>"; };
 		CA46368524F7928B003FAFDB /* LocalDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalDBService.swift; path = HelloPrice/Data/Service/LocalDB/LocalDBService.swift; sourceTree = SOURCE_ROOT; };
 		CA467396258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryItemCellViewModel.swift; sourceTree = "<group>"; };
@@ -219,7 +224,6 @@
 		CA6936AC255EC039004ADA26 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CA6936B0255EC0E7004ADA26 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		CA6936B6255EC1F7004ADA26 /* FetchHomeCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeCategoryResponse.swift; sourceTree = "<group>"; };
-		CA6936BC255EC206004ADA26 /* HomeCategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryDTO.swift; sourceTree = "<group>"; };
 		CA6A62472579109E00E91418 /* InjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectViewModel.swift; sourceTree = "<group>"; };
 		CA6A62502579185700E91418 /* InjectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectUseCase.swift; sourceTree = "<group>"; };
 		CA6A62542579185F00E91418 /* InjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectRepository.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 		CA6B7CE424F808920059FF63 /* RegistProductRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistProductRequestBody.swift; sourceTree = "<group>"; };
 		CA6B7CE724F809200059FF63 /* RegistProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistProductResponse.swift; sourceTree = "<group>"; };
 		CA6B7CEA24F80F690059FF63 /* ProductRegistrationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRegistrationAPI.swift; sourceTree = "<group>"; };
+		CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseMock.swift; sourceTree = "<group>"; };
+		CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfDomainObject.swift; sourceTree = "<group>"; };
 		CA7A0C5124E78C030047F971 /* BaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellViewModel.swift; sourceTree = "<group>"; };
 		CA7A0C5324E78C2D0047F971 /* ViewModelBindableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableCellType.swift; sourceTree = "<group>"; };
 		CA7A0C5524E799660047F971 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -239,15 +245,12 @@
 		CA8E8FD624E92D88005F18DD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CA8E8FD824E92F31005F18DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CA8E8FDA24E93673005F18DD /* DomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainObject.swift; sourceTree = "<group>"; };
-		CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyProductListUseCaseMock.swift; sourceTree = "<group>"; };
+		CA8E8FDD24E93CE4005F18DD /* MockShowMyProductListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShowMyProductListUseCase.swift; sourceTree = "<group>"; };
 		CA8E8FDF24E93D9D005F18DD /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		CA8E8FE124E93E0D005F18DD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		CA9D6E6924878C1E00E99B25 /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
 		CA9D6E6B24878E1B00E99B25 /* FetchMyProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyProductResponse.swift; sourceTree = "<group>"; };
 		CA9D6E6D2487900300E99B25 /* MyProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductListViewController.swift; sourceTree = "<group>"; };
 		CA9D6E6F2488700E00E99B25 /* ViewModelBindableControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableControllerType.swift; sourceTree = "<group>"; };
-		CA9D6E712488718700E99B25 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		CA9D6E732488754C00E99B25 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		CA9D6E77248879DF00E99B25 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		CA9D6E7924887A4300E99B25 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CA9D6E7D24887E0B00E99B25 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
@@ -273,8 +276,6 @@
 		CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseImpl.swift; sourceTree = "<group>"; };
 		CAF209372587C8980067426C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CAF2093A2587C8C30067426C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +283,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E7FB7C414E6EBC63322E1F /* Pods_HelloPrice.framework in Frameworks */,
+				CA6D3F3125883BE000D43EAC /* Differentiator in Frameworks */,
+				CA6D3F2325883B7600D43EAC /* RxCocoa in Frameworks */,
+				CA6D3F2125883B7600D43EAC /* RxSwift in Frameworks */,
+				CA6D3F4A2588535300D43EAC /* Kingfisher in Frameworks */,
+				CA6D3F2525883B7600D43EAC /* RxRelay in Frameworks */,
+				CA6D3F3725883C4100D43EAC /* NSObject-Rx in Frameworks */,
+				CA6D3F2925883BA300D43EAC /* RxAlamofire in Frameworks */,
+				CA6D3F3325883BE000D43EAC /* RxDataSources in Frameworks */,
+				CA6D3F2D25883BC000D43EAC /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +299,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BAD8A9ACAB905AA365E784A /* Pods_HelloPriceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,8 +319,6 @@
 		529C4C9A1DCFF84B9D488ED3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0739BBD313FCC900D0AD69F /* Pods_HelloPrice.framework */,
-				E2118FEEB5C4A7D29C9D46C2 /* Pods_HelloPriceTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				CA33B54424E43433008F558C /* UseCases */,
-				CA33B54324E4342F008F558C /* Entities */,
+				CA33B54324E4342F008F558C /* Objects */,
 				CA33B54224E4342A008F558C /* Common */,
 			);
 			path = Domain;
@@ -389,15 +395,6 @@
 			path = Implements;
 			sourceTree = "<group>";
 		};
-		CA31C0AA24A49DBC00CF190C /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				CA9D6E732488754C00E99B25 /* BaseViewModel.swift */,
-				CA9D6E712488718700E99B25 /* MainViewModel.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		CA33B54224E4342A008F558C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,14 +404,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		CA33B54324E4342F008F558C /* Entities */ = {
+		CA33B54324E4342F008F558C /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				CAA03E482584941A00359B88 /* Product.swift */,
 				CAA03E54258495EC00359B88 /* User.swift */,
 				CA4673A0258493990070DC55 /* HomeCategory.swift */,
+				CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */,
 			);
-			path = Entities;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		CA33B54424E43433008F558C /* UseCases */ = {
@@ -446,7 +444,6 @@
 				CA3B85CF24820F9100F1D863 /* Products */,
 				3D90CE990312B42B75FE9255 /* Pods */,
 				529C4C9A1DCFF84B9D488ED3 /* Frameworks */,
-				CA31C0AA24A49DBC00CF190C /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -865,9 +862,6 @@
 		CA6B7CE624F808E20059FF63 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CA9D6E6924878C1E00E99B25 /* ProductDTO.swift */,
-				CA46367F24F790D6003FAFDB /* UserDTO.swift */,
-				CA6936BC255EC206004ADA26 /* HomeCategoryDTO.swift */,
 				CA9D6E612487875100E99B25 /* DTO */,
 			);
 			path = Entities;
@@ -909,7 +903,8 @@
 		CA8E8FDC24E93CCA005F18DD /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				CA8E8FDD24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift */,
+				CA8E8FDD24E93CE4005F18DD /* MockShowMyProductListUseCase.swift */,
+				CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -984,7 +979,6 @@
 				CA3B85CA24820F9100F1D863 /* Sources */,
 				CA3B85CB24820F9100F1D863 /* Frameworks */,
 				CA3B85CC24820F9100F1D863 /* Resources */,
-				20BB040DC178EDE00D172E1A /* [CP] Embed Pods Frameworks */,
 				CAA03E802584F61C00359B88 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -993,6 +987,15 @@
 			);
 			name = HelloPrice;
 			packageProductDependencies = (
+				CA6D3F2025883B7600D43EAC /* RxSwift */,
+				CA6D3F2225883B7600D43EAC /* RxCocoa */,
+				CA6D3F2425883B7600D43EAC /* RxRelay */,
+				CA6D3F2825883BA300D43EAC /* RxAlamofire */,
+				CA6D3F2C25883BC000D43EAC /* Hero */,
+				CA6D3F3025883BE000D43EAC /* Differentiator */,
+				CA6D3F3225883BE000D43EAC /* RxDataSources */,
+				CA6D3F3625883C4100D43EAC /* NSObject-Rx */,
+				CA6D3F492588535300D43EAC /* Kingfisher */,
 			);
 			productName = HelloPrice;
 			productReference = CA3B85CE24820F9100F1D863 /* HelloPrice.app */;
@@ -1046,6 +1049,12 @@
 			);
 			mainGroup = CA3B85C524820F9100F1D863;
 			packageReferences = (
+				CA6D3F1F25883B7600D43EAC /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CA6D3F2725883BA300D43EAC /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				CA6D3F2B25883BC000D43EAC /* XCRemoteSwiftPackageReference "Hero" */,
+				CA6D3F2F25883BE000D43EAC /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				CA6D3F3525883C4100D43EAC /* XCRemoteSwiftPackageReference "NSObject-Rx" */,
+				CA6D3F482588535300D43EAC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CA3B85CF24820F9100F1D863 /* Products */;
 			projectDirPath = "";
@@ -1088,23 +1097,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20BB040DC178EDE00D172E1A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HelloPrice/Pods-HelloPrice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HelloPrice/Pods-HelloPrice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloPrice/Pods-HelloPrice-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3E16381564078B61B43770F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1160,7 +1152,7 @@
 				CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */,
 				CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */,
 				CA46366324F73883003FAFDB /* SignUpViewController.swift in Sources */,
-				CA8E8FDE24E93CE4005F18DD /* ShowMyProductListUseCaseMock.swift in Sources */,
+				CA8E8FDE24E93CE4005F18DD /* MockShowMyProductListUseCase.swift in Sources */,
 				CAA03E732584F19800359B88 /* UIImage+Extension.swift in Sources */,
 				CA8E8FD724E92D88005F18DD /* UIViewController+Extension.swift in Sources */,
 				CA467397258492EC0070DC55 /* HomeCategoryItemCellViewModel.swift in Sources */,
@@ -1194,6 +1186,7 @@
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
 				CA46367E24F79097003FAFDB /* MyPageRepository.swift in Sources */,
 				CA4E4CF024EA55F7008BB8F2 /* RootTabBarController.swift in Sources */,
+				CA774BFC2588B6DA004696C1 /* SectionOfDomainObject.swift in Sources */,
 				CA146D6C24E2D16D00C85C1C /* RemoteRepository.swift in Sources */,
 				CA9D6E84248884FF00E99B25 /* SceneCoordinator.swift in Sources */,
 				CA46367C24F79082003FAFDB /* MyPageRepositoryImpl.swift in Sources */,
@@ -1217,13 +1210,11 @@
 				CAECE8C7255ECD92000E7882 /* HomeRepositoryImpl.swift in Sources */,
 				CA146D6F24E2D17D00C85C1C /* LocalRepository.swift in Sources */,
 				CA46366E24F755B2003FAFDB /* UserDIContainer.swift in Sources */,
-				CA6936BD255EC206004ADA26 /* HomeCategoryDTO.swift in Sources */,
 				CAECE8C3255ECD8F000E7882 /* HomeRepository.swift in Sources */,
 				CA9F0F4624A8C15D00C84B50 /* NetworkProvider.swift in Sources */,
 				CA7A0C5424E78C2D0047F971 /* ViewModelBindableCellType.swift in Sources */,
 				CA367DAA24E6E1CB00E63753 /* MyItemCell.swift in Sources */,
 				CA7A0C5224E78C030047F971 /* BaseCellViewModel.swift in Sources */,
-				CA9D6E6A24878C1E00E99B25 /* ProductDTO.swift in Sources */,
 				CA33B55224E43B17008F558C /* ShowMyPageUseCase.swift in Sources */,
 				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA7A0C5824E7996E0047F971 /* BaseCollectionViewCell.swift in Sources */,
@@ -1250,11 +1241,11 @@
 				CA6936B1255EC0E7004ADA26 /* HomeUseCase.swift in Sources */,
 				CA49944824F8CDFF00691666 /* FetchTopDecreaseProductResponse.swift in Sources */,
 				CAECE8D9255ED025000E7882 /* FetchMyProductByCategoryRequest.swift in Sources */,
+				CA6D3F4D25886F7700D43EAC /* HomeUseCaseMock.swift in Sources */,
 				CA6936B7255EC1F7004ADA26 /* FetchHomeCategoryResponse.swift in Sources */,
 				CA46367424F75866003FAFDB /* ProductRepository.swift in Sources */,
 				CA31C0B224A49F9600CF190C /* MyProductViewModel.swift in Sources */,
 				CA33B54E24E43ABE008F558C /* SearchProductUseCase.swift in Sources */,
-				CA46368024F790D6003FAFDB /* UserDTO.swift in Sources */,
 				CAA03E492584941A00359B88 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1530,6 +1521,105 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA6D3F1F25883B7600D43EAC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		CA6D3F2725883BA300D43EAC /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		CA6D3F2B25883BC000D43EAC /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+		CA6D3F2F25883BE000D43EAC /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		CA6D3F3525883C4100D43EAC /* XCRemoteSwiftPackageReference "NSObject-Rx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/NSObject-Rx";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		CA6D3F482588535300D43EAC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA6D3F2025883B7600D43EAC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F1F25883B7600D43EAC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		CA6D3F2225883B7600D43EAC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F1F25883B7600D43EAC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CA6D3F2425883B7600D43EAC /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F1F25883B7600D43EAC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		CA6D3F2825883BA300D43EAC /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F2725883BA300D43EAC /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		CA6D3F2C25883BC000D43EAC /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F2B25883BC000D43EAC /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+		CA6D3F3025883BE000D43EAC /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F2F25883BE000D43EAC /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		CA6D3F3225883BE000D43EAC /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F2F25883BE000D43EAC /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		CA6D3F3625883C4100D43EAC /* NSObject-Rx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F3525883C4100D43EAC /* XCRemoteSwiftPackageReference "NSObject-Rx" */;
+			productName = "NSObject-Rx";
+		};
+		CA6D3F492588535300D43EAC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA6D3F482588535300D43EAC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA3B85C624820F9100F1D863 /* Project object */;
 }

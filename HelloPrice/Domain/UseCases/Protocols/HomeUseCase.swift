@@ -9,6 +9,6 @@
 import RxSwift
 
 protocol HomeUseCase: UseCase {
-    func fetchCategories() -> Single<FetchHomeCategoryResponse>
-    func fetchCategoryItems(categoryId: Int) -> Single<FetchMyProductResponse>
+    func fetchCategories() -> Single<[HomeCategory]>
+    func fetchCategoryItems(categoryId: Int) -> Single<[Product]>
 }

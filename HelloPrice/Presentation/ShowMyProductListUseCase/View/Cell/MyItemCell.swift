@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Kingfisher
-import RxKingfisher
 
 class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product> {
     
@@ -52,7 +51,7 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
         outputs.thumbnailImageUrlString
             .filter { $0 != "" }
             .map { ImageResource(downloadURL: URL(string: $0)!) }
-            .bind(to: thumbnailImageView.kf.rx.image())
+            .subscribe { [weak self] in self?.thumbnailImageView.kf.setImage(with: $0) }
             .disposed(by: 👜)
         
         outputs.productName

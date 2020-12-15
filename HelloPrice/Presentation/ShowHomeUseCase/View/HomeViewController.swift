@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxDataSources
 import NSObject_Rx
 
 class HomeViewController: BaseViewController<HomeViewModel> {
@@ -22,14 +23,16 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         didSet {
             categoryCollectionView.register(HomeCellType.category.nib, forCellWithReuseIdentifier: HomeCellType.category.identifier)
-            categoryCollectionView.dataSource = self
+//            categoryCollectionView.dataSource = self
             categoryCollectionView.delegate = self
+            
         }
     }
     @IBOutlet weak var mainItemCollectionView: UICollectionView! {
         didSet {
             mainItemCollectionView.register(HomeCellType.main.nib, forCellWithReuseIdentifier: HomeCellType.main.identifier)
-            mainItemCollectionView.dataSource = self
+            
+//            mainItemCollectionView.dataSource = self
             mainItemCollectionView.delegate = self
         }
     }
@@ -62,24 +65,60 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }
     }
     
-    var categories = [HomeCategory(title: "전체"),
-                 HomeCategory(title: "가전제품"),
-                 HomeCategory(title: "식품"),
-                 HomeCategory(title: "화장품")]
+    lazy var categoryDataSource: RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<HomeCategory>> = {
+        let categoryDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<HomeCategory>> { dataSource, collectionView, indexPath, item -> HomeCategoryItemCell in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCategoryItemCell.identifier, for: indexPath) as? HomeCategoryItemCell else { return HomeCategoryItemCell() }
+            cell.configure(item: item)
+            return cell
+        }
+        return categoryDataSource
+    }()
+    lazy var mainItemDataSource: RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>> = {
+        let mainItemDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>> { dataSource, collectionView, indexPath, item -> HomeMainItemCell in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell else { return HomeMainItemCell() }
+            cell.configure(item: item)
+            return cell
+        }
+        return mainItemDataSource
+    }()
     
-    var items = [Product(id: 0, productName: "애플 에어팟 프로", productCode: "1010", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 30300, prevPrice: 34000, additionalInfo: "추가 정보", priceChangeRate: 12.3, lowestPrice: 29400, lastUpdateAt: "20-12-12", notifyOn: true), Product(id: 1, productName: "삼성 노트북 시리즈9", productCode: "1011", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 800300, prevPrice: 830000, additionalInfo: "추가 정보", priceChangeRate: 6.3, lowestPrice: 800300, lastUpdateAt: "20-12-10", notifyOn: false), Product(id: 1, productName: "삼성 노트북 시리즈9", productCode: "1011", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 800300, prevPrice: 830000, additionalInfo: "추가 정보", priceChangeRate: 6.3, lowestPrice: 800300, lastUpdateAt: "20-12-10", notifyOn: false), Product(id: 1, productName: "삼성 노트북 시리즈9", productCode: "1011", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 800300, prevPrice: 830000, additionalInfo: "추가 정보", priceChangeRate: 6.3, lowestPrice: 800300, lastUpdateAt: "20-12-10", notifyOn: false), Product(id: 1, productName: "삼성 노트북 시리즈9", productCode: "1011", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 800300, prevPrice: 830000, additionalInfo: "추가 정보", priceChangeRate: 6.3, lowestPrice: 800300, lastUpdateAt: "20-12-10", notifyOn: false), Product(id: 1, productName: "삼성 노트북 시리즈9", productCode: "1011", url: "https://", imageUrl: "url", description: "", saleStatus: "", saleType: "카드가", price: 800300, prevPrice: 830000, additionalInfo: "추가 정보", priceChangeRate: 6.3, lowestPrice: 800300, lastUpdateAt: "20-12-10", notifyOn: false)
-                 ]
+    let fetchCategories = PublishRelay<Void>()
+    let fetchCategoryItems = PublishRelay<Int>()
+    let presentWebsite = PublishRelay<Void>()
+    var inputs: HomeViewModel.Input?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        inputs?.fetchCategories.accept(())
+        inputs?.fetchCategoryItems.accept(0)
+        categoryCollectionView.reloadData()
+        mainItemCollectionView.reloadData()
         categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
-//        setNavigationController()
-        print("이건데?")
-//        let titleView = UIView()
-//        titleView.backgroundColor = .red
-//        titleView.frame = navigationController?.navigationBar.frame ?? CGRect.zero
-//        self.navigationItem.titleView = titleView
+    }
+    
+    override func bindViewModel() {
+        print(#function)
+        inputs = HomeViewModel.Input(fetchCategories: fetchCategories, fetchCategoryItems: fetchCategoryItems)
+        
+        let outputs = viewModel.transform(input: inputs!)
+        
+        outputs.categories
+            .subscribeOn(MainScheduler.asyncInstance)
+            .bind(to: categoryCollectionView.rx.items(dataSource: categoryDataSource))
+            .disposed(by: 👜)
+        
+        outputs.products
+            .subscribeOn(MainScheduler.asyncInstance)
+            .bind(to: mainItemCollectionView.rx.items(dataSource: mainItemDataSource))
+            .disposed(by: 👜)
+        
+        categoryDataSource.collectionView(categoryCollectionView, observedEvent: .completed)
+        mainItemDataSource.collectionView(mainItemCollectionView, observedEvent: .completed)
     }
     
     func setNavigationController() {
@@ -88,7 +127,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         navigationController?.navigationBar.barTintColor = .richBlue
         titleViewHeightConstraint.constant = defaultHeight + topSafeAreaHeight
     }
-    
 }
 
 extension HomeViewController: UIScrollViewDelegate {
@@ -101,47 +139,47 @@ extension HomeViewController: UIScrollViewDelegate {
         topConstraint.constant = -scrollView.contentOffset.y
     }
 }
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch collectionView {
-        case categoryCollectionView:
-            return categories.count
-        case mainItemCollectionView:
-            return items.count
-        default:
-            return 0
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch collectionView {
-        case categoryCollectionView:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCategoryItemCell.identifier, for: indexPath) as? HomeCategoryItemCell {
-                cell.configure(item: categories[indexPath.item])
-                return cell
-            }
-        case mainItemCollectionView:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell {
-                cell.configure(item: items[indexPath.item])
-                return cell
-            }
-        default:
-            #if DEBUG
-            fatalError("Cell Creation Error")
-            #else
-            return UICollectionViewCell()
-            #endif
-        }
-        #if DEBUG
-        fatalError("Cell Creation Error")
-        #else
-        return UICollectionViewCell()
-        #endif
-    }
-    
-    
-}
+//
+//extension HomeViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        switch collectionView {
+//        case categoryCollectionView:
+//            return categories.count
+//        case mainItemCollectionView:
+//            return items.count
+//        default:
+//            return 0
+//        }
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        switch collectionView {
+//        case categoryCollectionView:
+//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCategoryItemCell.identifier, for: indexPath) as? HomeCategoryItemCell {
+//                cell.configure(item: categories[indexPath.item])
+//                return cell
+//            }
+//        case mainItemCollectionView:
+//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell {
+//                cell.configure(item: items[indexPath.item])
+//                return cell
+//            }
+//        default:
+//            #if DEBUG
+//            fatalError("Cell Creation Error")
+//            #else
+//            return UICollectionViewCell()
+//            #endif
+//        }
+//        #if DEBUG
+//        fatalError("Cell Creation Error")
+//        #else
+//        return UICollectionViewCell()
+//        #endif
+//    }
+//
+//
+//}
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
@@ -164,18 +202,5 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         }
         return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        if collectionView === categoryCollectionView {
-//            return 0
-//        }
-//        return 20
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        if collectionView === categoryCollectionView {
-//            return 8
-//        }
-//        return 15
-//    }
+    
 }

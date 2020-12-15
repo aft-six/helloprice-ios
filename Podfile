@@ -12,17 +12,17 @@ target 'HelloPrice' do
     # Pods for testing
   end
 
-  pod 'RxSwift'
-  pod 'RxAlamofire'
-  pod 'RxCocoa'
-  pod 'Hero'
-  pod 'RxDataSources'
-  pod 'RxKingfisher'
-  pod 'NSObject+Rx'
+#  pod 'RxSwift'
+#  pod 'RxAlamofire'
+#  pod 'RxCocoa'
+#  pod 'Hero'
+#  pod 'RxDataSources'
+#  pod 'RxKingfisher'
+#  pod 'NSObject+Rx'
 #  pod 'RxTest'
 
 
   
-  pod 'FBSDKLoginKit'
+#  pod 'FBSDKLoginKit'
       
 end

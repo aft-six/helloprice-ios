@@ -38,4 +38,8 @@ extension UILabel {
     func setMark(_ num: Double, head frontMark: String = "", tail endMark: String = "") {
         text = "\(frontMark)\(num)\(endMark)"
     }
+    
+    func setMark(_ num: Int, head frontMark: String = "", tail endMark: String = "") {
+        text = "\(frontMark)\(num)\(endMark)"
+    }
 }

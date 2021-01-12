@@ -10,11 +10,9 @@ import Foundation
 
 final class HomeDIContainer: DIContainerType {
     
-    var localDBService: LocalRepository
     var apiService: APIType
     
-    init(localDBService: LocalRepository, apiService: APIType) {
-        self.localDBService = localDBService
+    init(apiService: APIType) {
         self.apiService = apiService
     }
 }

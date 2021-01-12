@@ -31,15 +31,3 @@ extension SectionOfDomainObject: SectionModelType {
         self.items = items
     }
 }
-
-struct SectionOfHomeCategory: SectionModelType {
-    typealias Item = HomeCategory
-    
-    var header: String
-    var items: [Item]
-    
-    init(original: SectionOfHomeCategory, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}

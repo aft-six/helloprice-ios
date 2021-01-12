@@ -1,14 +1,14 @@
 //
-//  SearchProductUseCase.swift
+//  SearchProductRepository.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/08/12.
+//  Created by devming on 2020/11/13.
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
 import RxSwift
 
-protocol SearchProductUseCase: UseCase {
+protocol SearchProductRepository: RepositoryType {
     func createRecentSearch(item: SearchRecentObject) -> Single<Bool>
     func readRecentSearches() -> Single<[SearchRecentObject]>
     func updateRecentSearch(item: SearchRecentObject, updatedDate: String) -> Single<[SearchRecentObject]>

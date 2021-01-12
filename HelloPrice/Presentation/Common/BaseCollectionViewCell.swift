@@ -13,27 +13,50 @@ class BaseCollectionViewCell<T: ViewModelType,
                              OutputType: ViewModelOutput,
                              DomainType: DomainObject>: UICollectionViewCell, CellItemType {
     
+    
     var 👜 = DisposeBag()
     var viewModel: T!
-    var item: DomainType?
+//    var item: DomainType?
+    var indexPath: IndexPath!
     var output: OutputType?
     class var identifier: String {
         return Self.className
     }
     
-    func bindViewModel(item: DomainType) {
-        
+    func bindViewModel() {
+        #if DEBUG
+        fatalError("You must override here!")
+        #endif
     }
+//    func bindViewModel(item: DomainType) {
+//
+//    }
 }
 
-//class BaseCollectionViewCell<T: ViewModelType>: UICollectionViewCell, ViewModelBindableCellType {
-//    var viewModel: T!
+protocol CellItemType {}
+//    associatedtype CellViewModel
+//    var viewModel: CellViewModel! { get set }
+//    var indexPath: IndexPath! { get set }
+//    func bindViewModel()
+//    associatedtype OutputType
+//    var output: OutputType? { get set }
+//}
 //
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
+//extension CellItemType where Self: UICollectionViewCell {
+//    mutating func bindViewModel(viewModel: CellViewModel, indexPath: IndexPath) {
+//        self.viewModel = viewModel
+//        self.indexPath = indexPath
 //
 //        bindViewModel()
 //    }
+//}
 //
-//    func bindViewModel() { }
+//
+//extension CellItemType where Self: UITableViewCell {
+//    mutating func bindViewModel(viewModel: CellViewModel, indexPath: IndexPath) {
+//        self.viewModel = viewModel
+//        self.indexPath = indexPath
+//
+//        bindViewModel()
+//    }
 //}

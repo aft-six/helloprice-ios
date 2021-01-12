@@ -34,20 +34,21 @@ class HomeViewModel: BaseViewModel {
         let output = Output()
         
         input.fetchCategories
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .flatMap { [unowned self] in useCase.fetchCategories() }
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .withUnretained(self)
+            .flatMap { `self`, _ in self.useCase.fetchCategories() }
             .map { [SectionOfDomainObject<HomeCategory>(items: $0)] }
             .bind(to: output.categories)
             .disposed(by: 👜)
         
         input.fetchCategoryItems
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .flatMap { [unowned self] in useCase.fetchCategoryItems(categoryId: $0)}
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .withUnretained(self)
+            .flatMap { `self`, item in self.useCase.fetchCategoryItems(categoryId: item)}
             .map { [SectionOfDomainObject<Product>(items: $0)] }
             .bind(to: output.products)
             .disposed(by: 👜)
             
-        
         return output
     }
     

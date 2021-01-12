@@ -11,28 +11,27 @@ import RxSwift
 
 final class AppDIContainer {
     
-    lazy var localDBService: LocalDBService = {
-        LocalDBService()
-    }()
+//    lazy var localDBService: RealmManager = {
+//        RealmManager()
+//    }()
     
-    lazy var productAPIService: ProductAPIService = {
-        ProductAPIService()
-    }()
+//    lazy var productAPIService: ProductAPIService = {
+//        ProductAPIService()
+//    }()
     
-    lazy var homeAPIService: HomeAPIService = {
-        HomeAPIService()
-    }()
+//    lazy var homeAPIService: HomeAPIService = {
+//        HomeAPIService()
+//    }()
     
     lazy var userDIContainer: UserDIContainer = {
         UserDIContainer()
     }()
 
     lazy var productDIContainer: ProductDIContainer = {
-        ProductDIContainer(localDBService: localDBService,
-                           apiService: productAPIService)
+        ProductDIContainer(apiService: ProductAPIService())
     }()
     
     lazy var homeDIContainer: HomeDIContainer = {
-        HomeDIContainer(localDBService: localDBService, apiService: homeAPIService)
+        HomeDIContainer(apiService: HomeAPIService())
     }()
 }

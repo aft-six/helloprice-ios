@@ -42,8 +42,8 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
         }
     }
     
-    override func bindViewModel(item: Product) {
-        super.bindViewModel(item: item)
+    override func bindViewModel() {
+//        super.bindViewModel(item: item)
         
         let input = MyProductCellViewModel.Input()
         let outputs = viewModel!.transform(input: input)
@@ -100,7 +100,7 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
             .bind(to: lastConfirmTimeLabel.rx.text)
             .disposed(by: 👜)
         
-        input.bindData.accept(item)
+//        input.bindData.accept(item)
     }
 }
 

@@ -12,6 +12,8 @@ import RxCocoa
 
 class HomeCategoryItemCellViewModel: ViewModelType {
     
+    var 👜 = DisposeBag()
+    
     struct Input: ViewModelInput {
         let bindData = PublishRelay<Product>()
     }

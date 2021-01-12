@@ -10,16 +10,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
-import NSObject_Rx
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
-    @IBOutlet weak var searchBackgroundView: UIView! {
-        didSet {
-            searchBackgroundView.layer.shadowColor = UIColor.black.cgColor
-            searchBackgroundView.layer.shadowOpacity = 0.4
-        }
-    }
+    @IBOutlet weak var searchBackgroundView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         didSet {
             categoryCollectionView.register(HomeCellType.category.nib, forCellWithReuseIdentifier: HomeCellType.category.identifier)
@@ -51,27 +45,11 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet weak var categoryHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoryTopHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var searchField: UITextField! {
+    @IBOutlet weak var searchButton: UIButton! {
         didSet {
-            
-            searchField.rx.controlEvent(.editingDidEndOnExit)
-                .asDriver()
-                .drive(onNext: { [weak self] in
-                    self?.resignFirstResponder()
-                })
-                .disposed(by: rx.disposeBag)
-            searchField.rx.controlEvent(.editingDidBegin)
-                .asDriver()
-                .drive(onNext: {
-                    
-                    let pasteBoard = UIPasteboard.general
-                    if pasteBoard.hasURLs, let url = pasteBoard.url {
-                        // 복사한 URL 넣기 버튼 추가
-                        print("\(url)")
-                    }
-                    
-                })
-                .disposed(by: rx.disposeBag)
+            searchButton.layer.shadowColor = UIColor.black.cgColor
+            searchButton.layer.shadowOpacity = 0.4
+            searchButton.layer.shadowRadius = 5
         }
     }
     
@@ -85,7 +63,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }()
     lazy var mainItemDataSource: RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>> = {
         let mainItemDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDomainObject<Product>>(configureCell: { dataSource, collectionView, indexPath, item -> HomeMainItemCell in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell else { return HomeMainItemCell() }
+            guard var cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMainItemCell.identifier, for: indexPath) as? HomeMainItemCell else { return HomeMainItemCell() }
+            print("cell For Row At..?")
+//            cell.bindViewModel(viewModel: HomeMainItemCellViewModel(item: item), indexPath: indexPath)
             cell.configure(item: item)
             return cell
         }, configureSupplementaryView: { [weak self] dataSource, collectionView, titleString, indexPath -> UICollectionReusableView in
@@ -109,16 +89,20 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let topMargin = self.categoryHeightConstraint.constant
-            + self.categoryTopHeightConstraint.constant
-            + self.titleViewHeightConstraint.constant
+        let topMargin = categoryHeightConstraint.constant
+            + categoryTopHeightConstraint.constant
+            + titleViewHeightConstraint.constant
         let layout = mainItemCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.headerReferenceSize = CGSize(width: mainItemCollectionView.frame.width, height: topMargin)
+        
+        bindRx()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,7 +115,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func bindViewModel() {
-        print(#function)
+        
         inputs = HomeViewModel.Input(fetchCategories: fetchCategories, fetchCategoryItems: fetchCategoryItems)
         
         let outputs = viewModel.transform(input: inputs!)
@@ -148,10 +132,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         
         mainItemCollectionView.rx.didScroll
             .observeOn(MainScheduler.asyncInstance)
-            .map { [weak self] () -> CGFloat in
-                guard let `self` = self else { return 0 }
-                return self.mainItemCollectionView.contentOffset.y
-            }
+            .map { self.mainItemCollectionView.contentOffset.y }
             .asDriver(onErrorJustReturn: 0)
             .drive(onNext: { [weak self] y in
                 guard let `self` = self else { return }
@@ -161,6 +142,28 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 }
                 
                 self.topConstraint.constant = -y
+            })
+            .disposed(by: 👜)
+    }
+    
+    func setUI() {
+        
+    }
+    
+    func bindRx() {
+        //                    let pasteBoard = UIPasteboard.general
+        //                    if pasteBoard.hasURLs, let url = pasteBoard.url {
+        //                        // 복사한 URL 넣기 버튼 추가
+        //                        print("\(url)")
+        //                    }
+        searchButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                if let viewController = self?.storyboard?.instantiateViewController(identifier: SearchViewController.className) {
+                    viewController.modalPresentationStyle = .fullScreen
+                    viewController.hero.isEnabled = true
+                    self?.present(viewController, animated: true)
+                }
             })
             .disposed(by: 👜)
     }

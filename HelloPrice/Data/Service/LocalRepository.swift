@@ -7,9 +7,11 @@
 //
 
 import Foundation
-
-protocol LocalRepository {
-    func fetch()
-    func update()
-    func delete()
-}
+//
+//protocol LocalRepository {
+//    associatedtype T
+//    
+//    func fetch(object: T) -> [T]
+//    func update(origin: T) -> T
+//    func delete()
+//}

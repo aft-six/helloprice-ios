@@ -20,6 +20,6 @@ extension ViewModelBindableControllerType where Self: UIViewController {
         
         loadViewIfNeeded()
         
-        bindViewModel()
+//        bindViewModel()
     }
 }

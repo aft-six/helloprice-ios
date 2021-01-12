@@ -18,5 +18,22 @@ class BaseViewController<T: ViewModelType>: UIViewController, ViewModelBindableC
         super.viewDidLoad()
     }
     
-    func bindViewModel() { }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bindViewModel()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        👜 = DisposeBag()
+        if var viewModel = viewModel {
+            viewModel.👜 = DisposeBag()
+        }
+    }
+    
+    func bindViewModel() {
+//        fatalError("You must override here!")
+    }
 }

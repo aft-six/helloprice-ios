@@ -48,7 +48,7 @@ class HomeMainItemCell: BaseCollectionViewCell<HomeMainItemCellViewModel, HomeMa
         payTypeLabel.text = item.saleType
         rateLabel.textColor = .red
         rateLabel.setMark(item.priceChangeRate ?? 0, head: "↓", tail: "%")
-        priceLabel.setMark(Double(item.price ?? 0), tail: "원")
+        priceLabel.setMark(Int(item.price ?? 0), tail: "원")
         dateLabel.text = item.lastUpdateAt
         isRegisteredNoti = item.notifyOn
     }
@@ -57,5 +57,9 @@ class HomeMainItemCell: BaseCollectionViewCell<HomeMainItemCellViewModel, HomeMa
         let insets: CGFloat = 40
         let padding: CGFloat = 15
         widthConstraint.constant = (UIScreen.main.bounds.width - insets) / 2 - padding
+    }
+    
+    override func bindViewModel() {
+        
     }
 }

@@ -36,8 +36,7 @@ class SceneCoordinator: SceneCoordinatorType {
         self.currentVC = window.rootViewController!
     }
     
-    @discardableResult
-    func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) -> Completable {
+    func transition(to scene: Scene, using style: TransitionStyle, animated: Bool) {
         let subject = PublishSubject<Void>()
         let target = scene.instantiate()
         
@@ -67,7 +66,6 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC = target.sceneViewController
         }
         
-        return subject.ignoreElements()
     }
     
     @discardableResult

@@ -6,9 +6,10 @@
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 protocol ViewModelType: Injectable {
 //    associatedtype Input
 //    associatedtype Output
+    var 👜: DisposeBag { get set }
 }

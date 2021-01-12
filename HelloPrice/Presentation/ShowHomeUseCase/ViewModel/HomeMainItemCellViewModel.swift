@@ -13,19 +13,19 @@ import RxCocoa
 class HomeMainItemCellViewModel: BaseCellViewModel {
     
     struct Input: ViewModelInput {
-        let bindData = PublishRelay<Product>()
-        let tapNotiButton = PublishRelay<Void>()
+        let loadData: Driver<Void>
+        let tapNotiButton: Driver<Void>
+        let tapItem: Driver<Void>
     }
     
     struct Output: ViewModelOutput {
-        let thumbnailImageUrlString = BehaviorRelay<String>(value: "")
-        
+        let bindData = PublishRelay<Product>()
     }
     
-    let useCase: HomeUseCase
+    let item: Product
     
-    init(useCase: HomeUseCase) {
-        self.useCase = useCase
+    init(item: Product) {
+        self.item = item
         
         super.init()
     }

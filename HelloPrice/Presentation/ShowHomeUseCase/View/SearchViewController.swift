@@ -20,6 +20,7 @@ class SearchViewController: BaseViewController<SearchViewModel> {
     }
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var deleteAll: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,5 +45,28 @@ class SearchViewController: BaseViewController<SearchViewModel> {
                 self?.hero.dismissViewController()
             })
             .disposed(by: 👜)
+        
+        let dummy: [String] = [
+            "a",
+            "bn",
+            "sdaf",
+            "1234",
+            "sdafg",
+            "23rf",
+            "asdv",
+            "adsv",
+            "asda",
+            "dsa",
+            "bvca",
+            "ytjura"
+        ]
+        deleteAll.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                self?.addBottomSheetView(viewController: ScrollableBottomSheetViewController(list: dummy))
+            })
+            .disposed(by: 👜)
+        
     }
+    
 }

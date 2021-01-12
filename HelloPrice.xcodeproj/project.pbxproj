@@ -86,6 +86,13 @@
 		CA6D3F4D25886F7700D43EAC /* HomeUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */; };
 		CA73D1D725AAA48D00663CF9 /* BaseLocalDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1D625AAA48D00663CF9 /* BaseLocalDBService.swift */; };
 		CA73D1DB25AD20BE00663CF9 /* SearchLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1DA25AD20BE00663CF9 /* SearchLocalService.swift */; };
+		CA73D1EA25AD2B3400663CF9 /* BottomSheetViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */; };
+		CA73D1F425AD303100663CF9 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */; };
+		CA73D1F525AD303100663CF9 /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */; };
+		CA73D1F625AD303100663CF9 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */; };
+		CA73D1F725AD303100663CF9 /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */; };
+		CA73D1F825AD303100663CF9 /* ScrollableBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */; };
+		CA73D1F925AD303100663CF9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */; };
 		CA774BFC2588B6DA004696C1 /* SectionOfDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */; };
 		CA774BFF2588F7DF004696C1 /* HeaderMarginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */; };
 		CA774C022588F7F2004696C1 /* HeaderMarginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA774C012588F7F2004696C1 /* HeaderMarginView.xib */; };
@@ -249,6 +256,13 @@
 		CA6D3F4C25886F7700D43EAC /* HomeUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseMock.swift; sourceTree = "<group>"; };
 		CA73D1D625AAA48D00663CF9 /* BaseLocalDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocalDBService.swift; sourceTree = "<group>"; };
 		CA73D1DA25AD20BE00663CF9 /* SearchLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocalService.swift; sourceTree = "<group>"; };
+		CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewControllerType.swift; sourceTree = "<group>"; };
+		CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
+		CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
+		CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
+		CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableBottomSheetViewController.xib; sourceTree = "<group>"; };
+		CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfDomainObject.swift; sourceTree = "<group>"; };
 		CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMarginView.swift; sourceTree = "<group>"; };
 		CA774C012588F7F2004696C1 /* HeaderMarginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMarginView.xib; sourceTree = "<group>"; };
@@ -523,7 +537,14 @@
 		CA438794248D1C2100B01A8A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */,
+				CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */,
+				CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */,
+				CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */,
+				CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */,
+				CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */,
 				CA438795248D1C3700B01A8A /* BottonCircleButton.swift */,
+				CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1130,14 +1151,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA50436B254333080032EB42 /* Colors.xcassets in Resources */,
+				CA73D1F525AD303100663CF9 /* DefaultTableViewCell.xib in Resources */,
 				CA6936A5255EBFE8004ADA26 /* ShowHome.storyboard in Resources */,
 				CA14CC6424F814020089D039 /* ShowMyPage.storyboard in Resources */,
 				CA7C4103258247FD0034DBA5 /* HomeCategoryItemCell.xib in Resources */,
 				CA26CDCB254D62BC002C23BE /* MyItemHeaderView.xib in Resources */,
 				CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */,
 				CA367DAC24E6E1D700E63753 /* MyItemCell.xib in Resources */,
+				CA73D1F825AD303100663CF9 /* ScrollableBottomSheetViewController.xib in Resources */,
 				CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */,
 				CAA03E672584E80400359B88 /* HomeMainItemCell.xib in Resources */,
+				CA73D1F725AD303100663CF9 /* BottomSheetViewController.xib in Resources */,
 				CAC6B6C925A1C758008E919F /* SearchRecentCell.xib in Resources */,
 				CA46366924F738B0003FAFDB /* SignUp.storyboard in Resources */,
 				CA4E4CF224EA59C2008BB8F2 /* RootTabBarController.storyboard in Resources */,
@@ -1208,6 +1232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA73D1F625AD303100663CF9 /* DefaultTableViewCell.swift in Sources */,
 				CA6B7CE824F809200059FF63 /* RegistProductResponse.swift in Sources */,
 				CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */,
 				CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */,
@@ -1220,6 +1245,7 @@
 				CA6A62512579185700E91418 /* InjectUseCase.swift in Sources */,
 				CAE901F324E8338E008B5032 /* ShowMyProductListUseCaseImpl.swift in Sources */,
 				CAB7B5F725A3714100EE8B8B /* SearchDTO.swift in Sources */,
+				CA73D1F925AD303100663CF9 /* BottomSheetViewController.swift in Sources */,
 				CA9D6E702488700E00E99B25 /* ViewModelBindableControllerType.swift in Sources */,
 				CA33B55024E43AE0008F558C /* SubscribeProductUseCase.swift in Sources */,
 				CAF209382587C8980067426C /* SearchViewController.swift in Sources */,
@@ -1245,6 +1271,7 @@
 				CA59E7B7257679800047B0AC /* Resolver.swift in Sources */,
 				CA9D6E78248879DF00E99B25 /* SceneCoordinatorType.swift in Sources */,
 				CA8E8FE224E93E0D005F18DD /* AppCoordinator.swift in Sources */,
+				CA73D1EA25AD2B3400663CF9 /* BottomSheetViewControllerType.swift in Sources */,
 				CA6B7CE024F801630059FF63 /* BaseAPI.swift in Sources */,
 				CA8E8FDB24E93673005F18DD /* DomainObject.swift in Sources */,
 				CA9D6E82248880F400E99B25 /* BaseViewController.swift in Sources */,
@@ -1291,6 +1318,7 @@
 				CA46366124F73863003FAFDB /* SignUpViewModel.swift in Sources */,
 				CA6B7CEB24F80F690059FF63 /* ProductRegistrationAPI.swift in Sources */,
 				CA8E8FE024E93D9D005F18DD /* AppDIContainer.swift in Sources */,
+				CA73D1F425AD303100663CF9 /* ScrollableBottomSheetViewController.swift in Sources */,
 				CA8E8FD924E92F31005F18DD /* UIView+Extension.swift in Sources */,
 				CA6936A9255EBFFF004ADA26 /* HomeViewController.swift in Sources */,
 				CA46367A24F75967003FAFDB /* ProductRepositoryImpl.swift in Sources */,

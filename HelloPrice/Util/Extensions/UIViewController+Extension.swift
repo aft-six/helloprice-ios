@@ -24,4 +24,18 @@ extension UIViewController {
     var bottomSafeAreaHeight: CGFloat {
         return UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 47
     }
+    
+    func addBottomSheetView(viewController bottomSheetViewController: BottomSheetViewControllerType) {
+//        let bottomSheetVC = scrollable! ? ScrollableBottomSheetViewController() : BottomSheetViewController()
+        let bottomSheetVC = bottomSheetViewController
+        if !self.children.contains(bottomSheetVC) {
+            self.addChild(bottomSheetVC)
+        }
+        self.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: self)
+
+        let height = view.frame.height
+        let width  = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+    }
 }

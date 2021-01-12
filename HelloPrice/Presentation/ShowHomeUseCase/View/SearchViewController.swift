@@ -61,9 +61,11 @@ class SearchViewController: BaseViewController<SearchViewModel> {
             "ytjura"
         ]
         deleteAll.rx.tap
-            .asDriver()
+            .throttle(.milliseconds(2000), scheduler: MainScheduler.instance)
+            .asDriver(onErrorJustReturn: ())
             .drive(onNext: { [weak self] in
-                self?.addBottomSheetView(viewController: ScrollableBottomSheetViewController(list: dummy))
+//                self?.addBottomSheetView(viewController: SearchFilterBottomSheet(list: dummy))
+                self?.addBottomSheetView(viewController: SearchBottomSheet())
             })
             .disposed(by: 👜)
         

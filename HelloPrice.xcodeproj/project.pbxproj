@@ -88,11 +88,12 @@
 		CA73D1DB25AD20BE00663CF9 /* SearchLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1DA25AD20BE00663CF9 /* SearchLocalService.swift */; };
 		CA73D1EA25AD2B3400663CF9 /* BottomSheetViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */; };
 		CA73D1F425AD303100663CF9 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */; };
-		CA73D1F525AD303100663CF9 /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */; };
-		CA73D1F625AD303100663CF9 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */; };
-		CA73D1F725AD303100663CF9 /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */; };
-		CA73D1F825AD303100663CF9 /* ScrollableBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */; };
 		CA73D1F925AD303100663CF9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */; };
+		CA73D1FC25AD603000663CF9 /* SearchFilterBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1FB25AD603000663CF9 /* SearchFilterBottomSheet.swift */; };
+		CA73D1FF25AD73E400663CF9 /* SearchFilterBottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D1FE25AD73E400663CF9 /* SearchFilterBottomSheetCell.swift */; };
+		CA73D20225AD73F900663CF9 /* SearchFilterBottomSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA73D20125AD73F900663CF9 /* SearchFilterBottomSheetCell.xib */; };
+		CA73D20725ADA2FD00663CF9 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D20625ADA2FD00663CF9 /* DimmedView.swift */; };
+		CA73D20B25ADA7B800663CF9 /* SearchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73D20A25ADA7B800663CF9 /* SearchBottomSheet.swift */; };
 		CA774BFC2588B6DA004696C1 /* SectionOfDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */; };
 		CA774BFF2588F7DF004696C1 /* HeaderMarginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */; };
 		CA774C022588F7F2004696C1 /* HeaderMarginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA774C012588F7F2004696C1 /* HeaderMarginView.xib */; };
@@ -258,11 +259,12 @@
 		CA73D1DA25AD20BE00663CF9 /* SearchLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocalService.swift; sourceTree = "<group>"; };
 		CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewControllerType.swift; sourceTree = "<group>"; };
 		CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
-		CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
-		CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
-		CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
-		CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableBottomSheetViewController.xib; sourceTree = "<group>"; };
 		CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		CA73D1FB25AD603000663CF9 /* SearchFilterBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterBottomSheet.swift; sourceTree = "<group>"; };
+		CA73D1FE25AD73E400663CF9 /* SearchFilterBottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterBottomSheetCell.swift; sourceTree = "<group>"; };
+		CA73D20125AD73F900663CF9 /* SearchFilterBottomSheetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterBottomSheetCell.xib; sourceTree = "<group>"; };
+		CA73D20625ADA2FD00663CF9 /* DimmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
+		CA73D20A25ADA7B800663CF9 /* SearchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBottomSheet.swift; sourceTree = "<group>"; };
 		CA774BFB2588B6DA004696C1 /* SectionOfDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfDomainObject.swift; sourceTree = "<group>"; };
 		CA774BFE2588F7DF004696C1 /* HeaderMarginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMarginView.swift; sourceTree = "<group>"; };
 		CA774C012588F7F2004696C1 /* HeaderMarginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMarginView.xib; sourceTree = "<group>"; };
@@ -537,14 +539,8 @@
 		CA438794248D1C2100B01A8A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */,
-				CA73D1F125AD303100663CF9 /* BottomSheetViewController.xib */,
-				CA73D1F025AD303100663CF9 /* DefaultTableViewCell.swift */,
-				CA73D1EF25AD303100663CF9 /* DefaultTableViewCell.xib */,
-				CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */,
-				CA73D1F225AD303100663CF9 /* ScrollableBottomSheetViewController.xib */,
+				CA73D20D25ADA9B700663CF9 /* BottomSheet */,
 				CA438795248D1C3700B01A8A /* BottonCircleButton.swift */,
-				CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -846,6 +842,10 @@
 				CA6936A8255EBFFF004ADA26 /* HomeViewController.swift */,
 				CAF209372587C8980067426C /* SearchViewController.swift */,
 				CAA03E832584FC7B00359B88 /* HomeCellType.swift */,
+				CA73D1FB25AD603000663CF9 /* SearchFilterBottomSheet.swift */,
+				CA73D20A25ADA7B800663CF9 /* SearchBottomSheet.swift */,
+				CA73D1FE25AD73E400663CF9 /* SearchFilterBottomSheetCell.swift */,
+				CA73D20125AD73F900663CF9 /* SearchFilterBottomSheetCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -940,6 +940,17 @@
 				CA73D1DA25AD20BE00663CF9 /* SearchLocalService.swift */,
 			);
 			path = LocalServices;
+			sourceTree = "<group>";
+		};
+		CA73D20D25ADA9B700663CF9 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CA73D20625ADA2FD00663CF9 /* DimmedView.swift */,
+				CA73D1F325AD303100663CF9 /* BottomSheetViewController.swift */,
+				CA73D1EE25AD303100663CF9 /* ScrollableBottomSheetViewController.swift */,
+				CA73D1E925AD2B3400663CF9 /* BottomSheetViewControllerType.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		CA86D6CF257677A500E8CE10 /* DIPropertyWrapper */ = {
@@ -1151,20 +1162,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA50436B254333080032EB42 /* Colors.xcassets in Resources */,
-				CA73D1F525AD303100663CF9 /* DefaultTableViewCell.xib in Resources */,
 				CA6936A5255EBFE8004ADA26 /* ShowHome.storyboard in Resources */,
 				CA14CC6424F814020089D039 /* ShowMyPage.storyboard in Resources */,
 				CA7C4103258247FD0034DBA5 /* HomeCategoryItemCell.xib in Resources */,
 				CA26CDCB254D62BC002C23BE /* MyItemHeaderView.xib in Resources */,
 				CA3B85DE24820F9300F1D863 /* LaunchScreen.storyboard in Resources */,
 				CA367DAC24E6E1D700E63753 /* MyItemCell.xib in Resources */,
-				CA73D1F825AD303100663CF9 /* ScrollableBottomSheetViewController.xib in Resources */,
 				CA3B85DB24820F9300F1D863 /* Assets.xcassets in Resources */,
 				CAA03E672584E80400359B88 /* HomeMainItemCell.xib in Resources */,
-				CA73D1F725AD303100663CF9 /* BottomSheetViewController.xib in Resources */,
 				CAC6B6C925A1C758008E919F /* SearchRecentCell.xib in Resources */,
 				CA46366924F738B0003FAFDB /* SignUp.storyboard in Resources */,
 				CA4E4CF224EA59C2008BB8F2 /* RootTabBarController.storyboard in Resources */,
+				CA73D20225AD73F900663CF9 /* SearchFilterBottomSheetCell.xib in Resources */,
 				CA774C022588F7F2004696C1 /* HeaderMarginView.xib in Resources */,
 				CA46366724F738A5003FAFDB /* SignIn.storyboard in Resources */,
 				CA3B85D924820F9100F1D863 /* ShowMyProductList.storyboard in Resources */,
@@ -1232,7 +1241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA73D1F625AD303100663CF9 /* DefaultTableViewCell.swift in Sources */,
 				CA6B7CE824F809200059FF63 /* RegistProductResponse.swift in Sources */,
 				CAECE8BF255ECD1F000E7882 /* HomeDIContainer.swift in Sources */,
 				CA6B7CE524F808920059FF63 /* RegistProductRequestBody.swift in Sources */,
@@ -1250,6 +1258,7 @@
 				CA33B55024E43AE0008F558C /* SubscribeProductUseCase.swift in Sources */,
 				CAF209382587C8980067426C /* SearchViewController.swift in Sources */,
 				CA1C0A222520872100EA841D /* String+Extension.swift in Sources */,
+				CA73D1FC25AD603000663CF9 /* SearchFilterBottomSheet.swift in Sources */,
 				CA2C2A8E24E7A02600E4CB1D /* MyProductCellViewModel.swift in Sources */,
 				CA438796248D1C3700B01A8A /* BottonCircleButton.swift in Sources */,
 				CA3B85D224820F9100F1D863 /* AppDelegate.swift in Sources */,
@@ -1309,11 +1318,13 @@
 				CA774C062589259C004696C1 /* UICollectionView+Extension.swift in Sources */,
 				CA367DAA24E6E1CB00E63753 /* MyItemCell.swift in Sources */,
 				CA7A0C5224E78C030047F971 /* BaseCellViewModel.swift in Sources */,
+				CA73D20B25ADA7B800663CF9 /* SearchBottomSheet.swift in Sources */,
 				CA33B55224E43B17008F558C /* ShowMyPageUseCase.swift in Sources */,
 				CA31C0B124A49F9600CF190C /* BaseViewModel.swift in Sources */,
 				CA73D1DB25AD20BE00663CF9 /* SearchLocalService.swift in Sources */,
 				CA7A0C5824E7996E0047F971 /* BaseCollectionViewCell.swift in Sources */,
 				CAA03E6F2584E81100359B88 /* HomeMainItemCellViewModel.swift in Sources */,
+				CA73D20725ADA2FD00663CF9 /* DimmedView.swift in Sources */,
 				CA46366C24F7558D003FAFDB /* ProductDIContainer.swift in Sources */,
 				CA46366124F73863003FAFDB /* SignUpViewModel.swift in Sources */,
 				CA6B7CEB24F80F690059FF63 /* ProductRegistrationAPI.swift in Sources */,
@@ -1325,6 +1336,7 @@
 				CAA03E632584BB8500359B88 /* UILabel+Extension.swift in Sources */,
 				CA73D1D725AAA48D00663CF9 /* BaseLocalDBService.swift in Sources */,
 				CA46367024F75834003FAFDB /* RepositoryType.swift in Sources */,
+				CA73D1FF25AD73E400663CF9 /* SearchFilterBottomSheetCell.swift in Sources */,
 				CA9D6E8024887E4500E99B25 /* TransitionModel.swift in Sources */,
 				CAECE8D3255ECE8C000E7882 /* HomeCategoryFetchingAPI.swift in Sources */,
 				CA46365D24F72F08003FAFDB /* AppConfiguration.swift in Sources */,

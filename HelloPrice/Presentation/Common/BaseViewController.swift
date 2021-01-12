@@ -8,32 +8,18 @@
 
 import UIKit
 import RxSwift
+import ReactorKit
 
-class BaseViewController<T: ViewModelType>: UIViewController, ViewModelBindableControllerType {
-    
-    var 👜 = DisposeBag()
-    var viewModel: T!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        bindViewModel()
-    }
+class BaseViewController<R: Reactor>: UIViewController, StoryboardView {
+    var disposeBag = DisposeBag()
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        👜 = DisposeBag()
-        if var viewModel = viewModel {
-            viewModel.👜 = DisposeBag()
-        }
+        disposeBag = DisposeBag()
     }
     
-    func bindViewModel() {
-//        fatalError("You must override here!")
+    func bind(reactor: R) {
+        fatalError("Must override this function.")
     }
 }

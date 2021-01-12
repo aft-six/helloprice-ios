@@ -19,12 +19,19 @@ final class HomeDIContainer: DIContainerType {
 
 extension HomeDIContainer {
     
-    func makeHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(useCase: makeShowHomeUseCaseImpl())
+//    func makeHomeViewModel() -> HomeViewModel {
+//        return HomeViewModel(useCase: makeShowHomeUseCaseImpl())
+//    }
+    
+    func makeHomeReactor() -> HomeReactor {
+        return HomeReactor()
     }
     
     func makeShowHomeUseCaseImpl() -> HomeUseCase {
-        return HomeUseCaseMock()
+//        let useCase = HomeUseCaseImpl(repository: makeHomeRepository())
+        let useCase = HomeUseCaseMock()
+        Resolver.shared.add { useCase }
+        return useCase
 //        return HomeUseCaseImpl(repository: makeHomeRepository())
     }
     

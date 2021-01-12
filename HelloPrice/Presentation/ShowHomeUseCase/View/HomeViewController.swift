@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-class HomeViewController: BaseViewController<HomeViewModel> {
+class HomeViewController: BaseViewController<HomeReactor> {
     
     @IBOutlet weak var searchBackgroundView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
@@ -82,15 +82,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return mainItemDataSource
     }()
     
-    let fetchCategories = PublishRelay<Void>()
-    let fetchCategoryItems = PublishRelay<Int>()
-    let presentWebsite = PublishRelay<Void>()
-    var inputs: HomeViewModel.Input?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,33 +95,30 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         let layout = mainItemCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.headerReferenceSize = CGSize(width: mainItemCollectionView.frame.width, height: topMargin)
         
-        bindRx()
+//        bindRx()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        inputs?.fetchCategories.accept(())
-        inputs?.fetchCategoryItems.accept(0)
-        categoryCollectionView.reloadData()
-        mainItemCollectionView.reloadData()
+//        inputs?.fetchCategories.accept(())
+//        inputs?.fetchCategoryItems.accept(0)
+//        categoryCollectionView.reloadData()
+//        mainItemCollectionView.reloadData()
     }
     
-    override func bindViewModel() {
+    override func bind(reactor: HomeReactor) {
+        Observable.just(())
+            .map { Reactor.Action.fetchCategories }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
-        inputs = HomeViewModel.Input(fetchCategories: fetchCategories, fetchCategoryItems: fetchCategoryItems)
-        
-        let outputs = viewModel.transform(input: inputs!)
-        
-        outputs.categories
-            .observeOn(MainScheduler.asyncInstance)
-            .bind(to: categoryCollectionView.rx.items(dataSource: categoryDataSource))
-            .disposed(by: 👜)
-        
-        outputs.products
-            .observeOn(MainScheduler.asyncInstance)
-            .bind(to: mainItemCollectionView.rx.items(dataSource: mainItemDataSource))
-            .disposed(by: 👜)
+        categoryCollectionView.rx.itemSelected
+            .map { indexPath -> Reactor.Action in
+                return Reactor.Action.fetchCategoryItems(indexPath.item)
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         mainItemCollectionView.rx.didScroll
             .observeOn(MainScheduler.asyncInstance)
@@ -143,28 +133,68 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 
                 self.topConstraint.constant = -y
             })
-            .disposed(by: 👜)
-    }
-    
-    func setUI() {
+            .disposed(by: disposeBag)
         
-    }
-    
-    func bindRx() {
-        //                    let pasteBoard = UIPasteboard.general
-        //                    if pasteBoard.hasURLs, let url = pasteBoard.url {
-        //                        // 복사한 URL 넣기 버튼 추가
-        //                        print("\(url)")
-        //                    }
         searchButton.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] in
-                if let viewController = self?.storyboard?.instantiateViewController(identifier: SearchViewController.className) {
+                if let viewController = self?.storyboard?.instantiateViewController(withIdentifier: SearchViewController.className) {
                     viewController.modalPresentationStyle = .fullScreen
                     viewController.hero.isEnabled = true
                     self?.present(viewController, animated: true)
                 }
             })
-            .disposed(by: 👜)
+            .disposed(by: disposeBag)
     }
+    
+//    override func bindViewModel() {
+//
+//        inputs = HomeViewModel.Input(fetchCategories: fetchCategories, fetchCategoryItems: fetchCategoryItems)
+//
+//        let outputs = viewModel.transform(input: inputs!)
+//
+//        outputs.categories
+//            .observeOn(MainScheduler.asyncInstance)
+//            .bind(to: categoryCollectionView.rx.items(dataSource: categoryDataSource))
+//            .disposed(by: disposeBag)
+//
+//        outputs.products
+//            .observeOn(MainScheduler.asyncInstance)
+//            .bind(to: mainItemCollectionView.rx.items(dataSource: mainItemDataSource))
+//            .disposed(by: disposeBag)
+//
+//        mainItemCollectionView.rx.didScroll
+//            .observeOn(MainScheduler.asyncInstance)
+//            .map { self.mainItemCollectionView.contentOffset.y }
+//            .asDriver(onErrorJustReturn: 0)
+//            .drive(onNext: { [weak self] y in
+//                guard let `self` = self else { return }
+//                if y < 0 {
+//                    self.mainItemCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+//                    return
+//                }
+//
+//                self.topConstraint.constant = -y
+//            })
+//            .disposed(by: disposeBag)
+//    }
+//
+//
+//    func bindRx() {
+//        //                    let pasteBoard = UIPasteboard.general
+//        //                    if pasteBoard.hasURLs, let url = pasteBoard.url {
+//        //                        // 복사한 URL 넣기 버튼 추가
+//        //                        print("\(url)")
+//        //                    }
+//        searchButton.rx.tap
+//            .asDriver()
+//            .drive(onNext: { [weak self] in
+//                if let viewController = self?.storyboard?.instantiateViewController(identifier: SearchViewController.className) {
+//                    viewController.modalPresentationStyle = .fullScreen
+//                    viewController.hero.isEnabled = true
+//                    self?.present(viewController, animated: true)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+//    }
 }

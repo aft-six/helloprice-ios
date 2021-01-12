@@ -28,8 +28,9 @@ class SearchViewModel: BaseViewModel {
     func transform(input: Input) -> Output {
         
         let recentSearches = input.readRecentSearches
-            .withUnretained(self)
-            .flatMap { `self`, _ in self.useCase.readRecentSearches() }
+            .flatMap { self.useCase.readRecentSearches() }
+//            .withUnretained(self)
+//            .flatMap { `self`, _ in self.useCase.readRecentSearches() }
             .map { [SectionOfDomainObject<SearchRecentObject>(items: $0)] }
             .asDriver(onErrorJustReturn: [SectionOfDomainObject<SearchRecentObject>]())
         

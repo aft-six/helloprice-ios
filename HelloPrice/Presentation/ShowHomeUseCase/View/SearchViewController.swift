@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import Hero
 
-class SearchViewController: BaseViewController<SearchViewModel> {
+class SearchViewController: BaseViewController<SearchReactor> {
     
     @IBOutlet weak var searchFieldTopConstraint: NSLayoutConstraint! {
         didSet {
@@ -44,7 +44,7 @@ class SearchViewController: BaseViewController<SearchViewModel> {
             .drive(onNext: { [weak self] in
                 self?.hero.dismissViewController()
             })
-            .disposed(by: 👜)
+            .disposed(by: disposeBag)
         
         let dummy: [String] = [
             "a",
@@ -67,7 +67,7 @@ class SearchViewController: BaseViewController<SearchViewModel> {
 //                self?.addBottomSheetView(viewController: SearchFilterBottomSheet(list: dummy))
                 self?.addBottomSheetView(viewController: SearchBottomSheet())
             })
-            .disposed(by: 👜)
+            .disposed(by: disposeBag)
         
     }
     

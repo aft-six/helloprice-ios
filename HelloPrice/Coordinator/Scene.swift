@@ -10,7 +10,7 @@ import UIKit
 
 enum Scene {
     case main([UIViewController])
-    case home(HomeViewModel)
+    case home(HomeReactor)
     case myProductList(MyProductViewModel)
     case myPage(MyPageViewModel)
     case signIn(SignInViewModel)
@@ -46,7 +46,8 @@ extension Scene {
             return tabBarController
         case .home(let viewModel):
             var viewController = storyboard.instantiateViewController(withIdentifier: HomeViewController.className) as! HomeViewController
-            viewController.bindViewModel(viewModel: viewModel)
+            viewController.reactor = HomeReactor()
+//            viewController.bindViewModel(viewModel: viewModel)
             return viewController
         case .myProductList(let viewModel):
             var viewController = storyboard.instantiateViewController(withIdentifier: MyProductListViewController.className) as! MyProductListViewController

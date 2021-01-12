@@ -24,8 +24,8 @@ class AppCoordinator {
         let myProductViewController = Scene.myProductList(productViewModel).instantiate()
         
         let homeDIContainer = appDIContainer.homeDIContainer
-        let homeViewModel = homeDIContainer.makeHomeViewModel()
-        let homeViewController = Scene.home(homeViewModel).instantiate()
+        let homeReactor = homeDIContainer.makeHomeReactor()
+        let homeViewController = Scene.home(homeReactor).instantiate()
         
         let myPageViewModel = productDIContainer.makeMyPageViewModel()
         let myPageViewController = Scene.myPage(myPageViewModel).instantiate()

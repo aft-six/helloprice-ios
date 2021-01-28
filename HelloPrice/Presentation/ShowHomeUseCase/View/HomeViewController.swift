@@ -13,6 +13,7 @@ import RxDataSources
 
 class HomeViewController: BaseViewController<HomeReactor> {
     
+    weak var coordinatorDelegate: HomeCoordinating?
     @IBOutlet weak var searchBackgroundView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         didSet {
@@ -138,11 +139,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
         searchButton.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] in
-                if let viewController = self?.storyboard?.instantiateViewController(withIdentifier: SearchViewController.className) {
-                    viewController.modalPresentationStyle = .fullScreen
-                    viewController.hero.isEnabled = true
-                    self?.present(viewController, animated: true)
-                }
+                self?.coordinatorDelegate?.pushToSearchViewController()
             })
             .disposed(by: disposeBag)
     }

@@ -10,15 +10,16 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
     
+//    let tabBarCoordinator = RootTabBarCoordinator()
+    
     struct AddButtonState {
         var isOpen = false
     }
     
-    let subButtonBackView = UIView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let subButtonBackView = UIView()
         subButtonBackView.alpha = 0
         subButtonBackView.backgroundColor = .clear
     }
@@ -26,10 +27,8 @@ class RootTabBarController: UITabBarController {
 
 extension RootTabBarController {
     func initViewControllers(viewControllers: [UIViewController]) {
-        
         viewControllers.forEach {
-            let nav = UINavigationController(rootViewController: $0)
-            self.addChild(nav)
+            self.addChild($0)
             
             if $0 is HomeViewController {
 //                nav.isNavigationBarHidden = true
@@ -38,7 +37,7 @@ extension RootTabBarController {
 //                titleView.frame = nav.navigationBar.frame
 //                nav.navigationItem.titleView = titleView
 //                nav.navigationBar.backgroundColor = .clear
-                nav.navigationBar.prefersLargeTitles = true
+//                nav.navigationBar.prefersLargeTitles = true
 //                nav.navigationBar.largeTitleTextAttributes =
 //                    [NSAttributedString.Key.foregroundColor: UIColor.white,
 //                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .black)]

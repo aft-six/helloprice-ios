@@ -1,19 +1,21 @@
 //
-//  MyPageReactor.swift
+//  SignInReactor.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/06/04.
+//  Created by devming on 2020/08/27.
 //  Copyright © 2020 besteyes. All rights reserved.
 //
 
 import ReactorKit
-import RxSwift
 
-class MyPageReactor: Reactor {
+class SignInReactor: Reactor {
     
-    var initialState = State() 
+    var initialState = State()
+    
     enum Action {
-        
+        case loginKakao
+        case loginGoogle
+        case loginApple
     }
     
     enum Mutation {

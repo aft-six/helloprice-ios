@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol ViewModelType: Injectable {
+protocol ViewModelType {
 //    associatedtype Input
 //    associatedtype Output
     var 👜: DisposeBag { get set }

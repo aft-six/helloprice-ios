@@ -64,7 +64,6 @@ class SearchViewController: BaseViewController<SearchReactor> {
             .throttle(.milliseconds(2000), scheduler: MainScheduler.instance)
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: { [weak self] in
-//                self?.addBottomSheetView(viewController: SearchFilterBottomSheet(list: dummy))
                 self?.addBottomSheetView(viewController: SearchBottomSheet())
             })
             .disposed(by: disposeBag)

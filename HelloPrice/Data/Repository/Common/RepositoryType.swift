@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol RepositoryType: Injectable {
+protocol RepositoryType {
     
 }

@@ -13,12 +13,6 @@ import ReactorKit
 class BaseViewController<R: Reactor>: UIViewController, StoryboardView {
     var disposeBag = DisposeBag()
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        disposeBag = DisposeBag()
-    }
-    
     func bind(reactor: R) {
         fatalError("Must override this function.")
     }

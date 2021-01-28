@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  HomeReactor.swift
 //  HelloPrice
 //
 //  Created by devming on 2020/11/13.
@@ -11,9 +11,13 @@ import RxCocoa
 import ReactorKit
 
 class HomeReactor: Reactor {
+
+    let repository: HomeRepository
     
-    @InjectUseCase
-    var useCase: HomeUseCaseMock
+    init(repository: HomeRepository) {
+        self.repository = repository
+    }
+    
     let initialState = State()
     
     enum Action {
@@ -34,13 +38,13 @@ class HomeReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .fetchCategories:
-            return useCase.fetchCategories()
+            return repository.fetchCategories()
                 .map { categories -> Mutation in
                     return Mutation.setCategories(categories)
                 }
                 .asObservable()
         case .fetchCategoryItems(let id):
-            return useCase.fetchCategoryItems(categoryId: id)
+            return repository.fetchCategoryItems(categoryId: id)
                 .map { products -> Mutation in
                     return Mutation.setCategoryItems(products)
                 }

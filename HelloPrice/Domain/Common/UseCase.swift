@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UseCase: Injectable {
+protocol UseCase {
 }
 /*
  로그인하기(SignInUseCase)

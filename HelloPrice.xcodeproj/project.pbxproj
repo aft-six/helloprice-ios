@@ -141,6 +141,7 @@
 		CAECE8D9255ED025000E7882 /* FetchMyProductByCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8D8255ED025000E7882 /* FetchMyProductByCategoryRequest.swift */; };
 		CAECE8DF255ED158000E7882 /* HomeUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */; };
 		CAF209382587C8980067426C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF209372587C8980067426C /* SearchViewController.swift */; };
+		CAFE3A0925C3226D0054BC6E /* HomeRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3A0825C3226D0054BC6E /* HomeRepositoryMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -297,6 +298,7 @@
 		CAECE8D8255ED025000E7882 /* FetchMyProductByCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyProductByCategoryRequest.swift; sourceTree = "<group>"; };
 		CAECE8DE255ED158000E7882 /* HomeUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseImpl.swift; sourceTree = "<group>"; };
 		CAF209372587C8980067426C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CAFE3A0825C3226D0054BC6E /* HomeRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,6 +561,7 @@
 		CA46367824F7590A003FAFDB /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CAFE3A0825C3226D0054BC6E /* HomeRepositoryMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1279,6 +1282,7 @@
 				CA14CC6224F813F50089D039 /* MyPageViewController.swift in Sources */,
 				CAA03E6B2584E80B00359B88 /* HomeMainItemCell.swift in Sources */,
 				CA33B54124E43412008F558C /* UseCase.swift in Sources */,
+				CAFE3A0925C3226D0054BC6E /* HomeRepositoryMock.swift in Sources */,
 				CA46368224F7910E003FAFDB /* ShowMyPageUseCaseImpl.swift in Sources */,
 				CA46366524F7388D003FAFDB /* SignInViewController.swift in Sources */,
 				CA9D6E6E2487900300E99B25 /* MyProductListViewController.swift in Sources */,

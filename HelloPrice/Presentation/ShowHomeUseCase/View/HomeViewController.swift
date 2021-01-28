@@ -109,9 +109,20 @@ class HomeViewController: BaseViewController<HomeReactor> {
     }
     
     override func bind(reactor: HomeReactor) {
-        Observable.just(())
-            .map { Reactor.Action.fetchCategories }
+        Observable.just(Reactor.Action.fetchCategories)
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        reactor.state
+            .map { $0.categories }
+            .observeOn(MainScheduler.asyncInstance)
+            .bind(to: categoryCollectionView.rx.items(dataSource: categoryDataSource))
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.products }
+            .observeOn(MainScheduler.asyncInstance)
+            .bind(to: mainItemCollectionView.rx.items(dataSource: mainItemDataSource))
             .disposed(by: disposeBag)
         
         categoryCollectionView.rx.itemSelected

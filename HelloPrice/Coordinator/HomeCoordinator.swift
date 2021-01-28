@@ -22,7 +22,8 @@ class HomeCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: "ShowHome", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: HomeViewController.className) as? HomeViewController {
             
-            let repository = HomeRepositoryImpl(apiService: apiService)
+//            let repository = HomeRepositoryImpl(apiService: apiService)
+            let repository = HomeRepositoryMock(apiService: apiService)
             let reactor = HomeReactor(repository: repository)
             viewController.coordinatorDelegate = self
             viewController.reactor = reactor

@@ -10,9 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Kingfisher
-import RxKingfisher
 
-class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product>, CellViewModelCreatable {
+class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewModel.Output, Product> {
     
 //    @IBOutlet weak var movePositionButton: UIButton! {
 //        didSet {
@@ -43,18 +42,8 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
         }
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        viewModelCreatable = self
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        viewModelCreatable = self
-    }
-    
-    override func bindViewModel(item: Product) {
-        super.bindViewModel(item: item)
+    override func bindViewModel() {
+//        super.bindViewModel(item: item)
         
         let input = MyProductCellViewModel.Input()
         let outputs = viewModel!.transform(input: input)
@@ -62,7 +51,7 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
         outputs.thumbnailImageUrlString
             .filter { $0 != "" }
             .map { ImageResource(downloadURL: URL(string: $0)!) }
-            .bind(to: thumbnailImageView.kf.rx.image())
+            .subscribe { [weak self] in self?.thumbnailImageView.kf.setImage(with: $0) }
             .disposed(by: 👜)
         
         outputs.productName
@@ -111,11 +100,7 @@ class MyItemCell: BaseTableViewCell<MyProductCellViewModel, MyProductCellViewMod
             .bind(to: lastConfirmTimeLabel.rx.text)
             .disposed(by: 👜)
         
-        input.bindData.accept(item)
-    }
-    
-    func createCellViewModel() {
-        viewModel = MyProductCellViewModel()
+//        input.bindData.accept(item)
     }
 }
 

@@ -11,34 +11,29 @@ import UIKit
 class AppCoordinator {
     
     private let window: UIWindow
-    private let appDIContainer: AppDIContainer
+//    private let tabBarCoordinator: RootTabBarCoordinator
+    let homeCoordinator: HomeCoordinator
+    let tabBarController: RootTabBarController?
     
-    init(window: UIWindow, appDIContainer: AppDIContainer) {
+    init(window: UIWindow) {
         self.window = window
-        self.appDIContainer = appDIContainer
+//        self.tabBarCoordinator = RootTabBarCoordinator()
+        
+        let apiService = HomeAPIService()
+        self.homeCoordinator = HomeCoordinator(apiService: apiService)
+        
+        let storyboard = UIStoryboard(name: "RootTabBarController", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className) as? RootTabBarController
+        self.tabBarController = tabBarController
+        
+        self.window.rootViewController = tabBarController
     }
     
     func start() {
-        let productDIContainer = appDIContainer.productDIContainer
-        let productViewModel = productDIContainer.makeMyProductViewModel()
-        let myProductViewController = Scene.myProductList(productViewModel).instantiate()
+        let viewControllers = [homeCoordinator.navigationController]
+        tabBarController?.initViewControllers(viewControllers: viewControllers)
         
-        let homeDIContainer = appDIContainer.homeDIContainer
-        let homeViewModel = homeDIContainer.makeHomeViewModel()
-        let homeViewController = Scene.home(homeViewModel).instantiate()
-        
-        let myPageViewModel = productDIContainer.makeMyPageViewModel()
-        let myPageViewController = Scene.myPage(myPageViewModel).instantiate()
-        
-        let coordinator = SceneCoordinator(window: window)
-        coordinator.transition(to: .main([homeViewController,
-                                          myProductViewController,
-                                          myPageViewController]),
-                               using: .root,
-                               animated: false)
+        homeCoordinator.start()
     }
     
-//    fileprivate func makeMyProductViewController() -> MyProductListViewController {
-//
-//    }
 }

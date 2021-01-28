@@ -8,9 +8,13 @@
 
 import UIKit
 
-class SignUpViewController: BaseViewController<SignUpViewModel> {
+class SignUpViewController: BaseViewController<SignUpReactor> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func bind(reactor: SignUpReactor) {
+        
     }
 }

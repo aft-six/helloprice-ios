@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPageViewController: BaseViewController<MyPageViewModel> {
+class MyPageViewController: BaseViewController<MyPageReactor> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

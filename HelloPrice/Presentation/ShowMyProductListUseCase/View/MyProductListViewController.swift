@@ -10,54 +10,30 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MyProductListViewController: BaseViewController<MyProductViewModel> {
+class MyProductListViewController: BaseViewController<MyProductReactor> {
     
-    @IBOutlet weak var myProductListTableView: UITableView!
-    let fetchDatas = PublishRelay<Void>()
-    let presentWebsite = PublishRelay<Void>()
-    var tableViewHeader: MyItemHeaderView? = nil
+    @IBOutlet weak var myProductListTableView: UITableView! {
+        didSet {
+            let nibName = UINib(nibName: MyItemCell.className, bundle: nil)
+            myProductListTableView.register(nibName, forCellReuseIdentifier: MyItemCell.className)
+            myProductListTableView.rowHeight = 200
+            let tableViewHeader = MyItemHeaderView.createFromNib()
+            myProductListTableView.tableHeaderView = tableViewHeader
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindViewModel()
     }
     
-    override func bindViewModel() {
-        
-        let inputs = MyProductViewModel
-                        .Input(fetchDatas: fetchDatas,
-                               presentWebsite: presentWebsite)
-
-        let outputs = viewModel!.transform(inputs: inputs)
-        
-        makeTableView()
-        
-        outputs.products
-            .bind(to: myProductListTableView.rx.items(cellIdentifier: MyItemCell.className)) { index, product, cell in
-                guard let productCell = cell as? MyItemCell else { return }
-                
-                productCell.bindViewModel(item: product)
-            }
-            .disposed(by: 👜)
+    override func bind(reactor: MyProductReactor) {
+        Observable.just(())
+            .map { Reactor.Action.fetchDatas }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
-    func loadDatas() {
-        /// - TODO
-        /// accept로 불러오기를 call하는 중인데, 이걸 viewController가 viewWillAppear를 호출한 뒤로 엮으면 더 좋을듯!
-        
-        
-    }
-    
-    func makeTableView() {
-        let nibName = UINib(nibName: MyItemCell.className, bundle: nil)
-        myProductListTableView.register(nibName, forCellReuseIdentifier: MyItemCell.className)
-        myProductListTableView.rowHeight = 200
-        
-        tableViewHeader = MyItemHeaderView.createFromNib()
-        myProductListTableView.tableHeaderView = tableViewHeader
-        myProductListTableView.dataSource = nil
-    }
 }
 
 //let config = WKWebViewConfiguration()

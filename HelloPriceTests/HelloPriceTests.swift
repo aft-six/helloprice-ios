@@ -23,7 +23,7 @@ class HelloPriceTests: XCTestCase {
 //        
 //        // given
 //        let scheduler = TestScheduler(initialClock: 0)
-//        let useCase = ShowMyProductListUseCaseMock()
+//        let useCase = MockShowMyProductListUseCase()
 //        let myProductViewModel = MyProductViewModel(useCase: useCase)
 //        let fetchDatas = PublishRelay<Void>()
 //        let presentWebsite = PublishRelay<Void>()

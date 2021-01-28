@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Foundation
 
 class BaseCellViewModel: NSObject, ViewModelType {
     var 👜 = DisposeBag()

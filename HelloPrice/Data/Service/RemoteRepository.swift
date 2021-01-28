@@ -11,6 +11,7 @@
 
 import Alamofire
 import RxSwift
+import Foundation
 
 protocol RemoteRepository: class {
     associatedtype HTTPMethod

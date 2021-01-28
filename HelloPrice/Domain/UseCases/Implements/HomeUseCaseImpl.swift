@@ -16,11 +16,11 @@ class HomeUseCaseImpl: HomeUseCase {
         self.repository = repository
     }
     
-    func fetchCategories() -> Single<FetchHomeCategoryResponse> {
+    func fetchCategories() -> Single<[HomeCategory]> {
         return repository.fetchCategories()
     }
     
-    func fetchCategoryItems(categoryId: Int) -> Single<FetchMyProductResponse> {
+    func fetchCategoryItems(categoryId: Int) -> Single<[Product]> {
         return repository.fetchCategoryItems(categoryId: categoryId)
     }
     

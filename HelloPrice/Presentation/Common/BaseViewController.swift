@@ -8,15 +8,12 @@
 
 import UIKit
 import RxSwift
+import ReactorKit
 
-class BaseViewController<T: ViewModelType>: UIViewController, ViewModelBindableControllerType {
+class BaseViewController<R: Reactor>: UIViewController, StoryboardView {
+    var disposeBag = DisposeBag()
     
-    var 👜 = DisposeBag()
-    var viewModel: T!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func bind(reactor: R) {
+        fatalError("Must override this function.")
     }
-    
-    func bindViewModel() { }
 }

@@ -132,6 +132,13 @@ class HomeViewController: BaseViewController<HomeReactor> {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        mainItemCollectionView.rx.itemSelected
+            .compactMap { reactor.currentState.products.first?.items[$0.item] }
+            .subscribe(onNext: { [weak self] product in
+                self?.coordinatorDelegate?.popUpWebView(urlString: product.url)
+            })
+            .disposed(by: disposeBag)
+        
         mainItemCollectionView.rx.didScroll
             .observeOn(MainScheduler.asyncInstance)
             .map { self.mainItemCollectionView.contentOffset.y }

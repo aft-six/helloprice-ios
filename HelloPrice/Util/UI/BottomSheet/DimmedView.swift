@@ -1,9 +1,8 @@
 //
 //  DimmedView.swift
-//  HelloPrice
+//  ProjectVanilla
 //
 //  Created by devming on 2021/01/12.
-//  Copyright © 2021 besteyes. All rights reserved.
 //
 
 import UIKit
@@ -20,9 +19,17 @@ class DimmedView: UIView {
         setUI()
     }
     
+    override func removeFromSuperview() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 0.0
+        }) { _ in
+            super.removeFromSuperview()
+        }
+    }
+    
     func setUI() {
-        let dimmedViewTag = 9999
-        tag = dimmedViewTag
-        backgroundColor = .darkIndigo30
+        
+        alpha = 0.0
+        backgroundColor = .black60
     }
 }

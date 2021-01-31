@@ -24,6 +24,7 @@ extension UIColor {
     class var base30: UIColor { UIColor(named: "base30")! }
     class var base100: UIColor { UIColor(named: "base100")! }
     class var baseLabel100: UIColor { UIColor(named: "baseLabel100")! }
+    class var black60: UIColor { UIColor(named: "black60")! }
     class var black100: UIColor { UIColor(named: "black100")! }
     class var darkIndigo5: UIColor { UIColor(named: "darkIndigo5")! }
     class var darkIndigo10: UIColor { UIColor(named: "darkIndigo10")! }

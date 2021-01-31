@@ -12,14 +12,14 @@ class HomeCoordinator: Coordinator {
     let apiService: HomeAPIService
     let navigationController: UINavigationController
     
-    init(apiService: HomeAPIService) {
-        self.apiService = apiService
+    init() {
+        self.apiService = HomeAPIService()
         navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: "ShowHome", bundle: nil)
+        let storyboard = UIStoryboard(name: StoryboardName.home.name, bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: HomeViewController.className) as? HomeViewController {
             
 //            let repository = HomeRepositoryImpl(apiService: apiService)
@@ -34,7 +34,7 @@ class HomeCoordinator: Coordinator {
 
 extension HomeCoordinator: HomeCoordinating {
     func pushToSearchViewController() {
-        let storyboard = UIStoryboard(name: "ShowHome", bundle: nil)
+        let storyboard = UIStoryboard(name: StoryboardName.home.name, bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: SearchViewController.className)
         viewController.modalPresentationStyle = .fullScreen
         viewController.hero.isEnabled = true
@@ -42,6 +42,6 @@ extension HomeCoordinator: HomeCoordinating {
     }
 }
 
-protocol HomeCoordinating: class {
+protocol HomeCoordinating: WebViewCoordinating {
     func pushToSearchViewController()
 }

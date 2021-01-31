@@ -12,6 +12,7 @@ import RxCocoa
 
 class MyProductListViewController: BaseViewController<MyProductReactor> {
     
+    weak var coordinatorDelegate: MyProductCoordinating?
     @IBOutlet weak var myProductListTableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: MyItemCell.className, bundle: nil)

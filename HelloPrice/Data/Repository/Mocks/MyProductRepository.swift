@@ -1,15 +1,15 @@
 //
-//  ShowMyProductListUseCaseMock.swift
+//  MyProductRepository.swift
 //  HelloPrice
 //
-//  Created by devming on 2020/08/16.
-//  Copyright © 2020 besteyes. All rights reserved.
+//  Created by devming on 2021/01/30.
+//  Copyright © 2021 besteyes. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class ShowMyProductListUseCaseMock: ShowMyProductListUseCase {
+class MyProductRepository: ProductRepository {
     
     let json = """
     {
@@ -94,5 +94,6 @@ class ShowMyProductListUseCaseMock: ShowMyProductListUseCase {
         }
         return Single.just(FetchMyProductResponse())
     }
+    
     
 }
